@@ -1,6 +1,7 @@
 <!doctype html>
 <html lang="en">
   <head>
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:regular,bold,italic,thin,light,bolditalic,black,medium&amp;lang=en">
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <link rel="stylesheet" href="test.css">
@@ -55,7 +56,10 @@
             <ul class="mtss-menu mtss-menu--bottom-right mtss-js-menu mtss-js-ripple-effect" for="accbtn">
               <li class="mtss-menu__item">nick.barry@gmail.com</li>
               <li class="mtss-menu__item">benjamin.bradley@gmail.com</li>
-              <li class="mtss-menu__item"><i class="material-icons">add</i>Add another account...</li>
+              <li class="mtss-menu__item">
+				Add an account...
+				<div class="g-signin2" data-onsuccess="onSignIn"></div>
+			  </li>
             </ul>
           </div>
         </header>
