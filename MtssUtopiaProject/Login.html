@@ -1,0 +1,45 @@
+<Doctype! html>
+<html>
+	<head>
+		<link rel="stylesheet" href="LoginCSS.css">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+		<script src="https://apis.google.com/js/platform.js" async defer></script>
+		<meta name="google-signin-client_id" content="1016173195788-ppgbtil016dgii09hn3f4l4sjo306q73.apps.googleusercontent.com.apps.googleusercontent.com">
+	</head>
+	<body>
+		<div class="login-page">
+			<div class="form">
+				<form class="register-form">
+					<input type="text" placeholder="name"/>
+					<input type="password" placeholder="password"/>
+					<input type="text" placeholder="email address"/>
+					<button>create</button>
+					<p class="message">Already registered? <a href="#">Sign In</a></p>
+				</form>
+				<form class="login-form ul">
+					<!--input type="text" placeholder="username"/-->
+					<!--input type="password" placeholder="password"/-->
+					<div class="g-signin2" data-onsuccess="onSignIn"></div>
+					<button>login</button>
+					<p class="message">please sign in with a <a href="https://accounts.google.com/SignUp?hl=en">google account</a></p>
+					<!--p class="message">Not registered? <a href="#">Create an account</a></p-->
+				</form>
+			</div>
+		</div>
+		<!--script>
+			$('.message a').click(function(){
+				$('form').animate({height: "toggle", opacity: "toggle"}, "slow");
+			});
+		</script-->
+		<script>
+			function onSignIn(googleUser) {
+				var profile = googleUser.getBasicProfile();
+				console.log('ID: ' + profile.getId()); // Do not send to your backend! Use an ID token instead.
+				console.log('Name: ' + profile.getName());
+				console.log('Image URL: ' + profile.getImageUrl());
+				console.log('Email: ' + profile.getEmail()); // This is null if the 'email' scope is not present.
+				window.location.href = "";
+			}
+		</script>
+	</body>
+</html>
