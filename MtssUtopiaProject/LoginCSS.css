@@ -1,9 +1,8 @@
 @import url(https://fonts.googleapis.com/css?family=Roboto:300);
 
-.testing {}
-
 .abcRioButtonLightBlue {
-background-color: #fff;
+/*background-color: #fff;*/
+background-color: #EF6C00;
 color: #757575;
 margin: 16px auto;
 width: 270px !important;
