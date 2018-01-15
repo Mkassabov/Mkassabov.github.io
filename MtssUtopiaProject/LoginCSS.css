@@ -4,8 +4,8 @@
 background-color: #fff;
 color: #757575;
 margin: 16px auto;
-width: 270px;
-height: 47px;
+width: 270px !important;
+height: 47px !important;
 }
 
 .login-page {
