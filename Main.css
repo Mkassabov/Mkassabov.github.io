@@ -6,6 +6,266 @@ element.style {
     top: 0px;
 }
 
+/* layout */
+body {
+	font-family: 'Helvetica', 'Arial', sans-serif;
+	font-size: 14px;
+	font-weight: 400;
+	line-height: 20px
+}
+
+.navigation {
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-flex-wrap: nowrap;
+	-ms-flex-wrap: nowrap;
+	flex-wrap: nowrap;
+	box-sizing: border-box
+}
+
+.navigation__link {
+	color: #424242;
+	text-decoration: none;
+	font-weight: 500;
+	font-size: 13px;
+	margin: 0
+}
+
+.layout__container {
+	position: absolute;
+	width: 100%;
+	height: 100%
+}
+
+.layout-title {
+	display: block;
+	position: relative;
+	font-family: 'Roboto', 'Helvetica', 'Arial', sans-serif;
+	font-size: 20px;
+	line-height: 1;
+	letter-spacing: .02em;
+	font-weight: 400;
+	box-sizing: border-box
+}
+
+.layout-spacer {
+	-webkit-box-flex: 1;
+	-webkit-flex-grow: 1;
+	-ms-flex-positive: 1;
+	flex-grow: 1
+}
+
+.layout__drawer {
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-orient: vertical;
+	-webkit-box-direction: normal;
+	-webkit-flex-direction: column;
+	-ms-flex-direction: column;
+	flex-direction: column;
+	-webkit-flex-wrap: nowrap;
+	-ms-flex-wrap: nowrap;
+	flex-wrap: nowrap;
+	width: 240px;
+	height: 100%;
+	max-height: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+	box-shadow: 0 2px 2px 0 rgba(0, 0, 0, .14), 0 3px 1px -2px rgba(0, 0, 0, .2), 0 1px 5px 0 rgba(0, 0, 0, .12);
+	box-sizing: border-box;
+	border-right: 1px solid #e0e0e0;
+	background: #fafafa;
+	-webkit-transform: translateX(-250px);
+	-ms-transform: translateX(-250px);
+	transform: translateX(-250px);
+	-webkit-transform-style: preserve-3d;
+	transform-style: preserve-3d;
+	will-change: transform;
+	-webkit-transition-duration: .2s;
+	transition-duration: .2s;
+	-webkit-transition-timing-function: cubic-bezier(.4, 0, .2, 1);
+	transition-timing-function: cubic-bezier(.4, 0, .2, 1);
+	-webkit-transition-property: -webkit-transform;
+	transition-property: transform;
+	color: #424242;
+	overflow: visible;
+	overflow-y: auto;
+	z-index: 5
+}
+
+.layout__drawer.is-visible {
+	-webkit-transform: translateX(0);
+	-ms-transform: translateX(0);
+	transform: translateX(0)
+}
+
+.layout__drawer>.layout-title {
+	line-height: 64px;
+	padding-left: 40px
+}
+
+.layout__drawer .navigation {
+	-webkit-box-orient: vertical;
+	-webkit-box-direction: normal;
+	-webkit-flex-direction: column;
+	-ms-flex-direction: column;
+	flex-direction: column;
+	-webkit-box-align: stretch;
+	-webkit-align-items: stretch;
+	-ms-flex-align: stretch;
+	align-items: stretch;
+}
+
+.layout__drawer .navigation .navigation__link {
+	display: block;
+	-webkit-flex-shrink: 0;
+	-ms-flex-negative: 0;
+	flex-shrink: 0;
+	padding: 16px 40px;
+	margin: 0;
+	color: #757575
+}
+
+@media screen and (max-width:850px) {
+	.layout__drawer .navigation .navigation__link {
+		padding: 16px
+	}
+}
+
+.layout__drawer .navigation .navigation__link:hover {
+	background-color: #e0e0e0
+}
+
+.layout__drawer .navigation .navigation__link--current {
+	background-color: #000;
+	color: rgb(63, 81, 181)
+}
+
+@media screen and (min-width:851px) {
+	.layout--fixed-drawer>.layout__drawer {
+		-webkit-transform: translateX(0);
+		-ms-transform: translateX(0);
+		transform: translateX(0)
+	}
+}
+
+.layout__drawer-button {
+	display: block;
+	position: absolute;
+	height: 48px;
+	width: 48px;
+	border: 0;
+	-webkit-flex-shrink: 0;
+	-ms-flex-negative: 0;
+	flex-shrink: 0;
+	overflow: hidden;
+	text-align: center;
+	cursor: pointer;
+	font-size: 26px;
+	line-height: 50px;
+	font-family: Helvetica, Arial, sans-serif;
+	margin: 10px 12px;
+	top: 0;
+	left: 0;
+	color: rgb(255, 255, 255);
+	z-index: 4
+}
+
+.layout__header {
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-orient: vertical;
+	-webkit-box-direction: normal;
+	-webkit-flex-direction: column;
+	-ms-flex-direction: column;
+	flex-direction: column;
+	-webkit-flex-wrap: nowrap;
+	-ms-flex-wrap: nowrap;
+	flex-wrap: nowrap;
+	-webkit-box-pack: start;
+	-webkit-justify-content: flex-start;
+	-ms-flex-pack: start;
+	justify-content: flex-start;
+	box-sizing: border-box;
+	-webkit-flex-shrink: 0;
+	-ms-flex-negative: 0;
+	flex-shrink: 0;
+	width: 100%;
+	margin: 0;
+	padding: 0;
+	border: none;
+	min-height: 64px;
+	max-height: 1000px;
+	z-index: 3;
+	background-color: rgb(63, 81, 181);
+	color: rgb(255, 255, 255);
+	box-shadow: 0 2px 2px 0 rgba(0, 0, 0, .14), 0 3px 1px -2px rgba(0, 0, 0, .2), 0 1px 5px 0 rgba(0, 0, 0, .12);
+	-webkit-transition-duration: .2s;
+	transition-duration: .2s;
+	-webkit-transition-timing-function: cubic-bezier(.4, 0, .2, 1);
+	transition-timing-function: cubic-bezier(.4, 0, .2, 1);
+	-webkit-transition-property: max-height, box-shadow;
+	transition-property: max-height, box-shadow
+}
+
+.layout__header-row {
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-orient: horizontal;
+	-webkit-box-direction: normal;
+	-webkit-flex-direction: row;
+	-ms-flex-direction: row;
+	flex-direction: row;
+	-webkit-flex-wrap: nowrap;
+	-ms-flex-wrap: nowrap;
+	flex-wrap: nowrap;
+	-webkit-flex-shrink: 0;
+	-ms-flex-negative: 0;
+	flex-shrink: 0;
+	box-sizing: border-box;
+	-webkit-align-self: stretch;
+	-ms-flex-item-align: stretch;
+	align-self: stretch;
+	-webkit-box-align: center;
+	-webkit-align-items: center;
+	-ms-flex-align: center;
+	align-items: center;
+	height: 64px;
+	margin: 0;
+	padding: 0 40px 0 80px
+}
+
+.layout__obfuscator {
+	background-color: transparent;
+	position: absolute;
+	top: 0;
+	left: 0;
+	height: 100%;
+	width: 100%;
+	z-index: 4;
+	visibility: hidden;
+	-webkit-transition-property: background-color;
+	transition-property: background-color;
+	-webkit-transition-duration: .2s;
+	transition-duration: .2s;
+	-webkit-transition-timing-function: cubic-bezier(.4, 0, .2, 1);
+	transition-timing-function: cubic-bezier(.4, 0, .2, 1)
+}
+
+.layout__drawer.is-visible~.layout__obfuscator {
+	background-color: rgba(0, 0, 0, .5);
+	visibility: visible
+}
+
 
 /* background */
 .main {
