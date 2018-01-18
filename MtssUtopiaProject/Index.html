@@ -18,6 +18,7 @@
 				} else {
 					document.getElementById("account").textContent="not logged in";
 				}*/
+				 var auth2 = gapi.auth2.getAuthInstance();
 				document.getElementById("account").textContent=auth2.currentUser.get().getBasicProfile().getEmail();
 			 });
 			 
