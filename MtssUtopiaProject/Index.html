@@ -10,25 +10,15 @@
 		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 		<meta name="google-signin-client_id" content="1016173195788-ppgbtil016dgii09hn3f4l4sjo306q73.apps.googleusercontent.com">
 		<script src="https://apis.google.com/js/platform.js" async defer></script>
-		<script>
-			var width
-			var panels
-			var output
-			
-			$(document).ready(function() {
-					width = $(window).width();
-					panels = Math.floor((width - 16) / 416);
-					output = "auto ".repeat(panels);
-					$(".grid-container").css("grid-template-columns",output);
-					
-			});
-			
-			 $(window).resize(function(){
-					width = $(window).width();
-					panels = Math.floor((width - 16) / 416);
-					output = "auto ".repeat(panels);
-					$(".grid-container").css("grid-template-columns",output);
-			});
+		<script>			
+			 $(document).ready(function() {
+				if(auth2.isSignedIn.get()) {
+					var profile = auth2.currentUser.get().getBasicProfile();
+					document.getElementById("account").textContent="profile.getEmail()";
+				} else {
+					document.getElementById("account").textContent="not logged in";
+				}
+			 });
 			 
 			$(document).ready(function(){
 				$('#nav-icon1,#nav-icon2,#nav-icon3,#nav-icon4').click(function(){
@@ -50,7 +40,10 @@
 			</header>
 			<div class="layout__drawer navMenu">
 				<span class="layout-title">
-					<div class="card-menu-button" style="margin: 16px;" onclick="signOut();">
+					<div id="account">
+						
+					</div>
+					<!--div class="card-menu-button" style="margin: 16px;" onclick="signOut();">
 						<div>Sign Out</div>
 					</div>	
 					<script>
@@ -61,7 +54,7 @@
 								window.location.href = "Login.html";
 							});
 						}
-					</script>
+					</script-->
 				</span>
 				<nav class="navigation">
 					<a class="navigation__link" style="font-size:15px;" href="Index.html">Home</a>
