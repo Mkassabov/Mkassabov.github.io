@@ -18,7 +18,7 @@
 				} else {
 					document.getElementById("account").textContent="not logged in";
 				}*/
-				document.getElementById("account").textContent="testtext2";
+				document.getElementById("account").textContent=auth2.currentUser.get().getBasicProfile().getEmail();
 			 });
 			 
 			$(document).ready(function(){
