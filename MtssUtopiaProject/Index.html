@@ -3,37 +3,73 @@
 	<head>
 		<link href="https://use.fontawesome.com/releases/v5.0.4/css/all.css" rel="stylesheet">
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-		<link rel="stylesheet" href="Main.css">
-		<script src="https://storage.googleapis.com/code.getmdl.io/1.0.0/material.min.js"></script>
-		<link rel="stylesheet" href="https://storage.googleapis.com/code.getmdl.io/1.0.0/material.indigo-pink.min.css">
+		<link rel="stylesheet" href="../Main.css">
+		<!--link rel="stylesheet" href="temp.css"-->
+		<script src="../temp.js"></script>
 		<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+		<meta name="google-signin-client_id" content="1016173195788-ppgbtil016dgii09hn3f4l4sjo306q73.apps.googleusercontent.com">
+		<script src="https://apis.google.com/js/platform.js" async defer></script>
+		<script>
+			var width
+			var panels
+			var output
+			
+			$(document).ready(function() {
+					width = $(window).width();
+					panels = Math.floor((width - 16) / 416);
+					output = "auto ".repeat(panels);
+					$(".grid-container").css("grid-template-columns",output);
+					
+			});
+			
+			 $(window).resize(function(){
+					width = $(window).width();
+					panels = Math.floor((width - 16) / 416);
+					output = "auto ".repeat(panels);
+					$(".grid-container").css("grid-template-columns",output);
+			});
+			 
+			$(document).ready(function(){
+				$('#nav-icon1,#nav-icon2,#nav-icon3,#nav-icon4').click(function(){
+					$(this).toggleClass('open');
+				});
+			});
+		</script>
 	</head>
 	<body>
-		<div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
-			<header class="mdl-layout__header">
-				<div class="mdl-layout__header-row">
-					<!-- Title -->
-					<span class="mdl-layout-title">Michael Kassabov</span>
-					<!-- Add spacer, to align navigation to the right -->
-					<div class="mdl-layout-spacer"></div>
-					<!-- Navigation. We hide it in small screens. -->
-					<nav class="mdl-navigation mdl-layout--large-screen-only">
-						<span class="mdl-layout-title">Home</span>
+		<div class="layout js-layout layout--fixed-header">
+			<header class="layout__header">
+				<div class="layout__header-row">
+					<span class="layout-title">Home</span>
+					<div class="layout-spacer"></div>
+					<nav class="navigation layout--large-screen-only">
+						<span class="layout-title"></span>
 					</nav>
 				</div>
 			</header>
-			<div class="mdl-layout__drawer">
-				<span class="mdl-layout-title">Navigation</span>
-				<nav class="mdl-navigation">
-					<a class="mdl-navigation__link" style="font-size:15px;" href="Index.html">Home</a>
-					<a class="mdl-navigation__link" style="font-size:15px;" href="Projects.html">Projects</a>
-					<a class="mdl-navigation__link" style="font-size:15px;" href="">Behind the Scenes</a>
-					<a class="mdl-navigation__link" style="font-size:15px;" href="">Contact</a>
-					<a class="mdl-navigation__link" style="font-size:15px;" href="">About Me</a>
+			<div class="layout__drawer navMenu">
+				<span class="layout-title">
+					<div class="card-menu-button" style="margin: 16px;" onclick="signOut();">
+						<div>Sign Out</div>
+					</div>	
+					<script>
+						function signOut() {
+							var auth2 = gapi.auth2.getAuthInstance();
+							auth2.signOut().then(function () {
+								console.log('User signed out.');
+								window.location.href = "Login.html";
+							});
+						}
+					</script>
+				</span>
+				<nav class="navigation">
+					<a class="navigation__link" style="font-size:15px;" href="Index.html">Home</a>
+					<a class="navigation__link" style="font-size:15px;" href="Students.html">students</a>
 				</nav>
 			</div>
-			<div class="main">	
+			<div class="main">
+				
 			</div>
 		</div>
         <script src="button.js"></script>
