@@ -50,18 +50,18 @@
 			</header>
 			<div class="layout__drawer navMenu">
 				<span class="layout-title">
-					<div class="card-menu-button" style="margin: 16px;" onclick="signOut();">
-						<div>Sign Out</div>
-					</div>	
-					<script>
-						function signOut() {
-							var auth2 = gapi.auth2.getAuthInstance();
-							auth2.signOut().then(function () {
-								console.log('User signed out.');
-								window.location.href = "Login.html";
-							});
-						}
-					</script>
+					<div class="card-menu-button" style="margin: 16px;" onclick="location.href='';">
+						<a href="#" onclick="signOut();">Sign out</a>
+						<script>
+							function signOut() {
+								var auth2 = gapi.auth2.getAuthInstance();
+								auth2.signOut().then(function () {
+									console.log('User signed out.');
+									window.location.href = "Login.html";
+								});
+							}
+						</script>
+					</div>
 				</span>
 				<nav class="navigation">
 					<a class="navigation__link" style="font-size:15px;" href="Index.html">Home</a>
