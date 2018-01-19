@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:regular,bold,italic,thin,light,bolditalic,black,medium&amp;lang=en">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="test.css">
+    <link rel="stylesheet" href="styles.css">
+	<meta name="google-signin-client_id" content="1016173195788-ppgbtil016dgii09hn3f4l4sjo306q73.apps.googleusercontent.com">
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
+    <style>
+    #view-source {
+      position: fixed;
+      display: block;
+      right: 0;
+      bottom: 0;
+      margin-right: 40px;
+      margin-bottom: 40px;
+      z-index: 900;
+    }
+    </style>
+  </head>
+  <body>
+    <div class="mtss-layout mtss-layout mtss-js-layout mtss-layout--fixed-drawer mtss-layout--fixed-header">
+      <header class="mtss-header mtss-layout__header mtss-color--grey-100 mtss-color-text--grey-600">
+        <div class="mtss-layout__header-row">
+          <span class="mtss-layout-title">Home</span>
+          <div class="mtss-layout-spacer"></div>
+          <div class="mtss-textfield mtss-js-textfield mtss-textfield--expandable">
+            <label class="mtss-button mtss-js-button mtss-button--icon" for="search">
+              <i class="material-icons">search</i>
+            </label>
+            <div class="mtss-textfield__expandable-holder">
+              <input class="mtss-textfield__input" type="text" id="search">
+              <label class="mtss-textfield__label" for="search">Enter your query...</label>
+            </div>
+          </div>
+          <button class="mtss-button mtss-js-button mtss-js-ripple-effect mtss-button--icon" id="hdrbtn">
+            <i class="material-icons">more_vert</i>
+          </button>
+          <ul class="mtss-menu mtss-js-menu mtss-js-ripple-effect mtss-menu--bottom-right" for="hdrbtn">
+            <li class="mtss-menu__item">About</li>
+            <li class="mtss-menu__item">Contact</li>
+            <li class="mtss-menu__item">Legal information</li>
+          </ul>
+        </div>
+      </header>
+      <div class="mtss-drawer mtss-layout__drawer mtss-color--blue-grey-900 mtss-color-text--blue-grey-50">
+        <header class="mtss-drawer-header">
+			<div class="g-signin2" data-onsuccess="onSignIn"></div>
+			<a href="#" onclick="signOut();">Sign out</a>
+			<script>
+				function signOut() {
+					var auth2 = gapi.auth2.getAuthInstance();
+					auth2.signOut().then(function () {
+						console.log('User signed out.');
+						window.location.href = "Login.html";
+					});
+				}
+			</script>
+		</header>
+        <nav class="mtss-navigation mtss-navigation mtss-color--blue-grey-800">
+          <a class="mtss-navigation__link" href=""><i class="material-icons">home</i>Home</a>
+          <a class="mtss-navigation__link" href=""><i class="material-icons">view_stream</i>Students</a>
+          <a class="mtss-navigation__link" href=""><i class="material-icons">today</i>Schedule</a>
+          <a class="mtss-navigation__link" href=""><i class="material-icons">delete</i>Trash</a>
+          <div class="mtss-layout-spacer"></div>
+          <a class="mtss-navigation__link" href=""><i class="material-icons">help_outline</i><span class="visuallyhidden">Help</span></a>
+        </nav>
+      </div>
+    </div>
+	<script src="test.js"></script>
+  </body>
+</html>
