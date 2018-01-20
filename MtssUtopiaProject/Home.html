@@ -75,6 +75,25 @@
 							<i class="material-icons">arrow_drop_down</i>
 						</button>
 					</div>
+					<!--div class="card-menu-button" style="margin: 16px;" onclick="location.href='';">
+						<div class="g-signin2" data-onsuccess="onSignIn"></div>
+						<a href="#" onclick="signOut();">Sign out</a>
+						<script>
+							function signOut() {
+								var auth2 = gapi.auth2.getAuthInstance();
+								auth2.signOut().then(function () {
+									console.log('User signed out.');
+									window.location.href = "Login.html";
+								});
+							}
+						</script>
+					<!--/div-->
+				</span>
+				<nav class="navigation">
+					<a class="navigation__link" style="font-size:15px;" href="Index.html">Home</a>
+					<a class="navigation__link" style="font-size:15px;" href="Students.html">students</a>
+					<div class="g-signin2" data-onsuccess="onSignIn"></div>
+					<a href="#" onclick="signOut();">Sign out</a>
 					<script>
 						var auth2 = gapi.auth2.getAuthInstance();
 					
@@ -96,25 +115,6 @@
 						}
 
 					</script>
-					<!--div class="card-menu-button" style="margin: 16px;" onclick="location.href='';">
-						<div class="g-signin2" data-onsuccess="onSignIn"></div>
-						<a href="#" onclick="signOut();">Sign out</a>
-						<script>
-							function signOut() {
-								var auth2 = gapi.auth2.getAuthInstance();
-								auth2.signOut().then(function () {
-									console.log('User signed out.');
-									window.location.href = "Login.html";
-								});
-							}
-						</script>
-					<!--/div-->
-				</span>
-				<nav class="navigation">
-					<a class="navigation__link" style="font-size:15px;" href="Index.html">Home</a>
-					<a class="navigation__link" style="font-size:15px;" href="Students.html">students</a>
-					<div class="g-signin2" data-onsuccess="onSignIn"></div>
-					<a href="#" onclick="signOut();">Sign out</a>
 				</nav>
 			</div>
 			<div class="main">
