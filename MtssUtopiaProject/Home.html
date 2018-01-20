@@ -10,19 +10,8 @@
 		<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 		<meta name="google-signin-client_id" content="1016173195788-ppgbtil016dgii09hn3f4l4sjo306q73.apps.googleusercontent.com">
-		<script src="https://apis.google.com/js/platform.js" async defer></script>
-		<script> 
-			console.log('Script');
-
-			function signOut() {	
-				var auth2 = gapi.auth2.getAuthInstance();
-				auth2.signOut().then(function () {
-					console.log('User signed out.');
-					window.location.href = "Login.html";
-				});
-			}
-			
-			gapi.load('auth2', function () {
+		<script>
+			function onLoadCallback(){
 				console.log('Entering function');
 				var auth2 = gapi.auth2.getAuthInstance();
 					
@@ -35,8 +24,20 @@
 					console.log('Family Name: ' + profile.getFamilyName());
 					console.log('Image URL: ' + profile.getImageUrl());
 					console.log('Email: ' + profile.getEmail());
-				}
-			})			
+				}			
+			}
+		</script
+		<script src="https://apis.google.com/js/platform.js?onload=onLoadCallback" async defer></script>
+		<script> 
+			console.log('Script');
+
+			function signOut() {	
+				var auth2 = gapi.auth2.getAuthInstance();
+				auth2.signOut().then(function () {
+					console.log('User signed out.');
+					window.location.href = "Login.html";
+				});
+			}
 		</script>
 		<script>			
 			var width
