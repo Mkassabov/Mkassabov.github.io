@@ -13,17 +13,19 @@
 		<script src="https://apis.google.com/js/platform.js" async defer></script>
 		<script> 
 			console.log('Script');
+
+			function signOut() {	
+				var auth2 = gapi.auth2.getAuthInstance();
+				auth2.signOut().then(function () {
+					console.log('User signed out.');
+					window.location.href = "Login.html";
+				});
+			}
+
 			window.onLoad = function(){
 				console.log('Entering function');
 				var auth2 = gapi.auth2.getAuthInstance();
 					
-				function signOut() {	
-					var auth2 = gapi.auth2.getAuthInstance();
-					auth2.signOut().then(function () {
-						console.log('User signed out.');
-						window.location.href = "Login.html";
-					});
-				}
 					
 				if (auth2.isSignedIn.get()) {
 					console.log('Signed!!!');
@@ -37,8 +39,7 @@
 				}
 			}
 		</script>
-		<script>
-			
+		<script>			
 			var width
 			var panels
 			var output
@@ -105,30 +106,6 @@
 					<a class="navigation__link" style="font-size:15px;" href="Students.html">students</a>
 					<div class="g-signin2" data-onsuccess="onSignIn"></div>
 					<a href="#" onclick="signOut();">Sign outs</a>
-					<script>
-						window.onLoadCallback = function(){
-							console.log('Entering function');
-							var auth2 = gapi.auth2.getAuthInstance();
-					
-							function signOut() {	
-								var auth2 = gapi.auth2.getAuthInstance();
-								auth2.signOut().then(function () {
-									console.log('User signed out.');
-									window.location.href = "Login.html";
-								});
-							}
-					
-							if (auth2.isSignedIn.get()) {
-								var profile = auth2.currentUser.get().getBasicProfile();
-								console.log('ID: ' + profile.getId());
-								console.log('Full Name: ' + profile.getName());
-								console.log('Given Name: ' + profile.getGivenName());
-								console.log('Family Name: ' + profile.getFamilyName());
-								console.log('Image URL: ' + profile.getImageUrl());
-								console.log('Email: ' + profile.getEmail());
-							}
-						}
-					</script>
 				</nav>
 			</div>
 			<div class="main">
