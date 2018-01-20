@@ -13,7 +13,7 @@
 		<script src="https://apis.google.com/js/platform.js" async defer></script>
 		<script> 
 			console.log('Script');
-			window.onLoadCallback = function(){
+			window.onLoad = function(){
 				console.log('Entering function');
 				var auth2 = gapi.auth2.getAuthInstance();
 					
