@@ -14,7 +14,8 @@
 			function onLoadCallback(){
 				console.log('Entering function');
 				var auth2 = gapi.auth2.getAuthInstance();
-					
+				gapi.auth2.init();
+				
 				if (auth2.isSignedIn.get()) {
 					console.log('Signed!!!');
 					var profile = auth2.currentUser.get().getBasicProfile();
