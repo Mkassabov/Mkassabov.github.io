@@ -12,25 +12,16 @@
 	<meta name="google-signin-client_id" content="1016173195788-ppgbtil016dgii09hn3f4l4sjo306q73.apps.googleusercontent.com">
     <script src="https://apis.google.com/js/platform.js" async defer></script>
 		<script>
-			gapi.load('client', {
-				callback: function() {
-					// Handle gapi.client initialization.
-					initGapiClient();
-				},
-				onerror: function() {
-					// Handle loading error.
-					alert('gapi.client failed to load!');
-				},
-				timeout: 5000, // 5 seconds.
-				ontimeout: function() {
-					// Handle timeout.
-					alert('gapi.client could not load in a timely manner!');
-				}
-			});
 			
 			var width
 			var panels
 			var output
+			
+			window.onLoadCallback = function(){
+				gapi.auth2.init({
+					client_id: '1016173195788-ppgbtil016dgii09hn3f4l4sjo306q73.apps.googleusercontent.com'
+				});
+			}
 			
 			$(document).ready(function() {
 					width = $(window).width();
