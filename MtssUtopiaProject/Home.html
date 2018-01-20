@@ -17,6 +17,12 @@
 			var panels
 			var output
 			
+			window.onLoadCallback = function(){
+				gapi.auth2.init({
+					client_id: '1016173195788-ppgbtil016dgii09hn3f4l4sjo306q73.apps.googleusercontent.com'
+				});
+			}
+			
 			$(document).ready(function() {
 					width = $(window).width();
 					panels = Math.floor((width - 16) / 416);
@@ -80,12 +86,6 @@
 					<div class="g-signin2" data-onsuccess="onSignIn"></div>
 					<a href="#" onclick="signOut();">Sign outs</a>
 					<script>
-						window.onLoadCallback = function(){
-							gapi.auth2.init({
-								client_id: '1016173195788-ppgbtil016dgii09hn3f4l4sjo306q73.apps.googleusercontent.com'
-							});
-						}
-						
 						var auth2 = gapi.auth2.getAuthInstance();
 					
 						function signOut() {	
