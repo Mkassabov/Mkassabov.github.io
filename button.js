@@ -12,9 +12,9 @@ function createRipple (e) {
 
     circle.style.width = circle.style.height = d + 'px';
 
-var rect = this.getBoundingClientRect();
-circle.style.left = e.clientX - rect.left -d/2 + 'px';
-circle.style.top = e.clientY - rect.top - d/2 + 'px';
+	var rect = this.getBoundingClientRect();
+	circle.style.left = e.clientX - rect.left -d/2 + 'px';
+	circle.style.top = e.clientY - rect.top - d/2 + 'px';
 
     console.log(this);
 
