@@ -21,11 +21,10 @@
 					window.location.href = "Login.html";
 				});
 			}
-
-			window.onload = function(){
+			
+			gapi.load('auth2', function () {
 				console.log('Entering function');
 				var auth2 = gapi.auth2.getAuthInstance();
-					
 					
 				if (auth2.isSignedIn.get()) {
 					console.log('Signed!!!');
@@ -38,6 +37,7 @@
 					console.log('Email: ' + profile.getEmail());
 				}
 			}
+			
 		</script>
 		<script>			
 			var width
