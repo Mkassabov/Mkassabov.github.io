@@ -3,6 +3,38 @@
 .test {
 }
 
+.returnButton {
+	margin: 35px 0 0 35px;
+    padding: 10px;
+    border-radius: 50%;
+    background: #FFFFFF;
+    height: 30px;
+    width: 30px;
+    text-align: center;
+    left: 0;
+    font-size: 30px;
+    color: white;
+    display: fixed;
+    position: fixed;
+    z-index: 3;
+    -webkit-transition-duration: 400ms;
+    transition-duration: 400ms;
+    opacity: 1;
+    -webkit-box-shadow: 0 5px 20px rgba(0,0,0,0.3);
+    box-shadow: 0 5px 20px rgba(0,0,0,0.3);
+    display: -webkit-box;
+    display: -ms-flexbox;
+	text-decoration: none;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    color: #EF6C00;
+}
+
 .abcRioButtonLightBlue {
 	background-color: #fff;
 	color: #757575;
