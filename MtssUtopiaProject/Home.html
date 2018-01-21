@@ -39,6 +39,7 @@
 					console.log('Family Name: ' + profile.getFamilyName());
 					console.log('Image URL: ' + profile.getImageUrl());
 					console.log('Email: ' + profile.getEmail());
+					document.getElementById("user").innerHTML = profile.getName();
 				} else {
 					console.log('Test Not Signed');
 				}
@@ -100,8 +101,8 @@
 			<div class="layout__drawer navMenu">
 				<span class="layout-title" style="padding: 0px;">
 					<div class="accountLayout">	
-						<div class="user">
-							Michael Kassabov
+						<div id="user">
+							No User
 						</div>
 						<button id="accountMenu" class="accountButton" onclick="">
 							<i class="material-icons">arrow_drop_down</i>
