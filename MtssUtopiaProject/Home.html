@@ -109,7 +109,9 @@
 					<a class="navigation__link" style="font-size:15px;" href="Index.html">Home</a>
 					<a class="navigation__link" style="font-size:15px;" href="Students.html">students</a>
 					<button onclick="test('button');">Test</button>
-					<div class="g-signin2" data-onsuccess="onSignIn" onload="test('div load');"></div>
+					<script> test('before Div');</script>
+					<div class="g-signin2" data-onsuccess="onSignIn"></div>
+					<script> test('after Div');</script>
 					<a href="#" onclick="signOut();">Sign outs</a>
 				</nav>
 			</div>
