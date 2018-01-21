@@ -5,6 +5,7 @@
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 		<link rel="stylesheet" href="../Main.css">
 		<link rel="stylesheet" href="Mtss.css">
+		<link rel="stylesheet" href="menu.css">
 		<!--link rel="stylesheet" href="temp.css"-->
 		<script src="../temp.js"></script>
 		<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
@@ -104,9 +105,22 @@
 						<div id="user">
 							No User
 						</div>
-						<button id="accountMenu" class="accountButton" onclick="">
-							<i class="material-icons">arrow_drop_down</i>
-						</button>
+						<!--button id="accountMenu" class="accountButton" onclick="">
+							<i class="material-icons">more_vert</i>
+						</button-->
+						
+						<ul id="accountMenu" class="accountButton" style="-webkit-padding-start: 0px !important;">
+							<li class="drop" style="display: block !important;">
+								<i class="material-icons" style="display: flex;">more_vert</i>
+								<ul style=" -webkit-padding-start: 0px !important; background-color: #FFFFFF;">
+									<li style="padding: 16px;"><button>Sign Out</button></li>
+									<li><div class="g-signin2" data-onsuccess="onSignIn"></div></li>
+									<li><a href="http://www.g.com">Design</a></li>
+									<li><a href="http://www.g.com">Web Development</a></li>
+								</ul>
+							</li>
+						</ul>
+						
 					</div>
 					<!--div class="card-menu-button" style="margin: 16px;" onclick="location.href='';">
 						<div class="g-signin2" data-onsuccess="onSignIn"></div>
@@ -125,9 +139,9 @@
 				<nav class="navigation">
 					<a class="navigation__link" style="font-size:15px;" href="Index.html">Home</a>
 					<a class="navigation__link" style="font-size:15px;" href="Students.html">students</a>
-					<button onclick="test('button');">Test</button>
+					<!--button onclick="test('button');">Test</button>
 					<div class="g-signin2" data-onsuccess="onSignIn"></div>
-					<a href="#" onclick="signOut();">Sign outs</a>
+					<a href="#" onclick="signOut();">Sign outs</a-->
 				</nav>
 			</div>
 			<div class="main">
