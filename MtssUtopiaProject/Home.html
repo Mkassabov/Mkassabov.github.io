@@ -28,6 +28,23 @@
 					console.log('Not Signed');
 				}
 			}
+			
+			function test() {
+				console.log('Entering function Test');
+				var authX = gapi.auth2.getAuthInstance();				
+				if (authX.isSignedIn.get()) {
+					console.log('Test Signed!!!');
+					var profile = authX.currentUser.get().getBasicProfile();
+					console.log('ID: ' + profile.getId());
+					console.log('Full Name: ' + profile.getName());
+					console.log('Given Name: ' + profile.getGivenName());
+					console.log('Family Name: ' + profile.getFamilyName());
+					console.log('Image URL: ' + profile.getImageUrl());
+					console.log('Email: ' + profile.getEmail());
+				} else {
+					console.log('Test Not Signed');
+				}
+			}
 		</script>
 		<script src="https://apis.google.com/js/platform.js?onload=onLoadCallback" async defer></script>
 		<script> 
@@ -106,6 +123,7 @@
 				<nav class="navigation">
 					<a class="navigation__link" style="font-size:15px;" href="Index.html">Home</a>
 					<a class="navigation__link" style="font-size:15px;" href="Students.html">students</a>
+					<button onclick="test();">Test</button>
 					<div class="g-signin2" data-onsuccess="onSignIn"></div>
 					<a href="#" onclick="signOut();">Sign outs</a>
 				</nav>
