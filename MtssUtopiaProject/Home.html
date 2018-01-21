@@ -11,26 +11,8 @@
 		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 		<meta name="google-signin-client_id" content="1016173195788-ppgbtil016dgii09hn3f4l4sjo306q73.apps.googleusercontent.com">
 		<script>
-			function onLoadCallback(){
-				console.log('Entering function');
-				gapi.auth2.init();
-				var authX = gapi.auth2.getAuthInstance();				
-				if (authX.isSignedIn.get()) {
-					console.log('Signed!!!');
-					var profile = authX.currentUser.get().getBasicProfile();
-					console.log('ID: ' + profile.getId());
-					console.log('Full Name: ' + profile.getName());
-					console.log('Given Name: ' + profile.getGivenName());
-					console.log('Family Name: ' + profile.getFamilyName());
-					console.log('Image URL: ' + profile.getImageUrl());
-					console.log('Email: ' + profile.getEmail());
-				} else {
-					console.log('Not Signed');
-				}
-			}
-			
-			function test() {
-				console.log('Entering function Test');
+			function test(x) {
+				console.log('Entering function Test ' + x);
 				var authX = gapi.auth2.getAuthInstance();				
 				if (authX.isSignedIn.get()) {
 					console.log('Test Signed!!!');
@@ -45,10 +27,6 @@
 					console.log('Test Not Signed');
 				}
 			}
-		</script>
-		<script src="https://apis.google.com/js/platform.js?onload=onLoadCallback" async defer></script>
-		<script> 
-			console.log('Script');
 
 			function signOut() {	
 				var auth2 = gapi.auth2.getAuthInstance();
@@ -57,7 +35,14 @@
 					window.location.href = "Login.html";
 				});
 			}
+
+			function onLoadCallback(){
+				console.log('Entering function');
+				gapi.auth2.init();
+				test('onload');
+			}
 		</script>
+		<script src="https://apis.google.com/js/platform.js?onload=onLoadCallback" async defer></script>
 		<script>			
 			var width
 			var panels
@@ -85,7 +70,7 @@
 			});
 		</script>
 	</head>
-	<body>
+	<body onload="test('body load');">
 		<div class="layout js-layout layout--fixed-header">
 			<header class="layout__header">
 				<div class="layout__header-row">
@@ -123,7 +108,7 @@
 				<nav class="navigation">
 					<a class="navigation__link" style="font-size:15px;" href="Index.html">Home</a>
 					<a class="navigation__link" style="font-size:15px;" href="Students.html">students</a>
-					<button onclick="test();">Test</button>
+					<button onclick="test('button');">Test</button>
 					<div class="g-signin2" data-onsuccess="onSignIn"></div>
 					<a href="#" onclick="signOut();">Sign outs</a>
 				</nav>
