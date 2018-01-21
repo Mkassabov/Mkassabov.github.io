@@ -13,19 +13,20 @@
 		<script>
 			function onLoadCallback(){
 				console.log('Entering function');
-				var auth2 = gapi.auth2.getAuthInstance();
 				gapi.auth2.init();
-				
-				//if (auth2.isSignedIn.get()) {
+				var authX = gapi.auth2.getAuthInstance();				
+				if (authX.isSignedIn.get()) {
 					console.log('Signed!!!');
-					var profile = auth2.currentUser.get().getBasicProfile();
+					var profile = authX.currentUser.get().getBasicProfile();
 					console.log('ID: ' + profile.getId());
 					console.log('Full Name: ' + profile.getName());
 					console.log('Given Name: ' + profile.getGivenName());
 					console.log('Family Name: ' + profile.getFamilyName());
 					console.log('Image URL: ' + profile.getImageUrl());
 					console.log('Email: ' + profile.getEmail());
-				//}			
+				} else {
+					console.log('Not Signed');
+				}
 			}
 		</script>
 		<script src="https://apis.google.com/js/platform.js?onload=onLoadCallback" async defer></script>
