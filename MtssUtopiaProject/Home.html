@@ -19,7 +19,7 @@
 				//if (auth2.isSignedIn.get()) {
 					console.log('Signed!!!');
 					var profile = auth2.currentUser.get().getBasicProfile();
-					console.log(auth2.currentUser.get().getBasicProfile());
+					console.log(gapi.auth2.getAuthInstance().currentUser.get().getBasicProfile());
 					console.log('ID: ' + profile.getId());
 					console.log('Full Name: ' + profile.getName());
 					console.log('Given Name: ' + profile.getGivenName());
