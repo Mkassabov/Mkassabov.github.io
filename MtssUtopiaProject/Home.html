@@ -16,7 +16,7 @@
 				var auth2 = gapi.auth2.getAuthInstance();
 				gapi.auth2.init();
 				
-				if (auth2.isSignedIn.get()) {
+				//if (auth2.isSignedIn.get()) {
 					console.log('Signed!!!');
 					var profile = auth2.currentUser.get().getBasicProfile();
 					console.log(profile);
@@ -26,7 +26,7 @@
 					console.log('Family Name: ' + profile.getFamilyName());
 					console.log('Image URL: ' + profile.getImageUrl());
 					console.log('Email: ' + profile.getEmail());
-				}			
+				//}			
 			}
 		</script>
 		<script src="https://apis.google.com/js/platform.js?onload=onLoadCallback" async defer></script>
