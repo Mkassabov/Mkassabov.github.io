@@ -73,7 +73,7 @@ body {
 	width: 240px;
 	height: 100%;
 	max-height: 100%;
-	position: absolute;
+	position: fixed;
 	top: 0;
 	left: 0;
 	box-shadow: 0 2px 2px 0 rgba(0, 0, 0, .14), 0 3px 1px -2px rgba(0, 0, 0, .2), 0 1px 5px 0 rgba(0, 0, 0, .12);
@@ -181,6 +181,8 @@ body {
 	display: -webkit-flex;
 	display: -ms-flexbox;
 	display: flex;
+	position: fixed;
+	top: 0px;
 	-webkit-box-orient: vertical;
 	-webkit-box-direction: normal;
 	-webkit-flex-direction: column;
@@ -246,7 +248,7 @@ body {
 
 .layout__obfuscator {
 	background-color: transparent;
-	position: absolute;
+	position: fixed;
 	top: 0;
 	left: 0;
 	height: 100%;
@@ -266,9 +268,26 @@ body {
 	visibility: visible
 }
 
+/* mdi icons */
+.mdi {
+	font-family: 'Material Icons';
+    font-weight: normal;
+    font-style: normal;
+    font-size: 24px;
+    line-height: 1;
+    letter-spacing: normal;
+    text-transform: none;
+    display: inline-block;
+    white-space: nowrap;
+    word-wrap: normal;
+    direction: ltr;
+    -webkit-font-feature-settings: 'liga';
+    -webkit-font-smoothing: antialiased;
+}
 
 /* background */
 .main {
+	padding-top:64px;
 	height: auto;
 	justify-content: center;
 	background-color:#e8e8e8;
