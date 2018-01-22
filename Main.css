@@ -6,6 +6,8 @@ element.style {
     top: 0px;
 }
 
+.temp {}
+
 /* layout */
 body {
 	font-family: 'Helvetica', 'Arial', sans-serif;
@@ -243,7 +245,7 @@ body {
 	align-items: center;
 	height: 64px;
 	margin: 0;
-	padding: 0 40px 0 40px;
+	padding: 0 40px 0 80px;
 }
 
 .layout__obfuscator {
