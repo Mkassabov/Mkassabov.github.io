@@ -28,11 +28,11 @@ a, li {
 }
 .drop ul {
   position: absolute;
-  left: -120px;
+  left: -122px;
   top: 2em;
   transition: all 0.3s ease;
   transform: scale(0);
-  transform-origin: 120px 0;
+  transform-origin: 152px 0;
   box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.16), 0 2px 8px 0 rgba(0, 0, 0, 0.12);
 }
 .drop ul li {

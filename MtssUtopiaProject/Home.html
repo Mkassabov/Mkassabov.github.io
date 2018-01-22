@@ -8,7 +8,7 @@
 		<link rel="stylesheet" href="Mtss.css">
 		<link rel="stylesheet" href="menu.css">
 		<!--link rel="stylesheet" href="temp.css"-->
-		<script src="../temp.js"></script>
+		<!--script src="../temp.js"></script-->
 		<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 		<meta name="google-signin-client_id" content="1016173195788-ppgbtil016dgii09hn3f4l4sjo306q73.apps.googleusercontent.com">
@@ -95,12 +95,21 @@
 				<div class="layout__header-row">
 					<span class="layout-title">Home</span>
 					<div class="layout-spacer"></div>
-					<nav class="navigation layout--large-screen-only">
-						<span class="layout-title"></span>
-					</nav>
+					<div style="display:flex;justify-content:center;align-items:center;">
+						<span class="layout-title" id="user">No User</span>
+						<ul id="accountMenu" class="accountButton" style="-webkit-padding-start: 0px !important;">
+							<li class="drop" style="display: block !important;">
+								<i class="material-icons" style="display: flex;">more_vert</i>
+								<ul style=" -webkit-padding-start: 0px !important; background-color: #FFFFFF;">
+									<li style="padding: 16px;"><button onclick="signOut();">Sign Out</button></li>
+									<li style="padding: 0px 16px 16px;"><div class="g-signin2" data-onsuccess="onSignIn"></div></li>
+								</ul>
+							</li>
+						</ul>
+					</div>
 				</div>
 			</header>
-			<div class="layout__drawer navMenu">
+			<!--div class="layout__drawer navMenu">
 				<span class="layout-title" style="padding: 0px;">
 					<div class="accountLayout">	
 						<div id="user">
@@ -108,7 +117,7 @@
 						</div>
 						<!--button id="accountMenu" class="accountButton" onclick="">
 							<i class="material-icons">more_vert</i>
-						</button-->
+						</button>
 						
 						<ul id="accountMenu" class="accountButton" style="-webkit-padding-start: 0px !important;">
 							<li class="drop" style="display: block !important;">
@@ -134,15 +143,15 @@
 							}
 						</script>
 					<!--/div-->
-				</span>
+				<!--/span>
 				<nav class="navigation">
 					<a class="navigation__link" style="font-size:15px;" href="Index.html">Home</a>
 					<a class="navigation__link" style="font-size:15px;" href="Meetigns.html">Meetings</a>
 					<!--button onclick="test('button');">Test</button>
 					<div class="g-signin2" data-onsuccess="onSignIn"></div>
 					<a href="#" onclick="signOut();">Sign outs</a-->
-				</nav>
-			</div>
+				<!--/nav>
+			</div-->
 			<div class="students">
 				<div class="studentsList"></div>
 			</div>
