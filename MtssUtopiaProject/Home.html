@@ -13,8 +13,8 @@
 		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 		<meta name="google-signin-client_id" content="1016173195788-ppgbtil016dgii09hn3f4l4sjo306q73.apps.googleusercontent.com">
 		<script>
-			function test(x) {
-				console.log('Entering function Test ' + x);
+			function userInfo(x) {
+				console.log('Entering function userInfo ' + x);
 				var authX = gapi.auth2.getAuthInstance();				
 				if (authX.isSignedIn.get()) {
 					console.log('Test Signed!!!');
@@ -58,7 +58,7 @@
 			function onLoadCallback(){
 				console.log('Entering function');
 				gapi.auth2.init();
-				test('onload');
+				userInfo('onload');
 			}
 		</script>
 		<script src="https://apis.google.com/js/platform.js?onload=onLoadCallback" async defer></script>
@@ -89,7 +89,7 @@
 			});
 		</script>
 	</head>
-	<body onload="test('body load');">
+	<body onload="userInfo('body load');">
 		<div class="layout js-layout layout--fixed-header">
 			<header class="layout__header">
 				<div class="layout__header-row" style="padding: 0 40px 0 40px;">
@@ -97,10 +97,10 @@
 					<div class="layout-spacer"></div>
 					<div style="display:flex;justify-content:center;align-items:center;">
 						<span class="layout-title" id="user">No User</span>
-						<ul id="accountMenu" class="accountButton" style="-webkit-padding-start: 0px !important;">
+						<ul id="accountMenu" class="accountButton" style="padding: 0px;">
 							<li class="drop" style="display: block !important;">
 								<i class="material-icons" style="display: flex;">more_vert</i>
-								<ul style=" -webkit-padding-start: 0px !important; background-color: #FFFFFF;">
+								<ul style="padding:0px;background-color: #FFFFFF;">
 									<li style="padding: 16px;"><button onclick="signOut();">Sign Out</button></li>
 									<li style="padding: 0px 16px 16px;"><div class="g-signin2" data-onsuccess="onSignIn"></div></li>
 								</ul>
@@ -152,9 +152,7 @@
 					<a href="#" onclick="signOut();">Sign outs</a-->
 				<!--/nav>
 			</div-->
-			<div class="students">
-				<div class="studentsList"></div>
-			</div>
+
 			<div class="home">
 				<div class="leftColumn">
 					<div style="margin-top:0px;" class="leftSection">
@@ -216,7 +214,49 @@
 						</div>
 					</div>
 				</div>
-				<div class="centerColumn"></div>
+				<div class="centerColumn">
+					<div class="studentsList-container">
+						<div class="studentsList-student">
+							<i style="color:#64dd17;margin-right: 8px;" class="mdi mdi-tag"></i>													
+							<span class="studentsList-text">Edward Snowden</span>
+							<div class="layout-spacer"></div>
+							<span class="studentsList-text">Temp</span>
+						</div>
+						<div class="studentsList-student">
+							<i style="color:#ffd600;margin-right: 8px;" class="mdi mdi-tag"></i>													
+							<span class="studentsList-text">Edward Snowden</span>
+							<div class="layout-spacer"></div>
+							<span class="studentsList-text">Temp</span>
+						</div>
+						<div class="studentsList-student">
+							<i style="color:#d50000;margin-right: 8px;" class="mdi mdi-tag"></i>													
+							<span class="studentsList-text">Edward Snowden</span>
+							<div class="layout-spacer"></div>
+							<span class="studentsList-text">Temp</span>
+						</div>
+						<div id="temp" class="studentsList-student">
+							<i style="color:#304ffe;margin-right: 8px;" class="mdi mdi-tag"></i>													
+							<span class="studentsList-text">Edward Snowden</span>
+							<div class="layout-spacer"></div>
+							<span class="studentsList-text">Temp</span>
+						</div>
+						<div class="studentsList-add">
+							<div onclick="addStudent()"><i style="margin-right: 8px;cursor: pointer;" class="mdi mdi-plus-circle"></i></div>
+
+							<script>
+								function addStudent() {
+									alert("Hello! I am an alert box!");
+								}
+								
+								$('#temp').click(function() {
+									$(this).toggleClass("expand");
+								});
+
+							</script>
+							<span class="studentsList-text">New Student</span>
+						</div>
+					</div>
+				</div>
 				<div class="rightColumn">
 				
 				</div>

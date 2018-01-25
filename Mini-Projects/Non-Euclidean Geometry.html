@@ -1,0 +1,212 @@
+<!Doctype html>
+<html>
+	<head>
+		<link href="https://use.fontawesome.com/releases/v5.0.4/css/all.css" rel="stylesheet">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+		<link rel="stylesheet" href="../Main.css">
+		<link rel="stylesheet" href="Non-Euclidean Geometry.css">
+		<!--link rel="stylesheet" href="../temp.css"-->
+		<script src="../temp.js"></script>
+		<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+		<script>
+			var width
+			var panels
+			var output
+			
+			$(document).ready(function() {
+					width = $(window).width();
+					panels = Math.floor((width - 16) / 416);
+					output = "auto ".repeat(panels);
+					$(".grid-container").css("grid-template-columns",output);
+					
+			});
+			
+			 $(window).resize(function(){
+					width = $(window).width();
+					panels = Math.floor((width - 16) / 416);
+					output = "auto ".repeat(panels);
+					$(".grid-container").css("grid-template-columns",output);
+			});
+			 
+			$(document).ready(function(){
+				$('#nav-icon1,#nav-icon2,#nav-icon3,#nav-icon4').click(function(){
+					$(this).toggleClass('open');
+				});
+			});
+		</script>
+	</head>
+	<body>
+		<!--div class="header-background">
+			<div class="header-info">
+				<div id="nav-icon4">
+					<span></span>
+					<span></span>
+					<span></span>
+				</div>
+				<div class="title">
+					<div class="title-text">
+						Michael Kassabov
+					</div>
+				</div>
+			</div>
+		</div-->
+    <!-- Always shows a header, even in smaller screens. -->
+		<div class="layout js-layout layout--fixed-header">
+			<header class="layout__header">
+				<div class="layout__header-row">
+					<!-- Title -->
+					<span class="layout-title">Non-Euclidean Geometry Myths</span>
+					<!-- Add spacer, to align navigation to the right -->
+					<div class="layout-spacer"></div>
+					<!-- Navigation. We hide it in small screens. -->
+					<!--nav class="navigation layout--large-screen-only">
+						<span class="layout-title">Home</span>
+					</nav-->
+				</div>
+			</header>
+			<div class="layout__drawer navMenu">
+				<span class="layout-title">Navigation</span>
+				<nav class="navigation">
+					<a class="navigation__link" style="font-size:15px;" href="#Myth1">Myth #1</a>
+					<a class="navigation__link" style="font-size:15px;" href="#Myth2">Myth #2</a>
+					<a class="navigation__link" style="font-size:15px;" href="#Myth3">Myth #3</a>
+					<a class="navigation__link" style="font-size:15px;" href="#Myth4">Myth #4</a>
+					<a class="navigation__link" style="font-size:15px;" href="#Myth5">Myth #5</a>
+					<a class="navigation__link" style="font-size:15px;" href="#Real">Real World Applications</a>
+					<a class="navigation__link" style="font-size:15px;" href="../Mini-Projects.html">Back</a>
+				</nav>
+			</div>
+			<div class="main">
+				<div id="Intro" class="intro"></div>
+				<div id="Myth1" class="container">
+					<div class="container-section">
+						<div class="container-text">
+							<h1 style="line-height: 1.2em;"> Myth: A line may never intersect itself</h1>
+							<p>Fact: On several surfaces a line can intersect itself. On a cylinder, any line drawn “east” or “west” direction will intersect itself infinitely given the nature of the cylinders circumference. This is true on a sphere also because there is only one kind of line that you can draw on a sphere. Every line drawn will cut the sphere in half and come back to where it began. One way to think of this, I am sure you can imagine that if you keep running in a circle, you will come back to where you began. Both of these lines will intersect themselves infinitely on their surfaces. </p>
+						</div>
+						<div class="img-holder">
+							<img src="temp.JPG"></img>
+						</div>
+					</div>	
+					<div class="container-section"></div>
+				</div>
+				<div id="Myth2" class="container">
+					<div class="container-section">
+						<div class="container-text">
+							<h1 style="line-height: 1.2em;"> Myth: On any given surface all lines look the same extrinsically </h1>
+							<h2 style="line-height: 1.2em;"> On a Cone </h2>
+							<p>
+								Fact/reasoning : On a cone there are two different types of lines.
+								The “north” line will go over the apex and down the other side (infinitely).
+								However, the “east/northeast” lines will look like a ribbon, snaking around the apex.
+							</p>
+						</div>
+						<div class="img-holder">
+							<img src="temp.JPG"></img>
+						</div>
+					</div>
+					<div class="container-section">
+						<div class="img-holder">
+							<img src="temp.JPG"></img>
+						</div>
+						<div class="container-text"  style="padding-left: 8px; padding-right: 0px">
+							<h2 style="line-height: 1.2em;"> On a Cylinder </h2>
+							<p>
+								On a cylinder, the “east/west” line will intersect itself infinitely in a circular-loop shape. 
+								The “northeast/northwest etc.” lines will infinitely spiral around the surface of the cylinder.
+							</p>
+						</div>
+					</div>
+				</div>
+				<div id="Myth3" class="container">
+					<div class="container-section">
+						<div class="container-text">
+							<h1 style="line-height: 1.2em;"> Myth: Given a line, and a point not on that line, there is exactly one non-intersecting line passing through that point. </h1>
+							<h2 style="line-height: 1.2em;"> On a Cylinder </h2>
+							<p>
+								Reasoning: On a cylinder, if you draw a line, and a point not all that line, you can draw a line that is parallel to the original line going through the point.
+								However, if you draw a line going through the point on this line that is parallel the the original line, it will not be parallel and it will hit the original line and intersect, proving this statement true.
+							</p>
+						</div>
+						<div class="img-holder">
+							<img src="temp.JPG"></img>
+						</div>
+					</div>
+					<div class="container-section">
+						<div class="img-holder">
+							<img src="temp.JPG"></img>
+						</div>
+						<div class="container-text"  style="padding-left: 8px; padding-right: 0px">
+							<h2 style="line-height: 1.2em;"> On a Hyperbolic Surface </h2>
+							<p>
+								However, on a hyperbolic surface, there is an infinite amount of lines that will go through the given point but not intersect the hidden line, proving this statement false.
+							</p>
+						</div>
+					</div>
+				</div>
+				<div id="Myth4" class="container">
+					<div class="container-section">
+						<div class="container-text">
+							<h1 style="line-height: 1.2em;"> Myth: Two points determine a unique line. </h1>
+							<h2 style="line-height: 1.2em;"> On a Sphere </h2>
+							<p>
+								Fact/reasoning: On a sphere, you may have two polar points.
+								This does not just create one unique line that would pass through both.
+								Instead this would create an infinite amount of lines that could pass through those two points.
+							</p>
+						</div>
+						<div class="img-holder">
+							<img src="temp.JPG"></img>
+						</div>
+					</div>
+					<div class="container-section">
+						<div class="img-holder">
+							<img src="temp.JPG"></img>
+						</div>
+						<div class="container-text"  style="padding-left: 8px; padding-right: 0px">
+							<h2 style="line-height: 1.2em;"> On a Cone </h2>
+							<p>
+								 On a cone, there may be two points directly “north/south” of each other.
+								 There may be a line that spirals around hitting both of these two points.
+								 There may also be a line that goes directly “north/south” and hits the other line. 
+							</p>
+						</div>
+					</div>				
+				</div>
+				<div id="Myth5" class="container">
+					<div class="container-section">
+						<div class="container-text">
+							<h1 style="line-height: 1.2em;"> Myth: All straight angles are congruent. </h1>
+							<h2 style="line-height: 1.2em;"> On a Cone </h2>
+							<p>
+								On a cone, the line running through the apex will always be a straight angle.
+								If you have two different cones, with lines through the vertex, both lines will be straight angles however they will not be congruent. 
+							</p>
+						</div>
+						<div class="img-holder">
+							<img src="temp.JPG"></img>
+						</div>
+					</div>
+					<div class="container-section">
+						<div class="img-holder">
+							<img src="temp.JPG"></img>
+						</div>
+						<div class="container-text"  style="padding-left: 8px; padding-right: 0px">
+							<h2 style="line-height: 1.2em;"> On a Sphere </h2>
+							<p>
+								On a sphere, any line drawn will break the sphere into hemispheres or bisect it, since there is only one kind of line on a sphere.
+								A line drawn on the sphere has a straight to either side.
+								A second line drawn on the sphere will create the same results.
+								Since all the lines on a sphere are the same so will the straight angles, this proves the statement true. 
+
+							</p>
+						</div>
+					</div>					
+				</div>
+				<div id="#Real" class="container"></div>
+			</div>
+		</div>
+        <script src="../button.js"></script>
+	</body>
+</html>

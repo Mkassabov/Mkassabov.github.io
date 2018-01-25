@@ -1,0 +1,44 @@
+.intro {
+	width: 100vx;
+	height: 400px;
+	background-color: #FFF;
+}
+
+.container {
+	width: 100vx;
+	height: auto;
+	background-color: #FFF;
+}
+
+.container-section {
+	width: 100vx;
+	padding: 16px;
+	display: flex;
+	justify-content: center;
+}
+
+.img-holder {
+	width: 35vw;
+	max-width: 650px;
+	height: calc((35vw / 16) * 9);
+	max-height: calc((650px / 16) * 9);
+}
+.img-holder img {
+	width: 35vw;
+	max-width: 650px;
+	height: calc((35vw / 16) * 9);
+	max-height: calc((650px / 16) * 9);
+
+}
+
+.container-text {
+	width: 50vw;
+	padding: 8px;
+	padding-left: 0px;
+	word-wrap: normal;
+	color:#757575;
+	font-size: 20px;
+	line-height: 25px;
+	/*display: flex;
+	align-items: center;*/
+}
