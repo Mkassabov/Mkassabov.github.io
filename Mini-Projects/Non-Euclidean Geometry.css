@@ -28,7 +28,14 @@
 	max-width: 650px;
 	height: calc((35vw / 16) * 9);
 	max-height: calc((650px / 16) * 9);
+}
 
+.img-holder iframe {
+	width: 35vw;
+	max-width: 650px;
+	height: calc((35vw / 16) * 9);
+	max-height: calc((650px / 16) * 9);
+	border: 0;
 }
 
 .container-text {
