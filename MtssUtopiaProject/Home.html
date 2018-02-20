@@ -217,39 +217,107 @@
 				<div class="centerColumn">
 					<div class="studentsList-container">
 						<div class="studentsList-student">
-							<i style="color:#64dd17;margin-right: 8px;" class="mdi mdi-tag"></i>													
-							<span class="studentsList-text">Edward Snowden</span>
-							<div class="layout-spacer"></div>
-							<span class="studentsList-text">Temp</span>
+							<div class="studentsList-propertiesA">
+								<i style="color:#64dd17;margin-right: 8px;" class="mdi mdi-tag"></i>													
+								<span class="studentsList-text">Edward Snowden1</span>
+								<div class="layout-spacer"></div>
+								<span class="studentsList-text">Temp</span>
+							</div>
 						</div>
 						<div class="studentsList-student">
-							<i style="color:#ffd600;margin-right: 8px;" class="mdi mdi-tag"></i>													
-							<span class="studentsList-text">Edward Snowden</span>
-							<div class="layout-spacer"></div>
-							<span class="studentsList-text">Temp</span>
+							<div class="studentsList-propertiesA">
+								<i style="color:#ffd600;margin-right: 8px;" class="mdi mdi-tag"></i>													
+								<span class="studentsList-text">Edward Snowden2</span>
+								<div class="layout-spacer"></div>
+								<span class="studentsList-text">Temp</span>
+							</div>
 						</div>
 						<div class="studentsList-student">
-							<i style="color:#d50000;margin-right: 8px;" class="mdi mdi-tag"></i>													
-							<span class="studentsList-text">Edward Snowden</span>
-							<div class="layout-spacer"></div>
-							<span class="studentsList-text">Temp</span>
+							<div class="studentsList-propertiesA">
+								<i style="color:#d50000;margin-right: 8px;" class="mdi mdi-tag"></i>													
+								<span class="studentsList-text">Edward Snowden3</span>
+								<div class="layout-spacer"></div>
+								<span class="studentsList-text">Temp</span>
+							</div>
 						</div>
-						<div id="temp" class="studentsList-student">
-							<i style="color:#304ffe;margin-right: 8px;" class="mdi mdi-tag"></i>													
-							<span class="studentsList-text">Edward Snowden</span>
-							<div class="layout-spacer"></div>
-							<span class="studentsList-text">Temp</span>
+						<div class="studentsList-student">
+							<div class="studentsList-propertiesA" style="margin-bottom: 8px;">
+								<i style="color:#304ffe;margin-right: 8px;" class="mdi mdi-tag"></i>													
+								<span class="studentsList-text">Edward Snowden4</span>
+								<div class="layout-spacer"></div>
+								<span class="studentsList-text">Temp</span>
+							</div>
+							<div class="studentsList-propertiesB" style="visibility: hidden;">
+								<div class="studentsList-meetings">
+									<div class="studentsList-meetings-tile">Meetings</div>
+									<div class="studentsList-meetings-content">
+										<div style="padding-left: 5px">2018-1-27</div>
+									</div>
+									<div class="studentsList-meetings-content">
+										<div style="padding-left: 5px">2018-1-28</div>
+									</div>
+									<div class="studentsList-meetings-content">
+										<div style="padding-left: 5px">2018-1-29</div>
+									</div>
+									<div class="studentsList-meetings-content">
+										<div style="padding-left: 5px">2018-1-30</div>
+									</div>
+									<div class="studentsList-meetings-content">
+										<div style="padding-left: 5px">2018-1-31</div>
+									</div>
+									<div class="studentsList-meetings-add">
+										<a style="padding-left: 5px" href="#">Add Meeting</a>
+									</div>
+								</div>
+								<div class="studentsList-overview">
+									<div class="studentsList-overview-title">Edward Snowden's Overview</div>
+									<div class="studentsList-overview-body">
+										<div class="studentsList-overview-body-temp">
+											<!--button style="margin: 16px" onclick="">Edit</button-->
+											<button style="margin: 16px" onclick="editInfo('EdwardSnowden')">More Info</button>
+											<script>
+												function editInfo(student) {
+													sessionStorage.setItem("name",student)
+													window.location.href = 'EditInfo.html';
+												}
+											</script>
+										</div>
+										<div class="studentsList-overview-body-contact">
+											<div><p>Student Email: <a href="mailto:Edward.Snowden@icsd.k12.ny.us">Edward.Snowden@icsd.k12.ny.us</a></p></div>
+											<div><p>Mother Email: <a href="mailto:Edward.Snowden@icsd.k12.ny.us">Edward.Snowden@icsd.k12.ny.us</a></p></div>
+											<div><p>Father Email: <a href="mailto:Edward.Snowden@icsd.k12.ny.us">Edward.Snowden@icsd.k12.ny.us</a></p></div>
+										</div>
+									</div>
+								</div>
+							</div>
 						</div>
 						<div class="studentsList-add">
 							<div onclick="addStudent()"><i style="margin-right: 8px;cursor: pointer;" class="mdi mdi-plus-circle"></i></div>
 
 							<script>
+
+							
 								function addStudent() {
 									alert("Hello! I am an alert box!");
 								}
 								
-								$('#temp').click(function() {
-									$(this).toggleClass("expand");
+								var isOnDiv = false;
+								$('.studentsList-propertiesA').mouseenter(function(){isOnDiv=true;});
+								$('.studentsList-propertiesA').mouseleave(function(){isOnDiv=false;});
+								
+								$('.studentsList-student').click(function() {
+									if(isOnDiv===true) {
+										$(this).toggleClass("expand");
+										var obj = $(this)
+									
+										if(obj.hasClass("expand")) {
+										setTimeout(function() {
+											obj.find('div').addClass("visible");
+										}, 300);
+										} else {
+										obj.find('div').removeClass("visible");
+										}
+									}
 								});
 
 							</script>

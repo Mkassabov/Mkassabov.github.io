@@ -1,0 +1,246 @@
+<!Doctype html>
+<html>
+	<link href="https://use.fontawesome.com/releases/v5.0.4/css/all.css" rel="stylesheet">
+	<link href="../icons/css/materialdesignicons.min.css" media="all" rel="stylesheet" type="text/css" />
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<link rel="stylesheet" href="../Main.css">
+	<link rel="stylesheet" href="Mtss.css">
+	<link rel="stylesheet" href="menu.css">
+	<script src="../textNum.js"></script>
+	<script src="../textExpand.js"></script>
+	<script src="../materialTabs.js"></script>
+	<!--link rel="stylesheet" href="temp.css"-->
+	<!--script src="../temp.js"></script-->
+	<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	<meta name="google-signin-client_id" content="1016173195788-ppgbtil016dgii09hn3f4l4sjo306q73.apps.googleusercontent.com">
+	<script>
+			function userInfo(x) {
+				console.log('Entering function userInfo ' + x);
+				var authX = gapi.auth2.getAuthInstance();				
+				if (authX.isSignedIn.get()) {
+					console.log('Test Signed!!!');
+					var profile = authX.currentUser.get().getBasicProfile();
+					console.log('ID: ' + profile.getId());
+					console.log('Full Name: ' + profile.getName());
+					console.log('Given Name: ' + profile.getGivenName());
+					console.log('Family Name: ' + profile.getFamilyName());
+					console.log('Image URL: ' + profile.getImageUrl());
+					console.log('Email: ' + profile.getEmail());
+				} else {
+					console.log('Test Not Signed');
+				}
+			}
+
+			function onSignIn() {
+				var authX = gapi.auth2.getAuthInstance();				
+				if (authX.isSignedIn.get()) {
+					console.log('Test Signed!!!');
+					var profile = authX.currentUser.get().getBasicProfile();
+					console.log('ID: ' + profile.getId());
+					console.log('Full Name: ' + profile.getName());
+					console.log('Given Name: ' + profile.getGivenName());
+					console.log('Family Name: ' + profile.getFamilyName());
+					console.log('Image URL: ' + profile.getImageUrl());
+					console.log('Email: ' + profile.getEmail());
+					document.getElementById("user").innerHTML = profile.getName();
+				} else {
+					console.log('Test Not Signed');
+				}
+			}
+			
+			function signOut() {	
+				var auth2 = gapi.auth2.getAuthInstance();
+				auth2.signOut().then(function () {
+					console.log('User signed out.');
+					window.location.href = "Login.html";
+				});
+			}
+
+			function onLoadCallback(){
+				console.log('Entering function');
+				var student = sessionStorage.getItem("name");
+				document.getElementById("user").innerHTML = student;
+				gapi.auth2.init();
+				userInfo('onload');
+			}
+			
+		</script>
+		<script src="https://apis.google.com/js/platform.js?onload=onLoadCallback" async defer></script>
+</head>
+<body onload="userInfo('body load')'">
+	<div class="layout js-layout layout--fixed-header">
+		<header class="layout__header">
+			<div class="layout__header-row" style="padding: 0 40px 0 40px;">
+				<span id="user" class="layout-title">Edit Info</span>
+				<div class="layout-spacer"></div>
+				<div style="display:flex;justify-content:center;align-items:center;">
+					<span class="layout-title" id="user">No User</span>
+					<ul id="accountMenu" class="accountButton" style="padding: 0px;">
+						<li class="drop" style="display: block !important;">
+							<i class="material-icons" style="display: flex;">more_vert</i>
+							<ul style="padding:0px;background-color: #FFFFFF;">
+								<li style="padding: 16px;"><button onclick="signOut();">Sign Out</button></li>
+								<li style="padding: 0px 16px 16px;"><div class="g-signin2" data-onsuccess="onSignIn"></div></li>
+							</ul>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</header>
+		<div class="edit-home">
+			<div class="card" style="width: 90%; height: 80%; overflow-y:auto;">
+				<div class="tabs-header" style="position:fixed;background-color: #FFF;width: calc(90% - 29px);border-radius: 4px;">
+					<div id="material-tabs">
+						<a id="tab1-tab" href="#tab1" class="active">Contact Info</a>
+						<a id="tab2-tab" href="#tab2">Tier One</a>
+						<a id="tab3-tab" href="#tab3">Tier Two</a>
+						<a id="tab4-tab" href="#tab4">Tier Three</a>
+						<a id="tab5-tab" href="#tab5">Notes</a>
+						<span class="yellow-bar"></span>
+					</div>
+				</div>
+
+				<div class="tab-content" style="margin-top: 65px;">
+					<div id="tab1" style="padding: 8px;">
+						<div style="display: flex; justify-content: center;">
+							<div>
+								<p class="input-text">Student Contact: </p>
+								<p class="input-text">Father Contact: </p>
+								<p class="input-text">Mother Contact: </p>
+							</div>
+							<div>
+								<div class="wrapper" style="margin-right: 8px;">
+									<input id="input1a" type="text" class="textField" name="input" placeholder="email" onkeydown="textNum('1a', 255)"/>
+									<label id="label1a" for="input">0/255</label>
+								</div>
+								<div class="wrapper" style="margin-right: 8px;">
+									<input id="input2a" type="text" class="textField" name="input" placeholder="email" onkeydown="textNum('2a', 255)"/>
+									<label id="label2a" for="input">0/255</label>
+								</div>
+								<div class="wrapper" style="margin-right: 8px;">
+									<input id="input3a" type="text" class="textField" name="input" placeholder="email" onkeydown="textNum('3a', 255)"/>
+									<label id="label3a" for="input">0/255</label>
+								</div>
+							</div>
+							<div>
+								<div class="wrapper">
+									<input id="input1b" type="text" class="textField" name="input" placeholder="phone" onkeydown="textNum('1b', 255)"/>
+									<label id="label1b" for="input">0/255</label>
+								</div>
+								<div class="wrapper">
+									<input id="input2b" type="text" class="textField" name="input" placeholder="phone" onkeydown="textNum('2b', 255)"/>
+									<label id="label2b" for="input">0/255</label>
+								</div>
+								<div class="wrapper">
+									<input id="input3b" type="text" class="textField" name="input" placeholder="phone" onkeydown="textNum('3b', 255)"/>
+									<label id="label3b" for="input">0/255</label>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div id="tab2" style="padding: 8px;">
+						<div style="display: block; margin: 0 auto; width: 500px;">
+							<div style="display: flex; justify-content: flex-start;">
+								<p class="input-textarea">Contact Guardians:</p>
+							</div>
+							<textarea data-autoresize rows="1" style="display: block; margin: 0 auto;"></textarea>
+						</div>
+						<div style="display: block; margin: 0 auto; width: 500px;">
+							<div style="display: flex; justify-content: flex-start;">
+								<p class="input-textarea">Collaboration with Peers and Administration:</p>
+							</div>
+							<textarea data-autoresize rows="1" style="display: block; margin: 0 auto;"></textarea>
+						</div>
+						<div style="display: block; margin: 0 auto; width: 500px;">
+							<div style="display: flex; justify-content: flex-start;">
+								<p class="input-textarea">Interventions (Tier 1):</p>
+							</div>
+							<textarea data-autoresize rows="1" style="display: block; margin: 0 auto;"></textarea>
+						</div>
+						<div style="display: block; margin: 0 auto; width: 500px;">
+							<div style="display: flex; justify-content: flex-start;">
+								<p class="input-textarea">Progress Monitoring:</p>
+							</div>
+							<textarea data-autoresize rows="1" style="display: block; margin: 0 auto;"></textarea>
+						</div>
+						<div style="display: block; margin: 0 auto; width: 500px;">
+							<div style="display: flex; justify-content: flex-start;">
+								<p class="input-textarea">Meetings:</p>
+							</div>
+							<textarea data-autoresize rows="1" style="display: block; margin: 0 auto;"></textarea>
+						</div>
+					</div>
+					<div id="tab3" style="padding: 8px;">
+						<div style="display: block; margin: 0 auto; width: 500px;">
+							<div style="display: flex; justify-content: flex-start;">
+								<p class="input-textarea">Shift Instructional Approach:</p>
+							</div>
+							<textarea data-autoresize rows="1" style="display: block; margin: 0 auto;"></textarea>
+						</div>
+						<div style="display: block; margin: 0 auto; width: 500px;">
+							<div style="display: flex; justify-content: flex-start;">
+								<p class="input-textarea">Change Materials Used:</p>
+							</div>
+							<textarea data-autoresize rows="1" style="display: block; margin: 0 auto;"></textarea>
+						</div>
+						<div style="display: block; margin: 0 auto; width: 500px;">
+							<div style="display: flex; justify-content: flex-start;">
+								<p class="input-textarea">Goals:</p>
+							</div>
+							<textarea data-autoresize rows="1" style="display: block; margin: 0 auto;"></textarea>
+						</div>
+						<div style="display: block; margin: 0 auto; width: 500px;">
+							<div style="display: flex; justify-content: flex-start;">
+								<p class="input-textarea">Frequency:</p>
+							</div>
+							<textarea data-autoresize rows="1" style="display: block; margin: 0 auto;"></textarea>
+						</div>
+						<div style="display: block; margin: 0 auto; width: 500px;">
+							<div style="display: flex; justify-content: flex-start;">
+								<p class="input-textarea">Meetings:</p>
+							</div>
+							<textarea data-autoresize rows="1" style="display: block; margin: 0 auto;"></textarea>
+						</div>
+					</div>
+					<div id="tab4" style="padding: 8px;">
+						<div style="display: block; margin: 0 auto; width: 500px;">
+							<div style="display: flex; justify-content: flex-start;">
+								<p class="input-textarea">Plato Credit Recovery:</p>
+							</div>
+							<textarea data-autoresize rows="1" style="display: block; margin: 0 auto;"></textarea>
+						</div>
+						<div style="display: block; margin: 0 auto; width: 500px;">
+							<div style="display: flex; justify-content: flex-start;">
+								<p class="input-textarea">BOCES Regional Alternative School:</p>
+							</div>
+							<textarea data-autoresize rows="1" style="display: block; margin: 0 auto;"></textarea>
+						</div>
+						<div style="display: block; margin: 0 auto; width: 500px;">
+							<div style="display: flex; justify-content: flex-start;">
+								<p class="input-textarea">Alternative Credential Options:</p>
+							</div>
+							<textarea data-autoresize rows="1" style="display: block; margin: 0 auto;"></textarea>
+						</div>
+						<div style="display: block; margin: 0 auto; width: 500px;">
+							<div style="display: flex; justify-content: flex-start;">
+								<p class="input-textarea">Meetings:</p>
+							</div>
+							<textarea data-autoresize rows="1" style="display: block; margin: 0 auto;"></textarea>
+						</div>
+					</div>
+					<div id="tab5" style="padding: 8px;">
+						<div style="display: block; margin: 0 auto; width: 500px;">
+							<div style="display: flex; justify-content: flex-start;">
+								<p class="input-textarea">Notes:</p>
+							</div>
+							<textarea data-autoresize rows="1" style="display: block; margin: 0 auto;"></textarea>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+    <script src="../button.js"></script>
+</body>
+</html>
