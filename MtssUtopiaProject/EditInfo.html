@@ -60,7 +60,7 @@
 			function onLoadCallback(){
 				console.log('Entering function');
 				var student = sessionStorage.getItem("name");
-				document.getElementById("user").innerHTML = student;
+				document.getElementById("student").innerHTML = student;
 				gapi.auth2.init();
 				userInfo('onload');
 			}
@@ -75,7 +75,7 @@
 				<span id="user" class="layout-title">Edit Info</span>
 				<div class="layout-spacer"></div>
 				<div style="display:flex;justify-content:center;align-items:center;">
-					<span class="layout-title" id="user">No User</span>
+					<span class="layout-title" id="student">No User</span>
 					<ul id="accountMenu" class="accountButton" style="padding: 0px;">
 						<li class="drop" style="display: block !important;">
 							<i class="material-icons" style="display: flex;">more_vert</i>
