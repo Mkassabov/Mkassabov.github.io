@@ -1,98 +1,14 @@
 <!Doctype html>
 <html>
 	<head>
-		<link href="https://use.fontawesome.com/releases/v5.0.4/css/all.css" rel="stylesheet">
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-		<link rel="stylesheet" href="Main.css">
-		<!--link rel="stylesheet" href="temp.css"-->
-		<script src="temp.js"></script>
-		<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-		<meta name="google-site-verification" content="YRNKHO9Cbcd5Vg8_aAVQDSniZCwQgVctA_VdlATFpC0" />
-		<meta name="Michael Kassabov - Welcome" content="A portfolio for all of my work. I've worked with many languages, ranging from PHP to Java, but I prefer to work with Python" />
-		<title>Michael Kassabov - Welcome</title>
-		<script>
-			var width
-			var panels
-			var output
-			
-			$(document).ready(function() {
-					width = $(window).width();
-					panels = Math.floor((width - 16) / 416);
-					output = "auto ".repeat(panels);
-					$(".grid-container").css("grid-template-columns",output);
-					
-			});
-			
-			 $(window).resize(function(){
-					width = $(window).width();
-					panels = Math.floor((width - 16) / 416);
-					output = "auto ".repeat(panels);
-					$(".grid-container").css("grid-template-columns",output);
-			});
-			 
-			$(document).ready(function(){
-				$('#nav-icon1,#nav-icon2,#nav-icon3,#nav-icon4').click(function(){
-					$(this).toggleClass('open');
-				});
-			});
-		</script>
+        <script src="/buildPage.js"></script>
+		<script src="/generateCardsFromSheet.js"></script>
+        <script src="/csvToJSON.js"></script>
 	</head>
-	<body>
-		<!--div class="header-background">
-			<div class="header-info">
-				<div id="nav-icon4">
-					<span></span>
-					<span></span>
-					<span></span>
-				</div>
-				<div class="title">
-					<div class="title-text">
-						Michael Kassabov
-					</div>
-				</div>
-			</div>
-		</div-->
-    <!-- Always shows a header, even in smaller screens. -->
-		<div class="layout js-layout layout--fixed-header">
-			<header class="layout__header">
-				<div class="layout__header-row">
-					<!-- Title -->
-					<span class="layout-title">Michael Kassabov</span>
-					<!-- Add spacer, to align navigation to the right -->
-					<div class="layout-spacer"></div>
-					<!-- Navigation. We hide it in small screens. -->
-					<nav class="navigation layout--large-screen-only">
-						<span class="layout-title">Home</span>
-					</nav>
-				</div>
-			</header>
-			<div class="layout__drawer navMenu">
-				<span class="layout-title">Navigation</span>
-				<nav class="navigation">
-					<a class="navigation__link" style="font-size:15px;" href="Index.html">Home</a>
-					<a class="navigation__link" style="font-size:15px;" href="Projects.html">Projects</a>
-					<a class="navigation__link" style="font-size:15px;" href="">Behind the Scenes</a>
-					<a class="navigation__link" style="font-size:15px;" href="">Contact</a>
-					<a class="navigation__link" style="font-size:15px;" href="">About Me</a>
-					<a class="follow follow-twitter" href="https://twitter.com/mkassabov" target="_blank">
-						<i class="fab fa-twitter"></i>
-						<div style="font-size:15px">Follow Me</div>
-					</a>
-					<a class="follow follow-email" href="mailto:michael.kassabov@gmail.com" target="_blank">
-						<i class="material-icons">email</i>
-						<div style="font-size:15px">Email Me</div>
-					</a>
-					<a class="follow follow-github" href="https://github.com/Mkassabov" target="_blank">
-						<i class="fab fa-github"></i>
-						<div style="font-size:15px">Follow Me</div>
-					</a>
-				</nav>
-			</div>
-			<div class="main">
-				
-			</div>
+	<body onload=>
+        <div id="headerDiv"><script>buildPage('Projects', getSheetData('https://docs.google.com/spreadsheets/d/e/2PACX-1vQgMKegT9hTtCCZOA3V7qiQGwjP59oT-nAiXvOiG-160Jw3Jud7VahrTA00yqRMXoHQy8PNdIwpf5bt/pub?gid=0&single=true&output=csv', buildCards));</script></div>
+		<div id="main">
+			<div class="grid-container" id="grid-container"></div>
 		</div>
-        <script src="button.js"></script>
 	</body>
 </html>

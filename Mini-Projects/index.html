@@ -1,0 +1,14 @@
+<!Doctype html>
+<html>
+	<head>
+        <script src="/buildPage.js"></script>
+		<script src="/generateCardsFromSheet.js"></script>
+        <script src="/csvToJSON.js"></script>
+	</head>
+	<body>
+        <div id="headerDiv"><script type="text/javascript">buildPage('Projects', getSheetData('https://docs.google.com/spreadsheets/d/e/2PACX-1vQgMKegT9hTtCCZOA3V7qiQGwjP59oT-nAiXvOiG-160Jw3Jud7VahrTA00yqRMXoHQy8PNdIwpf5bt/pub?gid=25239207&single=true&output=csv', buildCards));</script></div>
+		<div id="main">
+			<div class="grid-container" id="grid-container"></div>
+		</div>
+	</body>
+</html>
