@@ -22,6 +22,12 @@
                 });
             }
             
+            function pad(n, width, z) {
+                z = z || '0';
+                n = n + '';
+                return n.length >= width ? n : new Array(width - n.length + 1).join(z) + n;
+            }
+            
 			function elementsToggleCard(element) {
 				
 				console.log(element);
@@ -31,11 +37,15 @@
 					document.getElementById("cardHolder").style.visibility = "hidden";
 				}
 				else {
-					document.getElementById("name").innerHTML = elementInfo[element].fullName;
-					document.getElementById("number").innerHTML = `Number: ${elementInfo[element].number}`;
-					document.getElementById("info").innerHTML = elementInfo[element].info;
-					document.getElementById("weight").innerHTML = `Weight: ${elementInfo[element].weight}`;
+					<!-- document.getElementById("name").innerHTML = elementInfo[element].fullName; -->
+					<!-- document.getElementById("number").innerHTML = `Number: ${elementInfo[element].number}`; -->
+					<!-- document.getElementById("info").innerHTML = elementInfo[element].info; -->
+					<!-- document.getElementById("weight").innerHTML = `Weight: ${elementInfo[element].weight}`; -->
 					
+                    console.log(elementInfo[element].number + 9)
+                    
+                    document.getElementById("image").src = 'images/PERIODIC TABLE-' + pad(parseInt(elementInfo[element].number) + 9, 3) + '.jpg';
+                    
 					document.getElementById("elementTint").style.visibility = "visible";
 					document.getElementById("cardHolder").style.visibility = "visible";
 				}
@@ -49,7 +59,10 @@
         <div id="main" style="display:flex;justify-content:center;align-items:center;">
 		
 			<div id="cardHolder" onclick="elementsToggleCard()" style="transition: nobe;display:flex;justify-content:center;align-items:center;z-index: 50;position: absolute; width: 100%; height: 70%; visibility: hidden;">
-				<div class="card" style="box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22); transition: none;">
+                <img id="image" src="images/PERIODIC TABLE-001.jpg">
+                
+                <!--
+                <div class="card" style="box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22); transition: none;">
 					<div class="card-top">
 						<svg viewBox="0 0 400 225" style="position: absolute; border-top-left-radius: 4px; border-top-right-radius: 4px;">
 							<path fill="#f7f7f7" d="M153.89 0c74.094 180.678 161.088 417.448 228.483 674.517C449.67 506.337 527.063 279.465 592.56 0H153.89z"></path>
@@ -80,7 +93,8 @@
 						<div id="weight">Weight: WEIGHT</div>
 					</div>
 				</div>
-			</div>
+                -->
+            </div>
 		
 			<div class="periodic">
 				<div class="periodic-row">
@@ -131,14 +145,46 @@
 					</div>
 					</div>
 					<div class="cell"></div>
-					<div class="cell"></div>
-					<div class="cell"></div>
-					<div class="cell"></div>
-					<div class="cell"></div>
-					<div class="cell"></div>
-					<div class="cell"></div>
-					<div class="cell"></div>
-					<div class="cell"></div>
+					<div class="cell" onclick="location.href='https://docs.google.com/presentation/d/1g0o0831m3E-R-UQxHgh0aQ4ju787553mW9vbwv2ebb0/edit?ts=5ce072b2#slide=id.p';">
+					<div class="element elementLink">
+						<div class="symbol">Presentation</div>
+					</div>
+					</div>
+					<div class="cell" onclick="location.href='https://docs.google.com/presentation/d/1g0o0831m3E-R-UQxHgh0aQ4ju787553mW9vbwv2ebb0/edit?ts=5ce072b2#slide=id.g583a805846_3_60';">
+					<div class="element elementLink">
+						<div class="symbol">Overview</div>
+					</div>
+					</div>
+                    <div class="cell" onclick="location.href='https://docs.google.com/presentation/d/1g0o0831m3E-R-UQxHgh0aQ4ju787553mW9vbwv2ebb0/edit?ts=5ce072b2#slide=id.g583a805846_3_117';">
+					<div class="element elementLink">
+						<div class="symbol">Original Elements</div>
+					</div>
+					</div>
+					<div class="cell" onclick="location.href='https://docs.google.com/presentation/d/1g0o0831m3E-R-UQxHgh0aQ4ju787553mW9vbwv2ebb0/edit?ts=5ce072b2#slide=id.g587eab4bf1_1_398';">
+					<div class="element elementLink">
+						<div class="symbol">Discoverers</div>
+					</div>
+					</div>
+                    <div class="cell" onclick="location.href='https://docs.google.com/presentation/d/1g0o0831m3E-R-UQxHgh0aQ4ju787553mW9vbwv2ebb0/edit?ts=5ce072b2#slide=id.g583a805846_1_46';">
+					<div class="element elementLink">
+						<div class="symbol">Honorable Mentions</div>
+					</div>
+					</div>
+                    <div class="cell" onclick="location.href='https://docs.google.com/presentation/d/1g0o0831m3E-R-UQxHgh0aQ4ju787553mW9vbwv2ebb0/edit?ts=5ce072b2#slide=id.g5a9adbfe96_1_289';">
+					<div class="element elementLink">
+						<div class="symbol">Creators</div>
+					</div>
+					</div>
+                    <div class="cell" onclick="location.href='https://docs.google.com/presentation/d/1g0o0831m3E-R-UQxHgh0aQ4ju787553mW9vbwv2ebb0/edit?ts=5ce072b2#slide=id.g583a805846_4_1';">
+					<div class="element elementLink">
+						<div class="symbol">Countries</div>
+					</div>
+					</div>
+                    <div class="cell" onclick="location.href='https://docs.google.com/presentation/d/1g0o0831m3E-R-UQxHgh0aQ4ju787553mW9vbwv2ebb0/edit?ts=5ce072b2#slide=id.g583a805846_1_304';">
+					<div class="element elementLink">
+						<div class="symbol">Ytterby Jackpot</div>
+					</div>
+					</div>
 					<div class="cell"></div>
 					<div class="cell" onclick="elementsToggleCard('B')">
 					<div class="element">

@@ -45,7 +45,7 @@
 .at_num,
 .at_details {
   position: absolute;
-  font-size: 15px;
+  font-size: 12px;
   color: rgba(255,255,255,0.5);
 }
 
@@ -67,4 +67,188 @@
   bottom: 4px;
   left: 0px;
   right: 0px;
+}
+
+.cell:nth-child(-n+2) .element {
+  background-color: rgba(193, 123, 17, 0.6);
+}
+
+.cell:nth-child(n+13) .element {
+  background-color: rgba(5, 142, 22, 0.6);
+}
+
+.periodic-row:nth-child(2) .cell:nth-child(13) .element,
+.periodic-row:nth-child(3) .cell:nth-child(n+14) .element,
+.periodic-row:nth-child(4) .cell:nth-child(n+14) .element,
+.periodic-row:nth-child(5) .cell:nth-child(n+15) .element,
+.periodic-row:nth-child(6) .cell:nth-child(n+16) .element {
+  background-color: rgba(25, 127, 38, 0.6);
+}
+
+.periodic-row:nth-child(n+2) .cell:nth-child(1) .element {
+    background-color: rgba(170, 18, 49, 0.6);
+}
+
+.periodic-row:nth-child(1) .cell:nth-child(1) .element,
+.periodic-row:nth-child(2) .cell:nth-child(n+14) .element,
+.periodic-row:nth-child(3) .cell:nth-child(n+15) .element,
+.periodic-row:nth-child(4) .cell:nth-child(n+16) .element,
+.periodic-row:nth-child(5) .cell:nth-child(n+17) .element {
+  background-color: rgba(0, 192, 64, 0.6);
+}
+
+.periodic-row:nth-child(-n+7) .cell:nth-child(18) .element {
+  background-color: rgba(90, 30, 168, 0.6);
+}
+
+.periodic-row:nth-child(-n+7) .cell:nth-child(17) .element {
+  background-color: rgba(163, 165, 24, 0.6);
+}
+
+.periodic-row:nth-child(n+9) .element {
+  background-color: rgba(0, 96, 160, 0.6);
+}
+
+.periodic-row:nth-child(9) .element {
+  background-color: rgba(152, 73, 175, 0.6);    
+}
+
+.periodic-row:nth-child(10) .element {
+  background-color: rgba(86, 40, 99, 0.6);    
+}
+
+.elementLink {
+    background-color: rgba(0, 0, 0, 0.6)
+}
+
+.elementLink .symbol {
+    font-size: 20px;
+    top: 30%;
+}
+
+/* hover */
+.cell:nth-child(-n+2):hover .element {
+  background-color: rgba(193, 123, 17, 0.9);
+}
+
+.cell:nth-child(n+13):hover .element {
+  background-color: rgba(5, 142, 22, 0.9);
+}
+
+.periodic-row:nth-child(2) .cell:nth-child(13):hover .element,
+.periodic-row:nth-child(3) .cell:nth-child(n+14):hover .element,
+.periodic-row:nth-child(4) .cell:nth-child(n+14):hover .element,
+.periodic-row:nth-child(5) .cell:nth-child(n+15):hover .element,
+.periodic-row:nth-child(6) .cell:nth-child(n+16):hover .element {
+  background-color: rgba(25, 127, 38, 0.9);
+}
+
+.periodic-row:nth-child(n+2)  .cell:nth-child(1):hover .element {
+    background-color: rgba(170, 18, 49, 0.9);
+}
+
+.periodic-row:nth-child(1) .cell:nth-child(1):hover .element,
+.periodic-row:nth-child(2) .cell:nth-child(n+14):hover .element,
+.periodic-row:nth-child(3) .cell:nth-child(n+15):hover .element,
+.periodic-row:nth-child(4) .cell:nth-child(n+16):hover .element,
+.periodic-row:nth-child(5) .cell:nth-child(n+17):hover .element {
+  background-color: rgba(0, 192, 64, 0.9);
+}
+
+.periodic-row:nth-child(-n+7) .cell:nth-child(18):hover .element {
+  background-color: rgba(90, 30, 168, 0.9);
+}
+
+.periodic-row:nth-child(-n+7) .cell:nth-child(17):hover .element {
+  background-color: rgba(163, 165, 24, 0.9);
+}
+
+.periodic-row:nth-child(n+9) .cell:hover .element {
+  background-color: rgba(0, 96, 160, 0.9);
+}
+
+.cell:hover .elementLink {
+    background-color: rgba(0, 0, 0, 0.7)
+}
+
+.periodic-row:nth-child(9) .cell:hover .element {
+  background-color: rgba(152, 73, 175, 0.9);    
+}
+
+.periodic-row:nth-child(10) .cell:hover .element {
+  background-color: rgba(86, 40, 99, 0.9);    
+}
+
+/* scaling */
+@media (min-width: 600px) {
+  .periodic {
+    height: 460px;
+  }
+  
+  .element {
+    right: 2px;
+    bottom: 2px;
+  }
+  
+  .at_num,
+  .at_details {
+    font-size: 0px;
+  }
+
+  
+}
+
+@media (min-width: 800px) {
+  .periodic {
+    height: 540px;
+  }
+
+  .symbol {
+    font-size: 20px;
+  }
+}
+
+@media (min-width: 992px) {
+  .periodic {
+    height: 680px;
+  }
+  
+  .at_num,
+  .at_details {
+    font-size: 9px;
+  }
+
+  .symbol {
+    font-size: 24px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .periodic {
+    height: 800px;
+  }
+  
+  .at_num,
+  .at_details {
+    font-size: 12px;
+  }
+
+  .symbol {
+    font-size: 30px;
+  }
+}
+
+@media (min-width: 2000px) {
+  .periodic {
+    height: 1100px;
+  }
+  
+  .at_num,
+  .at_details {
+    font-size: 12px;
+  }
+
+  .symbol {
+    font-size: 30px;
+  }
 }
