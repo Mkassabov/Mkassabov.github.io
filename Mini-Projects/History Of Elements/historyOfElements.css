@@ -74,7 +74,7 @@
 }
 
 .cell:nth-child(n+13) .element {
-  background-color: rgba(5, 142, 22, 0.6);
+  background-color: rgba(56, 156, 69, 0.6);
 }
 
 .periodic-row:nth-child(2) .cell:nth-child(13) .element,
@@ -82,7 +82,7 @@
 .periodic-row:nth-child(4) .cell:nth-child(n+14) .element,
 .periodic-row:nth-child(5) .cell:nth-child(n+15) .element,
 .periodic-row:nth-child(6) .cell:nth-child(n+16) .element {
-  background-color: rgba(25, 127, 38, 0.6);
+  background-color: rgba(5, 142, 22, 0.6);
 }
 
 .periodic-row:nth-child(n+2) .cell:nth-child(1) .element {
@@ -132,7 +132,7 @@
 }
 
 .cell:nth-child(n+13):hover .element {
-  background-color: rgba(5, 142, 22, 0.9);
+  background-color: rgba(56, 156, 69, 0.9);
 }
 
 .periodic-row:nth-child(2) .cell:nth-child(13):hover .element,
@@ -140,7 +140,7 @@
 .periodic-row:nth-child(4) .cell:nth-child(n+14):hover .element,
 .periodic-row:nth-child(5) .cell:nth-child(n+15):hover .element,
 .periodic-row:nth-child(6) .cell:nth-child(n+16):hover .element {
-  background-color: rgba(25, 127, 38, 0.9);
+  background-color: rgba(5, 142, 22, 0.9);
 }
 
 .periodic-row:nth-child(n+2)  .cell:nth-child(1):hover .element {

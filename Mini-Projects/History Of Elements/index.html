@@ -6,7 +6,7 @@
 		<link rel="stylesheet" href="historyOfElements.css">
 	</head>
 	<body>
-        <script>function setAuthors() {document.getElementById("headerAuthors").innerHTML = 'Heewon Ahn & Michael Kassabov';}</script>
+        <script>function setAuthors() {document.getElementById("headerAuthors").innerHTML = 'Heewan Ahn & Michael Kassabov';}</script>
         <div id="headerDiv"><script type="text/javascript">buildPage('History of Elements', setAuthors);</script></div>
 		<script>
             const elementsURL = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vSpfTbT40MwDyAg-1FPeT6kCxiH_Bu41WkJDqAx3yR90IkY4cI2eTs0ur6MIrQMnGUuaEmceZjVK8Ds/pub?output=csv';
@@ -37,12 +37,7 @@
 					document.getElementById("cardHolder").style.visibility = "hidden";
 				}
 				else {
-					<!-- document.getElementById("name").innerHTML = elementInfo[element].fullName; -->
-					<!-- document.getElementById("number").innerHTML = `Number: ${elementInfo[element].number}`; -->
-					<!-- document.getElementById("info").innerHTML = elementInfo[element].info; -->
-					<!-- document.getElementById("weight").innerHTML = `Weight: ${elementInfo[element].weight}`; -->
-					
-                    console.log(elementInfo[element].number + 9)
+					console.log(elementInfo[element].number + 9)
                     
                     document.getElementById("image").src = 'images/PERIODIC TABLE-' + pad(parseInt(elementInfo[element].number) + 9, 3) + '.jpg';
                     
@@ -59,43 +54,8 @@
         <div id="main" style="display:flex;justify-content:center;align-items:center;">
 		
 			<div id="cardHolder" onclick="elementsToggleCard()" style="transition: nobe;display:flex;justify-content:center;align-items:center;z-index: 50;position: absolute; width: 100%; height: 70%; visibility: hidden;">
-                <img id="image" src="images/PERIODIC TABLE-001.jpg">
-                
-                <!--
-                <div class="card" style="box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22); transition: none;">
-					<div class="card-top">
-						<svg viewBox="0 0 400 225" style="position: absolute; border-top-left-radius: 4px; border-top-right-radius: 4px;">
-							<path fill="#f7f7f7" d="M153.89 0c74.094 180.678 161.088 417.448 228.483 674.517C449.67 506.337 527.063 279.465 592.56 0H153.89z"></path>
-						</svg>
-						<div class="contact-container">
-							<div class="card-container" style="background: rgba(0, 96, 160, 0.6);">
-								<div class="card-rect" style="float: right; clear: right; opacity: 0.053388; width: 96px;"></div>
-								<div class="card-rect" style="float: right; clear: left; opacity: 0.146499; width: 97px;"></div>
-								<div class="card-rect" style="float: right; clear: right; opacity: 0.03941; width: 103px;"></div>
-								<div class="card-rect" style="float: left; clear: right; opacity: 0.0405505; width: 94px;"></div>
-								<div class="card-rect" style="float: left; clear: left; opacity: 0.125925; width: 114px;"></div>
-							</div>
-						</div>
-						<div class="card-top-a">
-							<div class="card-top-b" id="name">ELEMENT_NAME</div>
-						</div>
-					</div>
-					<div class="card-info" style="height:203px; line-height: 20px">
-						<div style="padding: 16px;">
-							<div id="info" style="display: flex; justify-content: center; align-items: center; color: rgb(33, 33, 33);">
-								Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus laoreet, nunc non ultrices scelerisque, arcu tortor dictum eros, nec scelerisque leo mauris ut sem. Nullam euismod quis turpis at sollicitudin. Sed eleifend ex eu erat pretium fringilla. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Cras a pellentesque erat. Donec porttitor nunc a faucibus tincidunt. Nullam dictum ante tellus, quis viverra lectus pharetra quis.
-							</div>
-							<div style="display: flex; justify-content: flex-start; align-items: center; color: rgb(189, 189, 189);"></div>
-						</div>
-					</div>
-					<div class="card-menu">
-						<div id="number">Number: NUMBER</div>
-						<div id="weight">Weight: WEIGHT</div>
-					</div>
-				</div>
-                -->
+                <img id="image" style="width: 50vw" src="images/PERIODIC TABLE-001.jpg">
             </div>
-		
 			<div class="periodic">
 				<div class="periodic-row">
 					<div class="cell" onclick="elementsToggleCard('H')">
