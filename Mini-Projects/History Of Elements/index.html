@@ -20,6 +20,14 @@
                 elements.forEach(e => {
                     elementInfo[e.name] = e;
                 });
+                
+                elementInfo['card1'] = {number: -6};
+                elementInfo['card2'] = {number: -5};
+                elementInfo['card3'] = {number: -4};
+                elementInfo['card4'] = {number: -3};
+                elementInfo['card5'] = {number: -2};
+                elementInfo['card6'] = {number: -1};
+                elementInfo['card7'] = {number: 0};
             }
             
             function pad(n, width, z) {
@@ -110,37 +118,37 @@
 						<div class="symbol">Presentation</div>
 					</div>
 					</div>
-					<div class="cell" onclick="location.href='https://docs.google.com/presentation/d/1g0o0831m3E-R-UQxHgh0aQ4ju787553mW9vbwv2ebb0/edit?ts=5ce072b2#slide=id.g583a805846_3_60';">
+					<div class="cell" onclick="elementsToggleCard('card1')">
 					<div class="element elementLink">
 						<div class="symbol">Overview</div>
 					</div>
 					</div>
-                    <div class="cell" onclick="location.href='https://docs.google.com/presentation/d/1g0o0831m3E-R-UQxHgh0aQ4ju787553mW9vbwv2ebb0/edit?ts=5ce072b2#slide=id.g583a805846_3_117';">
+                    <div class="cell" onclick="elementsToggleCard('card2')">
 					<div class="element elementLink">
 						<div class="symbol">Original Elements</div>
 					</div>
 					</div>
-					<div class="cell" onclick="location.href='https://docs.google.com/presentation/d/1g0o0831m3E-R-UQxHgh0aQ4ju787553mW9vbwv2ebb0/edit?ts=5ce072b2#slide=id.g587eab4bf1_1_398';">
+					<div class="cell" onclick="elementsToggleCard('card3')">
 					<div class="element elementLink">
 						<div class="symbol">Discoverers</div>
 					</div>
 					</div>
-                    <div class="cell" onclick="location.href='https://docs.google.com/presentation/d/1g0o0831m3E-R-UQxHgh0aQ4ju787553mW9vbwv2ebb0/edit?ts=5ce072b2#slide=id.g583a805846_1_46';">
+                    <div class="cell" onclick="elementsToggleCard('card4')">
 					<div class="element elementLink">
 						<div class="symbol">Honorable Mentions</div>
 					</div>
 					</div>
-                    <div class="cell" onclick="location.href='https://docs.google.com/presentation/d/1g0o0831m3E-R-UQxHgh0aQ4ju787553mW9vbwv2ebb0/edit?ts=5ce072b2#slide=id.g5a9adbfe96_1_289';">
+                    <div class="cell" onclick="elementsToggleCard('card5')">
 					<div class="element elementLink">
 						<div class="symbol">Creators</div>
 					</div>
 					</div>
-                    <div class="cell" onclick="location.href='https://docs.google.com/presentation/d/1g0o0831m3E-R-UQxHgh0aQ4ju787553mW9vbwv2ebb0/edit?ts=5ce072b2#slide=id.g583a805846_4_1';">
+                    <div class="cell" onclick="elementsToggleCard('card6')">
 					<div class="element elementLink">
 						<div class="symbol">Countries</div>
 					</div>
 					</div>
-                    <div class="cell" onclick="location.href='https://docs.google.com/presentation/d/1g0o0831m3E-R-UQxHgh0aQ4ju787553mW9vbwv2ebb0/edit?ts=5ce072b2#slide=id.g583a805846_1_304';">
+                    <div class="cell" onclick="elementsToggleCard('card7')">
 					<div class="element elementLink">
 						<div class="symbol">Ytterby Jackpot</div>
 					</div>
