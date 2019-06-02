@@ -22,8 +22,7 @@ function buildPage(title, callback) {
   // main.css holds the css for the header, this ensures
   // the css for the header is loaded before the header
   let headString = `
-    <link rel="stylesheet" href="/main.css" onload="buildDOM();">
-		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.4/css/all.css">
+		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.4/css/all.css" onload="buildDOM();">
 		<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 		<meta name="google-site-verification" content="YRNKHO9Cbcd5Vg8_aAVQDSniZCwQgVctA_VdlATFpC0" />
 		<meta name="Michael Kassabov"/>
