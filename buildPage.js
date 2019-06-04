@@ -39,6 +39,7 @@ function buildPage(title, callback) {
         <a href="/"> Home </a>
         <a href="#"> About Me </a>
         <a href="https://plex.home.mkassabov.com"> Plex </a>
+        <a href="https://octopi.home.mkassabov.com"> 3D Printer </a>
         <a id="spacer" class="sidenav-spacer"></a>
         <a href="https://twitter.com/mkassabov"> <i class="fab fa-twitter" style="font-size: 24px; padding-top: 4px;"></i> Twitter </a>
         <a href="mailto:michael.kassabov@gmail.com"> <i class="fas fa-envelope" style="font-size: 24px; padding-top: 4px;"></i> Email </a>
