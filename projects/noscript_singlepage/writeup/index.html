@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <script async src="/theme.js"></script>
+    <link rel="stylesheet" href="/writeup.min.css" />
+    <link rel="stylesheet" href="/style.min.css" />
+    <title>Mkassabov | Singlepage NoScript Websites</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0"/>
+    <script async src="/pageControl.js"></script>
+    <meta name="apple-mobile-web-app-title" content="Mkassabov"/>
+    <meta name="application-name" content="Mkassabov"/>
+    <link class="metaControlChild" rel="apple-touch-icon" sizes="180x180" href="/favicon-light/apple-touch-icon.webp">
+    <link class="metaControlChild" rel="icon" type="image/png" sizes="32x32" href="/favicon-light/favicon-32x32.webp">
+    <link class="metaControlChild" rel="icon" type="image/png" sizes="16x16" href="/favicon-light/favicon-16x16.webp">
+    <link class="metaControlChild" rel="manifest" href="/favicon-light/site.webmanifest">
+    <link class="metaControlChild" rel="mask-icon" href="/favicon-light/safari-pinned-tab.svg" color="#00a3e4">
+    <link class="metaControlChild" rel="shortcut icon" href="/favicon-light/favicon.ico">
+    <meta class="metaControlChild" name="msapplication-config" content="/favicon-light/browserconfig.xml">
+    <meta class="metaControlChild" name="msapplication-TileColor" content="#ffffff">
+    <meta class="metaControlChild" name="theme-color" content="#ffffff">
+    <meta name="description" content="A suggestion for a new website building approach focused on minimalist code and a good no-script experience"/>
+
+    <noscript>
+      <style>
+        main {
+          margin-left: initial;
+          min-width: 100vw;
+        }
+
+        #projects-content .card .head span {
+	        margin-top: 1.25rem;
+        }
+
+        @media (prefers-color-scheme: light) {
+          :root
+          {
+            --text-primary: #1f1f1f;
+            --text-secondary: #000000;
+            --bg-primary: #ffffff;
+            --bg-secondary: #e4e4e4;
+            --bg-tertiary:white;
+            --bg-body:#efefef;
+            --accent-primary:#026288;
+            --accent-secondary:#00a3e4;
+          }		
+          
+          #skills-content .row #aws-img-dark
+          {
+            display: none;
+          }
+        }
+
+        @media (prefers-color-scheme: dark) {
+          :root
+          {
+            --text-primary:#b6b6b6;
+            --text-secondary:#ececec;
+            --bg-primary:#23232e;
+            --bg-secondary:#141418;
+            --bg-tertiary:#252526;
+            --bg-body:#1e1e1e;
+            --accent-primary: #360B63;
+            --accent-secondary: #6649b8;
+          }		
+
+          #skills-content .row #aws-img-light
+          {
+            display: none;
+          }
+        }
+      </style>
+    </noscript>
+
+  </head>
+  
+  <body>
+    <meta-control></meta-control>
+    <nav id="nav" class="navbar">
+      <div class="logo">
+        <a href="/#landing" class="nav-link">
+          <span class="link-text logo-text">Michael <span style="transition:var(--transition-speed); color: var(--accent-primary)">Kassabov</span></span>
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 300">
+            <g>
+              <path class="svg-primary" d="M426.1,270.9L311,155.8c-2.5-2.5-2.4-6.4,0-8.9L413.9,44.6c2.5-2.4,6.4-2.4,8.9,0l18.8,18.9
+                c2.4,2.5,2.4,6.4,0,8.9L362,151.4l91.8,91.8c2.4,2.4,2.4,6.4,0,8.9L435,270.9C432.5,273.4,428.5,273.4,426.1,270.9z"/>
+            </g>
+            <g>
+              <path class="svg-secondary" d="M278.4,272.8h-27.8c-3.6,0-6.6-2.9-6.6-6.6V132.3l-69.8,69.8c-2.6,2.6-6.7,2.6-9.3,0l-69.8-69.8v133.9
+                c0,3.6-2.9,6.6-6.6,6.6H60.7c-3.6,0-6.6-2.9-6.6-6.6V49.3c0-5.8,7.1-8.8,11.2-4.6l104.2,104.2L273.8,44.7
+                c4.1-4.1,11.2-1.2,11.2,4.6v216.9C285,269.8,282,272.8,278.4,272.8z"/>
+            </g>
+          </svg>
+        </a>
+      </div>
+      <ul class="navbar-nav">
+
+        <li class="nav-item">
+          <a aria-label="backend" href="#backend" class="nav-link">
+            <svg aria-hidden="true" focusable="false" data-prefix="fad" data-icon="server" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><g><path fill="currentColor" d="M432 120a24 24 0 1 0-24-24 24 24 0 0 0 24 24zm0 272a24 24 0 1 0 24 24 24 24 0 0 0-24-24zm48-200H32a32 32 0 0 0-32 32v64a32 32 0 0 0 32 32h448a32 32 0 0 0 32-32v-64a32 32 0 0 0-32-32zm-112 88a24 24 0 1 1 24-24 24 24 0 0 1-24 24zm64 0a24 24 0 1 1 24-24 24 24 0 0 1-24 24z" class="svg-secondary"></path><path fill="currentColor" d="M456 256a24 24 0 1 0-24 24 24 24 0 0 0 24-24zm24-224H32A32 32 0 0 0 0 64v64a32 32 0 0 0 32 32h448a32 32 0 0 0 32-32V64a32 32 0 0 0-32-32zm-112 88a24 24 0 1 1 24-24 24 24 0 0 1-24 24zm64 0a24 24 0 1 1 24-24 24 24 0 0 1-24 24zm48 232H32a32 32 0 0 0-32 32v64a32 32 0 0 0 32 32h448a32 32 0 0 0 32-32v-64a32 32 0 0 0-32-32zm-112 88a24 24 0 1 1 24-24 24 24 0 0 1-24 24zm64 0a24 24 0 1 1 24-24 24 24 0 0 1-24 24z" class="svg-primary"></path></g></svg>
+            <span class="link-text">Backend</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a aria-label="backend user content" href="#backend-user-content" class="nav-link">
+            <svg aria-hidden="true" focusable="false" data-prefix="fad" data-icon="user-cog" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><g><path fill="currentColor" d="M636.3 388.2l-25.8-14.9a117.31 117.31 0 0 0 0-42.6l25.8-14.9a7.24 7.24 0 0 0 3.3-8.5 150.07 150.07 0 0 0-33.2-57.4 7.29 7.29 0 0 0-9-1.4l-25.8 14.9a117.4 117.4 0 0 0-36.9-21.3v-29.8a7.28 7.28 0 0 0-5.7-7.1 150.88 150.88 0 0 0-66.2 0 7.28 7.28 0 0 0-5.7 7.1v29.8a117.4 117.4 0 0 0-36.9 21.3l-25.8-14.9a7.31 7.31 0 0 0-9 1.4 150.07 150.07 0 0 0-33.2 57.4 7.37 7.37 0 0 0 3.3 8.5l25.8 14.9a117.31 117.31 0 0 0 0 42.6l-25.8 14.9a7.24 7.24 0 0 0-3.3 8.5 150.82 150.82 0 0 0 33.2 57.4 7.29 7.29 0 0 0 9 1.4l25.8-14.9a117.4 117.4 0 0 0 36.9 21.3v29.8a7.28 7.28 0 0 0 5.7 7.1 150.88 150.88 0 0 0 66.2 0 7.28 7.28 0 0 0 5.7-7.1v-29.8a117.4 117.4 0 0 0 36.9-21.3l25.8 14.9a7.31 7.31 0 0 0 9-1.4 150.07 150.07 0 0 0 33.2-57.4 7.37 7.37 0 0 0-3.3-8.5zM496 400.5a48.5 48.5 0 1 1 48.5-48.5 48.55 48.55 0 0 1-48.5 48.5z" class="svg-secondary"></path><path fill="currentColor" d="M425.2 491.7v-9.2c-2.3-1.2-4.6-2.6-6.8-3.9l-7.9 4.6a39.23 39.23 0 0 1-48.5-7.3 182.34 182.34 0 0 1-40.2-69.6 39.11 39.11 0 0 1 17.9-45.7l7.9-4.6q-.15-3.9 0-7.8l-7.9-4.6a39.07 39.07 0 0 1-17.9-45.7c.9-2.9 2.2-5.8 3.2-8.7-3.8-.3-7.5-1.2-11.4-1.2h-16.7a174.08 174.08 0 0 1-145.8 0h-16.7A134.43 134.43 0 0 0 0 422.4V464a48 48 0 0 0 48 48h352a47.94 47.94 0 0 0 27.2-8.5 39 39 0 0 1-2-11.8zM224 256A128 128 0 1 0 96 128a128 128 0 0 0 128 128z" class="svg-primary"></path></g></svg>
+            <span class="link-text">&nbsp;&nbsp;&nbsp;User Content</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a aria-label="backend commerce" href="#backend-commerce" class="nav-link">
+            <svg aria-hidden="true" focusable="false" data-prefix="fad" data-icon="shopping-cart" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><g><path fill="currentColor" d="M552 64H159.21l52.36 256h293.15a24 24 0 0 0 23.4-18.68l47.27-208a24 24 0 0 0-18.08-28.72A23.69 23.69 0 0 0 552 64z" class="svg-secondary"></path><path fill="currentColor" d="M218.12 352h268.42a24 24 0 0 1 23.4 29.32l-5.52 24.28a56 56 0 1 1-63.6 10.4H231.18a56 56 0 1 1-67.05-8.57L93.88 64H24A24 24 0 0 1 0 40V24A24 24 0 0 1 24 0h102.53A24 24 0 0 1 150 19.19z" class="svg-primary"></path></g></svg>
+            <span class="link-text">&nbsp;&nbsp;&nbsp;Commerce</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a aria-label="frameworks" href="#frameworks" class="nav-link">
+            <svg aria-hidden="true" focusable="false" data-prefix="fad" data-icon="browser" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><g><path fill="currentColor" d="M76 160h40a12 12 0 0 0 12-12v-40a12 12 0 0 0-12-12H76a12 12 0 0 0-12 12v40a12 12 0 0 0 12 12zM0 224v208a48 48 0 0 0 48 48h416a48 48 0 0 0 48-48V224z" class="svg-secondary"></path><path fill="currentColor" d="M464 32H48A48 48 0 0 0 0 80v144h512V80a48 48 0 0 0-48-48zM128 148a12 12 0 0 1-12 12H76a12 12 0 0 1-12-12v-40a12 12 0 0 1 12-12h40a12 12 0 0 1 12 12zm320 0a12 12 0 0 1-12 12H188a12 12 0 0 1-12-12v-40a12 12 0 0 1 12-12h248a12 12 0 0 1 12 12z" class="svg-primary"></path></g></svg>
+            <span class="link-text">Frameworks</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a aria-label="frameworks css components" href="#frameworks-css-components" class="nav-link">
+            <svg aria-hidden="true" focusable="false" data-prefix="fad" data-icon="puzzle-piece" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><g><path fill="currentColor" d="M576 354.44C576 388 556.71 416 521.08 416c-39.89 0-50.35-36.15-86.31-36.15-60.55 0-25.83 120.1-25.83 120.1-51.55 0-181.23 35.07-181.23-25.73 0-35.83 36.29-46.25 36.29-86 0-35.5-28.12-54.71-61.79-54.71-34.33 0-63.58 18.89-63.58 56.34 0 41.37 40 59 40 81.47C178.63 541 0 500 0 500V166.76s175.88 41 175.88-28.66c0-22.48-31.71-40.39-31.71-81.75C144.17 18.89 175.88 0 210.54 0 243.88 0 272 19.22 272 54.72c0 39.73-36.29 50.16-36.29 86C235.71 224 432 144 432 144s-54.59 176.24 5.38 176.24c22.56 0 40.54-31.59 82.06-31.59 37.56 0 56.56 31.59 56.56 65.79z" class="svg-secondary"></path><path fill="currentColor" d="" class="svg-primary"></path></g></svg>
+            <span class="link-text">&nbsp;&nbsp;&nbsp;Components</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a aria-label="frameworks routing" href="#frameworks-routing" class="nav-link">
+            <svg aria-hidden="true" focusable="false" data-prefix="fad" data-icon="router" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><g><path fill="currentColor" d="M566.22 82.05C444.81-27.34 259.26-27.34 137.78 82a16.11 16.11 0 0 0-.71 23.34l22.34 22.34a15.85 15.85 0 0 0 21.86.64c96.45-86.55 244.24-85.85 341.11.42a16 16 0 0 0 21.85-.63l22.7-22.7a16.1 16.1 0 0 0-.71-23.36zm-360.34 83.61a16.12 16.12 0 0 0-.86 23.61L227.73 212a15.94 15.94 0 0 0 21.7.78c58.77-49.84 145.8-49.36 205.14.21a16.07 16.07 0 0 0 21.63-.84l22.8-22.8a16.22 16.22 0 0 0-.84-23.63c-83.83-71.91-208.42-71.91-292.28-.06zM96 384a32 32 0 1 0 32 32 32 32 0 0 0-32-32z" class="svg-secondary"></path><path fill="currentColor" d="M528 320H376v-80a16 16 0 0 0-16-16h-16a16 16 0 0 0-16 16v80H48a48 48 0 0 0-48 48v96a48 48 0 0 0 48 48h480a48 48 0 0 0 48-48v-96a48 48 0 0 0-48-48zM96 448a32 32 0 1 1 32-32 32 32 0 0 1-32 32zm96 0a32 32 0 1 1 32-32 32 32 0 0 1-32 32z" class="svg-primary"></path></g></svg>
+            <span class="link-text">&nbsp;&nbsp;&nbsp;Routing</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a aria-label="comparison" href="#comparison" class="nav-link">
+            <svg aria-hidden="true" focusable="false" data-prefix="fad" data-icon="equals" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><g><path fill="currentColor" d="M448 336v32a32 32 0 0 1-32 32H32a32 32 0 0 1-32-32v-32a32 32 0 0 1 32-32h384a32 32 0 0 1 32 32z" class="svg-secondary"></path><path fill="currentColor" d="M448 144v32a32 32 0 0 1-32 32H32a32 32 0 0 1-32-32v-32a32 32 0 0 1 32-32h384a32 32 0 0 1 32 32z" class="svg-primary"></path></g></svg>
+            <span class="link-text">Comparison</span>
+          </a>
+        </li>
+
+        <li class="nav-item" id="themeButton">
+          <a class="nav-link">
+            <svg class="theme-icon" id="lightIcon" aria-hidden="true" focusable="false" data-divfix="fad" data-icon="moon-stars" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><g><path fill="currentColor" d="M320 32L304 0l-16 32-32 16 32 16 16 32 16-32 32-16zm138.7 149.3L432 128l-26.7 53.3L352 208l53.3 26.7L432 288l26.7-53.3L512 208z" class="svg-secondary"></path><path fill="currentColor" d="M332.2 426.4c8.1-1.6 13.9 8 8.6 14.5a191.18 191.18 0 0 1-149 71.1C85.8 512 0 426 0 320c0-120 108.7-210.6 227-188.8 8.2 1.6 10.1 12.6 2.8 16.7a150.3 150.3 0 0 0-76.1 130.8c0 94 85.4 165.4 178.5 147.7z" class="svg-primary"></path></g></svg>
+            <span class="link-text">Change Theme</span>
+          </a>
+        </li>
+      </ul>
+    </nav>
+
+    <main>
+      <article>
+        <div class="article-container">
+          <div class="headline"><h1>Singlepage NoScript Websites</h1></div>
+          
+          <p>For the better part of the last decade, the dominant method by which a web frontend was created was through a JS framework. The whole goal of these frameworks was to create an easy way to sync the UI with the state (the information held by javascript). Frameworks do a really good job of achieving that task. However, many frontend developers have started using frameworks for their other features: components, single page websites, and html templating. While frameworks do a good job of implementing these features, they are not needed for many smaller projects and often add more complexity. This complexity can often lead to web pages that are slower and more resource intensive than they should be. This can especially be a problem for users running on extremely low-end devices, or even privacy conscious users who choose to run a no-script browsing experience.</p>
+          <p>Many developers might point out that the kinds of users making the choice to use no-script should expect things not to work. I definitely agree with that statement, however that doesn’t mean that there shouldn’t be somebody out there supporting these users. At the very least, it teaches developers to rely on CSS and HTML much more than just falling back to JS whenever they can’t solve an issue. This skill becomes significantly more useful when you think about it in terms of frontend and backend instead of HTML/CSS and JS. I’ve seen a lot of web developers try to make a simple portfolio website for a client and immediately jump to JS, a Framework, and even a custom backend. This is beyond excessive!</p>
+          <p>As an example I will use a portfolio website I started building for a client, which consisted of a medium for digitally displaying their artwork, while being able to specify which ones are available for purchase, and at what price. The goal here will be to lower the cost to the lowest possible amount, the target to beat will be the $200/year that the client said they would be charged in order to have a basic e-commerce platform on one of the popular website building platforms. At the end I’ll compare my cost and what I offered compared to one of these popular services, both in terms of yearly cost and upfront cost. </p>
+          
+          <div class="subheading"><h2 id="backend">No Custom Backends</h2></div>
+          <p>There is almost no need for a custom backend hosting service for a personal portfolio / basic e-commerce website. Sometimes that added complexity even adds potential to make things worse for the client. Let's take a minute to think about where there might be a reason to add a custom backend, and then solve each problem individually:</p>
+          
+          <section>
+            <div class="subheading"><h3 id="backend-user-content">User Added Content</h3></div>
+            <p>There are multiple ways around this. I’ve seen a lot of people use something like Blogger to make this possible. I personally dislike Blogger, though it is definitely a good option. What I normally offer is to set everything up to run on a google drive based system. The only reason I prefer Google Drive is because a spreadsheet can often act as a simple pseudo-database for clients. With the portfolio example I mentioned the client wanted to be able to upload her new artwork whenever they wanted to be able to upload new artworks whenever they wanted without having to go through me. Since each artwork was also unique there had to be an option to show whether it was available for purchase and if so what its price was. This was very easy to manage through a Google Sheet and it provided a simple enough interface that the client was already familiar enough. In order to update the information on the site after adding to the sheet there are 2 possible methods. One is to just load the content from the spreadsheet into the website using JS, the other option is to add an option to the spreadsheet menu (via Google Scripts) that parses the information into a basic HTML template and pushes it to github (this was more no-script friendly and seemed to update faster than the Google Spreadsheet hosting). Blogger and Google Docs are only 2 of multiple possible pseudo-backend solutions that are free and pretty much just as easy to use as some of the online tools I’ve tried.</p>
+            
+            <div class="subheading"><h3 id="backend-commerce">Commerce</h3></div>
+            <p>This is where things might get a little bit more difficult to do without a real backend. For this particular example, the client wanted to be able to approve each sale personally. Both to approve the seller and to make sure they hadn’t sold the artwork in person. The solution I came up with was a combination of HTML forms, emails, and a 3rd party payment processor. HTML forms were the obvious choice on the frontend since it was a no-script friendly way of having the user return information to my client. Remember HTML forms were around before JS, backwards compatibility for the win! These forms included the artwork the user wanted to purchase, their name, email, etc. These forms were sent to netlify, where the website was hosted, and emailed back to the client. From there the client could either email back the user that they had either sold the artwork, didn’t want to sell to them, or they could send them an invoice through Stripe. No need for any advanced custom backend, and it's all free. </p>
+          </section>
+          
+          <div class="subheading"><h2 id="frameworks">JS Frameworks</h2></div>
+          <p>While there are plenty of good uses for JS Frameworks, sometimes they are used exclusively for the extra tools they are bundled with. Using Vue as an example. You need page routing to make a single-page website? Vue Router. You want to make everything into a component for organization? Vue has components. You want scoped CSS? Vue has you covered. But what if you need all that but don’t need the UI-State management offered by Vue. Vue will lead to a bloated and slower than it needs to be website. It’s not just vue either, this happens with most frameworks. Frontend developers seem to have forgotten that before frameworks there already were solutions to routing, and to scoped css, and to components.</p>
+          
+          <section>
+            <div class="subheading"><h3 id="frameworks-css-components">Scoped CSS and Components</h3></div>
+            <p>Web Components are a great solution to components. There is also the possibility to add custom html tags using JS. However, all of this seems excessive. Why do I need to add so much JS in order to have a styled button? A front end developer should be able to style the button themselves, or at the very least copy the style from the component and apply it to their button without all the unnecessary JS. Components can be extremely useful for larger, more interactive elements. But you really don’t need one for a styled button.</p>
+            <p>CSS scoping has been around for a while in the form of CSS frameworks like SASS. What happened to just adding a div with a certain class and then scoping all your CSS within that class using SASS. If you think that the templating tools provided by frameworks add significant improvements to the way you write HTML, then you are an HTML templating tool that doesn’t rely on frameworks. Between emmet abbreviations and templating languages like PUG or HAML, writing HTML is simpler than ever.</p>
+
+            <div class="subheading"><h3 id="frameworks-routing">Routing</h3></div>
+            <p>Writing a proper router for a single page application can be difficult. There are tutorials on the internet for writing a router, and once you write one you can reuse it over and over again until it no longer suits your needs. A simple router can be made in 50 lines! It can be a fun task to try and it would make a great beginner project since it shows a healthy amount of understanding about how the browser works without requiring an extreme amount of knowledge about JS.</p>
+            
+
+            <p>The bigger question here is how can one go about making a router that works on a no-script page? That sounds impossible right? Well it isn’t. At the very core a router only needs a few things:
+              <ol>
+                <li>
+                  A way to manipulate the URL with user input. This can be done with hashlinks
+                </li>
+                <li>
+                  A way to take the user to a different view depending on the URL. Once again, hash links to the rescue!
+                </li>
+                <li>
+                  A way to hide a specific view from the user when it's not supposed to be shown. This is where some CSS magic is required.
+                </li>
+              </ol>
+            </p>
+
+            <p>Normally hash links just take you to a specific element when they are clicked on. So that's the routing part all taken care of. So how can you hide the view from a certain user using CSS? Using parallel columns. If you think of a website as essentially one giant column, each view is another column displayed parallel to that one. Locking the users ability to scroll horizontally allows them to only navigate between views by using hashlinks.</p>
+            <div class="img-container">
+              <div class="img-text">
+                <div>Normal Website</div>
+                <div style="margin-right: 2rem;">No-Script Single Page Website</div>
+              </div>
+              <img src="image1.png" alt="Website layout proposal" style="max-width: 37rem;">
+            </div>
+            <p>In this example you should make sure the user is restricted in the way that they can move the viewport. Allowing the user to manipulate the viewport so it’s not 100vw (this is possible on mobile) can be limited by meta tags such as:</p>
+            <div class="code-container">
+              <div>
+                <code>
+                  <span class="c36">&lt;</span><span class="c9">meta</span><span class="c19">&nbsp;</span><span class="c33">name</span><span class="c19">=</span><span class="c16">"viewport"</span><span class="c19">&nbsp;</span><span class="c33">content</span><span class="c19">=</span><span class="c16">"width=device-width, initial-scale=1.0, user-scalable=0"</span><span class="c36 c40">/&gt;</span>
+                </code>
+              </div>
+            </div>
+
+            <p>The user should also be limited in the horizontal movement of the viewport, this can be done with CSS by adding the following line: <span class="inline-code">overflow-x:hidden</span>. This allows the viewport to be restricted in the following ways.</p>
+            <div class="img-container"><img src="image2.png" alt="Bad viewport locations" style="max-width: 37rem;"><div class="img-text"><div>All of These are <b>NOT</b> Okay!</div></div></div>
+            <div class="img-container"><img src="image3.png" alt="Good viewport locations" style="max-width: 37rem;"><div class="img-text">All of These are Okay!</div></div>
+            <p>The only problem with routing with hash links and css is if you want to pass information into JS or know what view the user is currently on. This can be done fairly simply by replacing all the hash links with click events that talk to your JS router. (This has the added benefit of automatically being disabled without issues for any of your no-script users).</p>
+          </section>
+
+          <div class="subheading"><h2 id="comparison">Comparison</h2></div>
+          <p>All of these issues that can be handled by frameworks can also be handled within HTML, CSS, and some trickery, with the occasional JS. This way of thinking can save the client money on the backend and increase their performance on the frontend. And all the setup side on the developer can be done once and then reused as a template for every client. Now that we’ve purged a bunch of unnecessary content from the clients website, where does that leave us in terms of features and cost? My upfront cost is not free, but yearly costs are significantly cheaper!</p>
+
+          <table>
+            <tr>
+              <th>Feature</th>
+              <th>Developer</th>
+              <th>Online Web Creation Tool</th>
+            </tr>
+            <tr>
+              <td>Price</td>
+              <td>
+                <div>~$500 creation cost</div>
+                <div>~$0-5/year maintenance fee</div>
+                <div>~$10/yearly domain cost</div>
+              </td>
+              <td>$200+/year</td>
+            </tr>
+            <tr>
+              <td>Website Design</td>
+              <td><span style="color:forestgreen"><b>✔</b></span></td>
+              <td><span style="color:firebrick;"><b>✖</b></span></td>
+            </tr>
+            <tr>
+              <td>SSL</td>
+              <td><span style="color:forestgreen"><b>✔</b></span></td>
+              <td><span style="color:forestgreen"><b>✔</b></span></td>
+            </tr>
+            <tr>
+              <td>Storage Space</td>
+              <td>
+                <div>100GB on Github</div>
+                <div>15GB on Google Drive</div>
+              </td>
+              <td>Unlimited</td>
+            </tr>
+            <tr>
+              <td>SEO</td>
+              <td><span style="color:forestgreen"><b>✔</b></span></td>
+              <td><span style="color:forestgreen"><b>✔</b></span></td>
+            </tr>
+            <tr>
+              <td>Templates</td>
+              <td>Design Included <span style="color:firebrick;"><b>✖</b></span></td>
+              <td><span style="color:forestgreen"><b>✔</b></span></td>
+            </tr>
+            <tr>
+              <td>Number of Editors</td>
+              <td>
+                <div>Small edits: <b>unlimited</b></div>
+                <div>Large edits: 0 (contact developer)</div>
+              </td>
+              <td>2</td>
+            </tr>
+            <tr>
+              <td>Mobile-Optimized (responsive)</td>
+              <td><span style="color:forestgreen"><b>✔</b></span></td>
+              <td><span style="color:forestgreen"><b>✔</b></span></td>
+            </tr>
+            <tr>
+              <td>Customer Support</td>
+              <td>Contact Developer</td>
+              <td>24/7</td>
+            </tr>
+            <tr>
+              <td>Basic Maintenance</td>
+              <td>Contact Developer</td>
+              <td><span style="color:forestgreen"><b>✔</b></span></td>
+            </tr>
+            <tr>
+              <td>Domain Email</td>
+              <td><span style="color:forestgreen"><b>✔</b></span></td>
+              <td><span style="color:forestgreen"><b>✔</b></span></td>
+            </tr>
+            <tr>
+              <td>Customizable JS/CSS</td>
+              <td><span style="color:forestgreen"><b>✔</b></span></td>
+              <td><span style="color:forestgreen"><b>✔</b></span></td>
+            </tr>
+            <tr>
+              <td>Web Analytics</td>
+              <td><span style="color:forestgreen"><b>✔</b></span></td>
+              <td><span style="color:forestgreen"><b>✔</b></span></td>
+            </tr>
+            <tr>
+              <td>Google Adwords Credit</td>
+              <td>Google offers $150 on signup....</td>
+              <td>$100</td>
+            </tr>
+            <tr>
+              <td>Promotional Banners</td>
+              <td><span style="color:forestgreen"><b>✔</b></span></td>
+              <td><span style="color:forestgreen"><b>✔</b></span></td>
+            </tr>
+            <tr>
+              <td>E-Commerce Platform</td>
+              <td><span style="color:forestgreen"><b>✔</b></span></td>
+              <td><span style="color:forestgreen"><b>✔</b></span></td>
+            </tr>
+            <tr>
+              <td>Accept Dontaions</td>
+              <td><span style="color:forestgreen"><b>✔</b></span></td>
+              <td><span style="color:forestgreen"><b>✔</b></span></td>
+            </tr>
+            <tr>
+              <td>Gift Cards</td>
+              <td>Custom Invoicing <span style="color:firebrick;"><b>✖</b></span></td>
+              <td><span style="color:forestgreen"><b>✔</b></span></td>
+            </tr>
+            <tr>
+              <td>Unlimited Products</td>
+              <td><span style="color:forestgreen"><b>✔</b></span></td>
+              <td><span style="color:forestgreen"><b>✔</b></span></td>
+            </tr>
+          </table>
+
+          <style>.c36 { font-size: 10.5pt; font-family: "Consolas"; color: #808080; font-weight: 400; } .c9 { font-size: 10.5pt; font-family: "Consolas"; color: #569cd6; font-weight: 400; } .c19 { font-size: 10.5pt; font-family: "Consolas"; color: #d4d4d4; font-weight: 400; } .c33 { font-size: 10.5pt; font-family: "Consolas"; color: #9cdcfe; font-weight: 400; } .c16 { font-size: 10.5pt; font-family: "Consolas"; color: #ce9178; font-weight: 400; } .c40 { text-decoration: none; vertical-align: baseline; font-style: normal; }</style>  
+        </div>
+      </article>
+    </main>
+  </body>
+</html>

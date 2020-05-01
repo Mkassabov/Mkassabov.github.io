@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <script async src="/theme.js"></script>
+    <link rel="stylesheet" href="/writeup.min.css" />
+    <link rel="stylesheet" href="/style.min.css" />
+    <title>Mkassabov | Quantifying Caring</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0"/>
+    <script async src="/pageControl.js"></script>
+    <meta name="apple-mobile-web-app-title" content="Mkassabov"/>
+    <meta name="application-name" content="Mkassabov"/>
+    <link class="metaControlChild" rel="apple-touch-icon" sizes="180x180" href="/favicon-light/apple-touch-icon.webp">
+    <link class="metaControlChild" rel="icon" type="image/png" sizes="32x32" href="/favicon-light/favicon-32x32.webp">
+    <link class="metaControlChild" rel="icon" type="image/png" sizes="16x16" href="/favicon-light/favicon-16x16.webp">
+    <link class="metaControlChild" rel="manifest" href="/favicon-light/site.webmanifest">
+    <link class="metaControlChild" rel="mask-icon" href="/favicon-light/safari-pinned-tab.svg" color="#00a3e4">
+    <link class="metaControlChild" rel="shortcut icon" href="/favicon-light/favicon.ico">
+    <meta class="metaControlChild" name="msapplication-config" content="/favicon-light/browserconfig.xml">
+    <meta class="metaControlChild" name="msapplication-TileColor" content="#ffffff">
+    <meta class="metaControlChild" name="theme-color" content="#ffffff">
+    <meta name="description" content="An attempt at finding a quantifiable metric to determine how much a set of people care about one another."/>
+
+    <noscript>
+      <style>
+        main {
+          margin-left: initial;
+          min-width: 100vw;
+        }
+
+        #projects-content .card .head span {
+	        margin-top: 1.25rem;
+        }
+
+        @media (prefers-color-scheme: light) {
+          :root
+          {
+            --text-primary: #1f1f1f;
+            --text-secondary: #000000;
+            --bg-primary: #ffffff;
+            --bg-secondary: #e4e4e4;
+            --bg-tertiary:white;
+            --bg-body:#efefef;
+            --accent-primary:#026288;
+            --accent-secondary:#00a3e4;
+          }		
+          
+          #skills-content .row #aws-img-dark
+          {
+            display: none;
+          }
+        }
+
+        @media (prefers-color-scheme: dark) {
+          :root
+          {
+            --text-primary:#b6b6b6;
+            --text-secondary:#ececec;
+            --bg-primary:#23232e;
+            --bg-secondary:#141418;
+            --bg-tertiary:#252526;
+            --bg-body:#1e1e1e;
+            --accent-primary: #360B63;
+            --accent-secondary: #6649b8;
+          }		
+
+          #skills-content .row #aws-img-light
+          {
+            display: none;
+          }
+        }
+      </style>
+    </noscript>
+
+  </head>
+  
+  <body>
+    <meta-control></meta-control>
+    <nav id="nav" class="navbar">
+      <div class="logo">
+        <a href="/#landing" class="nav-link">
+          <span class="link-text logo-text">Michael <span style="transition:var(--transition-speed); color: var(--accent-primary)">Kassabov</span></span>
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 300">
+            <g>
+              <path class="svg-primary" d="M426.1,270.9L311,155.8c-2.5-2.5-2.4-6.4,0-8.9L413.9,44.6c2.5-2.4,6.4-2.4,8.9,0l18.8,18.9
+                c2.4,2.5,2.4,6.4,0,8.9L362,151.4l91.8,91.8c2.4,2.4,2.4,6.4,0,8.9L435,270.9C432.5,273.4,428.5,273.4,426.1,270.9z"/>
+            </g>
+            <g>
+              <path class="svg-secondary" d="M278.4,272.8h-27.8c-3.6,0-6.6-2.9-6.6-6.6V132.3l-69.8,69.8c-2.6,2.6-6.7,2.6-9.3,0l-69.8-69.8v133.9
+                c0,3.6-2.9,6.6-6.6,6.6H60.7c-3.6,0-6.6-2.9-6.6-6.6V49.3c0-5.8,7.1-8.8,11.2-4.6l104.2,104.2L273.8,44.7
+                c4.1-4.1,11.2-1.2,11.2,4.6v216.9C285,269.8,282,272.8,278.4,272.8z"/>
+            </g>
+          </svg>
+        </a>
+      </div>
+      <ul class="navbar-nav">
+
+        <li class="nav-item">
+          <a href="#problem" class="nav-link">
+            <svg aria-hidden="true" focusable="false" data-icon="question" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><g><path fill="currentColor" d="M182.43 373.46a69.27 69.27 0 1 0 69.28 69.27 69.28 69.28 0 0 0-69.28-69.27z" class="svg-secondary"></path><path fill="currentColor" d="M367.92 153.6c0 116-125.27 117.77-125.27 160.63V320a24 24 0 0 1-24 24h-72.47a24 24 0 0 1-24-24v-9.79c0-61.83 46.87-86.54 82.3-106.4 30.38-17 49-28.62 49-51.17 0-29.83-38-49.63-68.82-49.63-39.12 0-57.75 18.07-82.75 49.45a24 24 0 0 1-33.26 4.15L25.51 123.9A24 24 0 0 1 20.34 91c40.59-58.3 92.28-91 172.1-91 84.88 0 175.49 66.26 175.48 153.6z" class="svg-primary"></path></g></svg>
+            <span class="link-text">The Problem</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a href="#math" class="nav-link">
+            <svg aria-hidden="true" focusable="false" data-icon="lambda" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><g><path fill="currentColor" d="M194.62 243.73l-95 221.72A24 24 0 0 1 77.54 480H25.31a24 24 0 0 1-22.06-33.45l132.88-310.06z" class="svg-secondary"></path><path fill="currentColor" d="M448 408v48a24 24 0 0 1-24 24h-81.5a32 32 0 0 1-28.1-16.68L131.5 128H24a24 24 0 0 1-24-24V56a24 24 0 0 1 24-24h145.5a32 32 0 0 1 28.1 16.68L380.5 384H424a24 24 0 0 1 24 24z" class="svg-primary"></path></g></svg>
+            <span class="link-text">The Math</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a href="#code" class="nav-link">
+            <svg aria-hidden="true" focusable="false" data-icon="brackets-curly" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><g><path fill="currentColor" d="M566.64 233.37a32 32 0 0 1 0 45.25l-45.25 45.25a32 32 0 0 0-9.39 22.64V384a96 96 0 0 1-96 96h-48a16 16 0 0 1-16-16v-32a16 16 0 0 1 16-16h48a32 32 0 0 0 32-32v-37.48a96 96 0 0 1 28.13-67.89L498.76 256l-22.62-22.62A96 96 0 0 1 448 165.47V128a32 32 0 0 0-32-32h-48a16 16 0 0 1-16-16V48a16 16 0 0 1 16-16h48a96 96 0 0 1 96 96v37.48a32 32 0 0 0 9.38 22.65l45.25 45.24z" class="svg-secondary"></path><path fill="currentColor" d="M208 32h-48a96 96 0 0 0-96 96v37.48a32.12 32.12 0 0 1-9.38 22.65L9.38 233.37a32 32 0 0 0 0 45.25l45.25 45.25A32.05 32.05 0 0 1 64 346.51V384a96 96 0 0 0 96 96h48a16 16 0 0 0 16-16v-32a16 16 0 0 0-16-16h-48a32 32 0 0 1-32-32v-37.48a96 96 0 0 0-28.13-67.89L77.26 256l22.63-22.63A96 96 0 0 0 128 165.48V128a32 32 0 0 1 32-32h48a16 16 0 0 0 16-16V48a16 16 0 0 0-16-16z" class="svg-primary"></path></g></svg>
+            <span class="link-text">The Code</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a aria-label="project" href="../" class="nav-link">
+            <svg aria-hidden="true" focusable="false" data-icon="mobile-android" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><g><path fill="currentColor" d="M0 384v80a48 48 0 0 0 48 48h224a48 48 0 0 0 48-48v-80zm208 68a12 12 0 0 1-12 12h-72a12 12 0 0 1-12-12v-8a12 12 0 0 1 12-12h72a12 12 0 0 1 12 12z" class="svg-secondary"></path><path fill="currentColor" d="M0 384V48A48 48 0 0 1 48 0h224a48 48 0 0 1 48 48v336z" class="svg-primary"></path></g></svg>
+            <span class="link-text">The Project</span>
+          </a>
+        </li>
+
+        <li class="nav-item" id="themeButton">
+          <a class="nav-link">
+            <svg class="theme-icon" id="lightIcon" aria-hidden="true" focusable="false" data-divfix="fad" data-icon="moon-stars" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><g><path fill="currentColor" d="M320 32L304 0l-16 32-32 16 32 16 16 32 16-32 32-16zm138.7 149.3L432 128l-26.7 53.3L352 208l53.3 26.7L432 288l26.7-53.3L512 208z" class="svg-secondary"></path><path fill="currentColor" d="M332.2 426.4c8.1-1.6 13.9 8 8.6 14.5a191.18 191.18 0 0 1-149 71.1C85.8 512 0 426 0 320c0-120 108.7-210.6 227-188.8 8.2 1.6 10.1 12.6 2.8 16.7a150.3 150.3 0 0 0-76.1 130.8c0 94 85.4 165.4 178.5 147.7z" class="svg-primary"></path></g></svg>
+            <span class="link-text">Change Theme</span>
+          </a>
+        </li>
+      </ul>
+    </nav>
+
+    <main>
+      <article>
+        <div class="article-container">
+          <div class="headline"><h1>Quantifying Caring</h1></div>
+          <div class="subheading"><h2 id="problem">The Problem</h2></div>
+          <p>The age-old trope of teachers claiming to care about their students may hold true in certain cases. However, I have personally had more than enough teachers, who clearly did not care about their students, making such claims. In an attempt to finally prove this, I aimed to find a metric which could be used to quantify the degree to which an individual cares about another. In an attempt to find a reasonable metric, I began by asking people how their actions change when they care about somebody compared to when they do not. After encountering a few cases, I determined that individual accounts of “care” vary to such a degree that they are effectively useless for research purposes. This led me to attempt to find a way to compare how much two different people care about a third person in order to be able to build an ordinal scale, instead of the original cardinal one I had wanted. In addition, the majority of my subjects conducted this mental comparison through simple intuition; for apparent reasons, this did not suit my purpose of creating an algorithm to quantify such sentiments.</p>
+          <p>Eventually, I found a paper by Amy L. Gonzales, Jeffrey T. Hancock, and James W. Pennebaker that gave me a metric similar to the one I was originally looking for.</p>
+          <p>The paper, titled <a href="https://sml.stanford.edu/ml/2010/06/gonzales-cr-language-style.pdf">Language Style Matching as a divdictor of Social Dynamics in Small Groups</a>, proposed a way of rating the similarity between the diction of two individuals, henceforth referred to as a Language Style Matching Score or LSM score for short. This is done by first analyzing the conversation and comparing the frequency of certain function words. Function words are words that are extremely common and context independent, as well as used across all ranges of formality. The reason that function words can be useful in this case is based on the idea of human mimicry. Humans tend to subconsciously mimic each other the more attentive they are in a conversation. For the purposes of this project, this was similar enough to what I wanted, as people who care about each other are more likely to pay attention to each other in a conversation.</p>
+          <div class="subheading"><h2 id="math">The Math</h2></div>
+          <p>An LSM score is calculated first by finding the function words used by each person and the group in total, these function words are split into 9 different categories: auxiliary verbs (e.g., to be, to have), articles (e.g., an, the), common adverbs (e.g., hardly, often), personal pronouns (e.g., I, they, we), indefinite pronouns (e.g., it, those), divpositions (e.g., for, after, with), negations (e.g., not, never), conjunctions (e.g., and, but), and quantifiers (e.g., many, few). The scores for each category are then compared using the formula below and then averaged together.</p>
+          <div class="math-container">
+            <div>
+              <div class="math"><p><span>fwcLSM = 1 - (|fwc1 - fwcG| / (fwc1 + fwcG + 0.0001))</span></p></div>
+            </div>
+            <ol class="notes">
+              <li>Where fwcLSM is the LSM score for only one category of function words.</li>
+              <li>fwc1 is the percent of function words for 1 person.</li>
+              <li>fwcG is the percent of function words for the entire group except the 1 person.</li>
+            </ol>
+          </div>
+          <p>The LSM Score results in a number between 0.5 and 1. The higher the LSM score the people in the group are “in sync” and the more likely it is that they care about each other more. For reference a typical score between two friends is around 0.85 and anything above 0.97 is divtty much only achieved when the person is talking to themselves. Other papers have shown that this score can be used to divdict the likelihood of relationships, the bond between mothers and children, and more; leading me to believe it is a solid metric for how much two people care about each other.</p>
+          <div class="subheading"><h2 id="code">The Code</h2></div>
+          <p>In order to implement this in JavaScript, so that it could be used in a browser, I first needed to find all the words in each function word category. Every paper I managed to find about LSM used LIWC or Linguistic Inquiry and Word Count, a costly software for analyzing text. Instead of paying large fees for a project of this size I decided to manually create lists of all the function word categories I needed. This proved to be harder than expected due to the complexity of the english language.</p>
+          <p>After all of the function words were found there needed to be a way to count their appearances in a string of text efficiently. At first this might seem like a fairly simple task, however when you consider that in order to count the number of occurrences of a word in a string you need to loop through the entire string, and then compare each word to every word in the function category time complexity can start to get really high with the wrong implementation. Regex is a fairly simple way to get around this issue, as traditional regex is always at most O(N). The code for this is fairly simple if the regex is procedurally generated for each word category.</p>
+          <div class="code-container">
+            <div>
+              <code>
+                <div class="c12"><span class="c9">const</span><span class="c5">&nbsp;</span><span class="c3">contains</span><span class="c5">&nbsp;= </span><span class="c9">function</span><span class="c5">(</span><span class="c3">str</span><span class="c5">, </span><span class="c3">array</span><span class="c5 c19">) {</span></div>
+                <div class="c12"><span class="c5">&nbsp; </span><span class="c9">let</span><span class="c5">&nbsp;</span><span class="c3">regex</span><span class="c5">&nbsp;= </span><span class="c9">new</span><span class="c5">&nbsp;</span><span class="c21">RegExp</span><span class="c5">(</span><span class="c14">" "</span><span class="c5">&nbsp;+ </span><span class="c3">array</span><span class="c5">.</span><span class="c1">reduce</span><span class="c5">((</span><span class="c3">acc</span><span class="c5">, </span><span class="c3">c</span><span class="c5">) </span><span class="c9">=&gt;</span><span class="c5">&nbsp;</span><span class="c14">`</span><span class="c9">${</span><span class="c3">acc</span><span class="c9">}</span><span class="c14">&nbsp;| </span><span class="c9">${</span><span class="c3">c</span><span class="c9">}</span><span class="c14">`</span><span class="c5">) + </span><span class="c14">" "</span><span class="c5">, </span><span class="c14">"g"</span><span class="c5 c19">)</span></div>
+                <div class="c12"><span class="c5">&nbsp; </span><span class="c22">return</span><span class="c5">&nbsp;(</span><span class="c3">str</span><span class="c5">.</span><span class="c1">toLowerCase</span><span class="c5">().</span><span class="c1">match</span><span class="c5">(</span><span class="c3">regex</span><span class="c5">) || []).</span><span class="c3">length</span><span class="c5 c19">;</span></div>
+                <div class="c12"><span class="c5">}</span></div>
+              </code>
+            </div>
+          </div>
+          <p>The array reduction simply combines every value in the array with a | the or operator in regex padded with spaces, this allows for a quick search through the people inputs. This function is then run for every person for every category to generate the necessary percentages for calculating an LSM score. In order to test this I used a text conversation I had with a friend of mine, and calculated the score by hand first. Once I had an answer and intermediate steps done by hand check for typos and other minor bugs in the code was trivial.</p>
+          <p>After generating the needed percentages for every individual in the group, and the overall group, the rest of the calculations were simply copying the formula from the paper. A slight modification was made to the paper since each comparison required the rest of the group not including the person being compared, instead of the entire group. The solution to this issue was easy, it came down to using the group percentage and subtracting out the respective individual percentage as needed.</p>
+          <div class="code-container">
+            <div>
+              <code>
+                <div class="c12"><span class="c11">1</span><span class="c5">&nbsp;- ((</span><span class="c21">Math</span><span class="c5">.</span><span class="c1">abs</span><span class="c5">(</span><span class="c11">2</span><span class="c5">&nbsp;* </span><span class="c3">peopleObjects</span><span class="c5">[</span><span class="c3">person</span><span class="c5">][</span><span class="c3">category</span><span class="c5">] - </span><span class="c3">totalLSM</span><span class="c5">)) / (</span><span class="c11">0.0001</span><span class="c5">&nbsp;+ </span><span class="c3">totalLSM</span><span class="c5 c19">))</span></div>
+              </code>
+            </div>
+          </div>
+          <p>Once all the scores are averaged together an accurate LSM score is returned.</p>
+        </div>
+      </article>
+    </main>
+    <style>.c12{background-color:#1e1e1e;padding-top:0pt;padding-bottom:0pt;line-height:1.3571428571428572;orphans:2;widows:2;text-align:left}.c11{font-family:"Consolas";color:#b5cea8;font-weight:400}.c3{font-family:"Consolas";color:#9cdcfe;font-weight:400}.c9{font-family:"Consolas";color:#569cd6;font-weight:400}.c14{font-family:"Consolas";color:#ce9178;font-weight:400}.c22{font-family:"Consolas";color:#c586c0;font-weight:400}.c1{font-family:"Consolas";color:#dcdcaa;font-weight:400}.c21{font-family:"Consolas";color:#4ec9b0;font-weight:400}.c5{font-family:"Consolas";color:#d4d4d4;font-weight:400}.c19{text-decoration:none;vertical-align:baseline;font-style:normal}</style>  
+  </body>
+</html>

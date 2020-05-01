@@ -1,15 +1,460 @@
-<!Doctype html>
-<html>
-	<head>
-        <link rel="stylesheet" href="/main.css">
-        <script src="/buildPage.js"></script>
-		<script src="/generateCardsFromSheet.js"></script>
-        <script src="/csvToJSON.js"></script>
-	</head>
-	<body onload=>
-        <div id="headerDiv"><script>buildPage('Projects', getSheetData('https://docs.google.com/spreadsheets/d/e/2PACX-1vQgMKegT9hTtCCZOA3V7qiQGwjP59oT-nAiXvOiG-160Jw3Jud7VahrTA00yqRMXoHQy8PNdIwpf5bt/pub?gid=0&single=true&output=csv', buildCards));</script></div>
-		<div id="main">
-			<div class="grid-container" id="grid-container"></div>
-		</div>
-	</body>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <script async src="theme.js"></script>
+    <link rel="stylesheet" href="index.min.css" />
+    <link rel="stylesheet" href="style.min.css" />
+    <title>Mkassabov</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0"/>
+    <script async src="/pageControl.js"></script>
+    <meta name="apple-mobile-web-app-title" content="Mkassabov"/>
+    <meta name="application-name" content="Mkassabov"/>
+    <link class="metaControlChild" rel="apple-touch-icon" sizes="180x180" href="/favicon-light/apple-touch-icon.webp">
+    <link class="metaControlChild" rel="icon" type="image/png" sizes="32x32" href="/favicon-light/favicon-32x32.webp">
+    <link class="metaControlChild" rel="icon" type="image/png" sizes="16x16" href="/favicon-light/favicon-16x16.webp">
+    <link class="metaControlChild" rel="manifest" href="/favicon-light/site.webmanifest">
+    <link class="metaControlChild" rel="mask-icon" href="/favicon-light/safari-pinned-tab.svg" color="#00a3e4">
+    <link class="metaControlChild" rel="shortcut icon" href="/favicon-light/favicon.ico">
+    <meta class="metaControlChild" name="msapplication-config" content="/favicon-light/browserconfig.xml">
+    <meta class="metaControlChild" name="msapplication-TileColor" content="#ffffff">
+    <meta class="metaControlChild" name="theme-color" content="#ffffff">
+    <meta name="description" content="Fullstack Developer interested in creative and algorithmic solutions to modern problems."/>
+    <noscript>
+      <style>
+        main {
+          margin-left: initial;
+          min-width: 100vw;
+        }
+
+        #projects-content .card .head span {
+	        margin-top: 1.25rem;
+        }
+
+        @media (prefers-color-scheme: light) {
+          :root
+          {
+            --text-primary: #1f1f1f;
+            --text-secondary: #000000;
+            --bg-primary: #ffffff;
+            --bg-secondary: #e4e4e4;
+            --bg-tertiary:white;
+            --bg-body:#efefef;
+            --accent-primary:#026288;
+            --accent-secondary:#00a3e4;
+          }		
+          
+          #skills-content .row #aws-img-dark
+          {
+            display: none;
+          }
+        }
+
+        @media (prefers-color-scheme: dark) {
+          :root
+          {
+            --text-primary:#b6b6b6;
+            --text-secondary:#ececec;
+            --bg-primary:#23232e;
+            --bg-secondary:#141418;
+            --bg-tertiary:#252526;
+            --bg-body:#1e1e1e;
+            --accent-primary: #360B63;
+            --accent-secondary: #6649b8;
+          }		
+
+          #skills-content .row #aws-img-light
+          {
+            display: none;
+          }
+        }
+      </style>
+    </noscript>
+
+  </head>
+  
+  <body>
+    <meta-control></meta-control>
+
+    
+
+    <div name="landing" class="landing" id="landing" style="height: 100vh">
+      <div style="position: absolute; z-index: 2">
+        <div class="name-container">
+          <div><span>Michael Kassabov</span><span>Full Stack JS Developer</span></div>
+        </div>
+        <div class="button-container">
+          <a id="landingButton" href="#about">
+            <span>My Work</span>
+            <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="arrow-right" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M190.5 66.9l22.2-22.2c9.4-9.4 24.6-9.4 33.9 0L441 239c9.4 9.4 9.4 24.6 0 33.9L246.6 467.3c-9.4 9.4-24.6 9.4-33.9 0l-22.2-22.2c-9.5-9.5-9.3-25 .4-34.3L311.4 296H24c-13.3 0-24-10.7-24-24v-32c0-13.3 10.7-24 24-24h287.4L190.9 101.2c-9.8-9.3-10-24.8-.4-34.3z"></path></svg>
+          </a>
+        </div>
+      </div>
+      <div class="background-container">
+        <noscript>
+          <div class="rect-container"><div class="rect" style="float: right; clear: left; opacity: 0.0779989; width: 13%;"></div><div class="rect" style="float: left; clear: left; opacity: 0.220867; width: 10%;"></div><div class="rect" style="float: left; clear: left; opacity: 0.133372; width: 21%;"></div><div class="rect" style="float: right; clear: right; opacity: 0.123701; width: 18%;"></div><div class="rect" style="float: right; clear: right; opacity: 0.238371; width: 24%;"></div><div class="rect" style="float: right; clear: right; opacity: 0.0981192; width: 24%;"></div><div class="rect" style="float: right; clear: left; opacity: 0.227661; width: 24%;"></div><div class="rect" style="float: right; clear: left; opacity: 0.251174; width: 10%;"></div><div class="rect" style="float: right; clear: right; opacity: 0.00439962; width: 18%;"></div><div class="rect" style="float: right; clear: right; opacity: 0.258038; width: 16%;"></div><div class="rect" style="float: left; clear: left; opacity: 0.222455; width: 21%;"></div><div class="rect" style="float: right; clear: left; opacity: 0.0790982; width: 15%;"></div><div class="rect" style="float: right; clear: left; opacity: 0.0688793; width: 20%;"></div><div class="rect" style="float: right; clear: right; opacity: 0.1486; width: 22%;"></div><div class="rect" style="float: right; clear: left; opacity: 0.103646; width: 19%;"></div><div class="rect" style="float: right; clear: left; opacity: 0.24411; width: 18%;"></div><div class="rect" style="float: right; clear: left; opacity: 0.106423; width: 24%;"></div><div class="rect" style="float: right; clear: right; opacity: 0.177436; width: 22%;"></div><div class="rect" style="float: left; clear: right; opacity: 0.0712881; width: 22%;"></div><div class="rect" style="float: right; clear: left; opacity: 0.0555111; width: 10%;"></div><div class="rect" style="float: right; clear: left; opacity: 0.289815; width: 10%;"></div><div class="rect" style="float: left; clear: right; opacity: 0.176307; width: 21%;"></div><div class="rect" style="float: right; clear: left; opacity: 0.251734; width: 15%;"></div><div class="rect" style="float: left; clear: right; opacity: 0.138023; width: 15%;"></div><div class="rect" style="float: left; clear: right; opacity: 0.085989; width: 20%;"></div><div class="rect" style="float: right; clear: left; opacity: 0.149604; width: 14%;"></div><div class="rect" style="float: right; clear: left; opacity: 0.175265; width: 14%;"></div><div class="rect" style="float: right; clear: right; opacity: 0.118475; width: 11%;"></div><div class="rect" style="float: right; clear: left; opacity: 0.213337; width: 19%;"></div><div class="rect" style="float: right; clear: left; opacity: 0.207312; width: 14%;"></div><div class="rect" style="float: right; clear: right; opacity: 0.0113696; width: 16%;"></div><div class="rect" style="float: left; clear: left; opacity: 0.0897251; width: 18%;"></div><div class="rect" style="float: right; clear: left; opacity: 0.184327; width: 24%;"></div><div class="rect" style="float: right; clear: left; opacity: 0.162792; width: 22%;"></div><div class="rect" style="float: left; clear: left; opacity: 0.274213; width: 10%;"></div><div class="rect" style="float: right; clear: left; opacity: 0.175806; width: 20%;"></div><div class="rect" style="float: left; clear: right; opacity: 0.160096; width: 17%;"></div><div class="rect" style="float: right; clear: left; opacity: 0.0138978; width: 15%;"></div><div class="rect" style="float: left; clear: left; opacity: 0.287706; width: 13%;"></div><div class="rect" style="float: right; clear: left; opacity: 0.116411; width: 18%;"></div><div class="rect" style="float: left; clear: left; opacity: 0.19144; width: 20%;"></div><div class="rect" style="float: right; clear: left; opacity: 0.0633678; width: 15%;"></div><div class="rect" style="float: right; clear: right; opacity: 0.0260974; width: 18%;"></div><div class="rect" style="float: right; clear: right; opacity: 0.115206; width: 15%;"></div><div class="rect" style="float: left; clear: left; opacity: 0.125221; width: 15%;"></div><div class="rect" style="float: left; clear: left; opacity: 0.11692; width: 23%;"></div><div class="rect" style="float: right; clear: left; opacity: 0.200659; width: 13%;"></div><div class="rect" style="float: right; clear: left; opacity: 0.14832; width: 20%;"></div><div class="rect" style="float: right; clear: left; opacity: 0.0751134; width: 21%;"></div><div class="rect" style="float: right; clear: left; opacity: 0.265942; width: 18%;"></div><div class="rect" style="float: right; clear: left; opacity: 0.02328; width: 17%;"></div><div class="rect" style="float: right; clear: left; opacity: 0.0892068; width: 20%;"></div><div class="rect" style="float: right; clear: left; opacity: 0.233445; width: 15%;"></div><div class="rect" style="float: left; clear: left; opacity: 0.179393; width: 16%;"></div><div class="rect" style="float: right; clear: right; opacity: 0.152859; width: 23%;"></div><div class="rect" style="float: right; clear: left; opacity: 0.132825; width: 19%;"></div><div class="rect" style="float: right; clear: left; opacity: 0.213516; width: 16%;"></div><div class="rect" style="float: right; clear: left; opacity: 0.0776286; width: 13%;"></div><div class="rect" style="float: right; clear: left; opacity: 0.0138755; width: 18%;"></div><div class="rect" style="float: right; clear: right; opacity: 0.256197; width: 15%;"></div><div class="rect" style="float: left; clear: left; opacity: 0.0645746; width: 19%;"></div></div>
+        </noscript>
+      </div>
+    </div>
+
+    <main>
+      <nav id="nav" class="navbar">
+        <div class="logo">
+          <a href="#landing" class="nav-link">
+            <span class="link-text logo-text">Michael <span style="transition:var(--transition-speed); color: var(--accent-primary)">Kassabov</span></span>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 300">
+              <g>
+                <path class="svg-primary" d="M426.1,270.9L311,155.8c-2.5-2.5-2.4-6.4,0-8.9L413.9,44.6c2.5-2.4,6.4-2.4,8.9,0l18.8,18.9
+                  c2.4,2.5,2.4,6.4,0,8.9L362,151.4l91.8,91.8c2.4,2.4,2.4,6.4,0,8.9L435,270.9C432.5,273.4,428.5,273.4,426.1,270.9z"/>
+              </g>
+              <g>
+                <path class="svg-secondary" d="M278.4,272.8h-27.8c-3.6,0-6.6-2.9-6.6-6.6V132.3l-69.8,69.8c-2.6,2.6-6.7,2.6-9.3,0l-69.8-69.8v133.9
+                  c0,3.6-2.9,6.6-6.6,6.6H60.7c-3.6,0-6.6-2.9-6.6-6.6V49.3c0-5.8,7.1-8.8,11.2-4.6l104.2,104.2L273.8,44.7
+                  c4.1-4.1,11.2-1.2,11.2,4.6v216.9C285,269.8,282,272.8,278.4,272.8z"/>
+              </g>
+            </svg>
+          </a>
+        </div>
+        <ul class="navbar-nav">
+  
+          <li class="nav-item">
+            <a href="#about" class="nav-link">
+              <svg aria-hidden="true" focusable="false" data-icon="id-card" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><g><path fill="currentColor" d="M0 128v304a48 48 0 0 0 48 48h480a48 48 0 0 0 48-48V128zm176 64a64 64 0 1 1-64 64 64 64 0 0 1 64-64zm93.3 224H82.7c-10.4 0-18.8-10-15.6-19.8A64.09 64.09 0 0 1 128 352h8.2a103 103 0 0 0 79.6 0h8.2a64.09 64.09 0 0 1 60.9 44.2c3.2 9.9-5.2 19.8-15.6 19.8zM512 344a8 8 0 0 1-8 8H360a8 8 0 0 1-8-8v-16a8 8 0 0 1 8-8h144a8 8 0 0 1 8 8zm0-64a8 8 0 0 1-8 8H360a8 8 0 0 1-8-8v-16a8 8 0 0 1 8-8h144a8 8 0 0 1 8 8zm0-64a8 8 0 0 1-8 8H360a8 8 0 0 1-8-8v-16a8 8 0 0 1 8-8h144a8 8 0 0 1 8 8z" class="svg-secondary"></path><path fill="currentColor" d="M224 352h-8.2a103 103 0 0 1-79.6 0H128a64.09 64.09 0 0 0-60.9 44.2C63.9 406 72.3 416 82.7 416h186.6c10.4 0 18.8-9.9 15.6-19.8A64.09 64.09 0 0 0 224 352zM528 32H48A48 48 0 0 0 0 80v48h576V80a48 48 0 0 0-48-48zM176 320a64 64 0 1 0-64-64 64 64 0 0 0 64 64z" class="svg-primary"></path></g></svg>
+              <span class="link-text">About</span>
+            </a>
+          </li>
+  
+          <li class="nav-item">
+            <a href="#projects" class="nav-link">
+              <svg aria-hidden="true" focusable="false" data-icon="code" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><g><path fill="currentColor" d="M422.12 18.16a12 12 0 0 1 8.2 14.9l-136.5 470.2a12 12 0 0 1-14.89 8.2l-61-17.7a12 12 0 0 1-8.2-14.9l136.5-470.2a12 12 0 0 1 14.89-8.2z" class="svg-primary"></path><path fill="currentColor" d="M636.23 247.26l-144.11-135.2a12.11 12.11 0 0 0-17 .5L431.62 159a12 12 0 0 0 .81 17.2L523 256l-90.59 79.7a11.92 11.92 0 0 0-.81 17.2l43.5 46.4a12 12 0 0 0 17 .6l144.11-135.1a11.94 11.94 0 0 0 .02-17.54zm-427.8-88.2l-43.5-46.4a12 12 0 0 0-17-.5l-144.11 135a11.94 11.94 0 0 0 0 17.5l144.11 135.1a11.92 11.92 0 0 0 17-.5l43.5-46.4a12 12 0 0 0-.81-17.2L117 256l90.6-79.7a11.92 11.92 0 0 0 .83-17.24z" class="svg-secondary"></path></g></svg>
+              <span class="link-text">Projects</span>
+            </a>
+          </li>
+  
+          <li class="nav-item">
+            <a href="#skills" class="nav-link">
+              <svg aria-hidden="true" focusable="false" data-icon="chart-bar" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><g><path fill="currentColor" d="M512 400v32a16 16 0 0 1-16 16H32a32 32 0 0 1-32-32V80a16 16 0 0 1 16-16h32a16 16 0 0 1 16 16v304h432a16 16 0 0 1 16 16z" class="svg-secondary"></path><path fill="currentColor" d="M275.2 96h-38.4c-6.4 0-12.8 6.4-12.8 12.8v198.4c0 6.4 6.4 12.8 12.8 12.8h38.4c6.4 0 12.8-6.4 12.8-12.8V108.8c0-6.4-6.4-12.8-12.8-12.8zm-96 128h-38.4c-6.4 0-12.8 6.4-12.8 12.8v70.4c0 6.4 6.4 12.8 12.8 12.8h38.4c6.4 0 12.8-6.4 12.8-12.8v-70.4c0-6.4-6.4-12.8-12.8-12.8zm288-160h-38.4c-6.4 0-12.8 6.4-12.8 12.8v230.4c0 6.4 6.4 12.8 12.8 12.8h38.4c6.4 0 12.8-6.4 12.8-12.8V76.8c0-6.4-6.4-12.8-12.8-12.8zm-96 96h-38.4c-6.4 0-12.8 6.4-12.8 12.8v134.4c0 6.4 6.4 12.8 12.8 12.8h38.4c6.4 0 12.8-6.4 12.8-12.8V172.8c0-6.4-6.4-12.8-12.8-12.8z" class="svg-primary"></path></g></svg>
+              <span class="link-text">Skills</span>
+            </a>
+          </li>
+  
+          
+          <li class="nav-item">
+            <a href="#experience" class="nav-link">
+              <svg aria-hidden="true" focusable="false" data-icon="chart-network" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><g><path fill="currentColor" d="M64 240a64 64 0 1 0 64 64 64.06 64.06 0 0 0-64-64zm88 80h48v-32h-48zm294.4-106.8l19.2 25.6 48-36-19.2-25.6zM576 64a64 64 0 1 0 64 64 64.06 64.06 0 0 0-64-64z" class="svg-secondary"></path><path fill="currentColor" d="M576 384a63.84 63.84 0 0 0-38.3 13l-96-57.6a109.91 109.91 0 0 0 6.3-35.5 111.94 111.94 0 0 0-112-112 108.64 108.64 0 0 0-24.4 2.9l-40.8-87.4A63.84 63.84 0 1 0 224 128c1.1 0 2.1-.3 3.2-.3l41 87.8C241.5 235.9 224 267.8 224 304a111.71 111.71 0 0 0 193.2 76.7l95.8 57.5a63.87 63.87 0 1 0 63-54.2zm-240-32a48 48 0 1 1 48-48 48 48 0 0 1-48 48z" class="svg-primary"></path></g></svg>
+              <span class="link-text">Experience</span>
+            </a>
+          </li>
+  
+          <li class="nav-item">
+            <a href="#contact" class="nav-link">
+              <svg aria-hidden="true" focusable="false" data-icon="mail-bulk" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><g><path fill="currentColor" d="M288 256H32a32 32 0 0 0-32 32v16c25.6 19.2 22.4 19.2 115.2 86.4 9.6 6.4 28.8 25.6 44.8 25.6s35.2-19.2 44.8-22.4c92.8-67.2 89.6-67.2 115.2-86.4V288a32 32 0 0 0-32-32zM160 448c-25.6 0-51.2-22.4-64-32-64-44.8-83.2-60.8-96-70.4V480a32 32 0 0 0 32 32h256a32 32 0 0 0 32-32V345.6c-12.8 9.6-32 25.6-96 70.4-12.8 9.6-38.4 32-64 32zm288-224v64h64v-64z" class="svg-primary"></path><path fill="currentColor" d="M544 160H224a32 32 0 0 0-32 32v32h96a64.09 64.09 0 0 1 63.71 57.82l.29-.22V416h192a32 32 0 0 0 32-32V192a32 32 0 0 0-32-32zm-32 128h-64v-64h64zm-64-160V32a32 32 0 0 0-32-32H96a32 32 0 0 0-32 32v192h96v-32a64.07 64.07 0 0 1 64-64z" class="svg-secondary"></path></g></svg>
+              <span class="link-text">Contact</span>
+            </a>
+          </li>
+  
+          <!-- <li class="nav-item">
+            <a class="nav-link">
+              <svg aria-hidden="true" focusable="false" data-icon="file-invoice" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><g><path fill="currentColor" d="M96 320h192v-64H96zm288-192H272a16 16 0 0 1-16-16V0H24A23.94 23.94 0 0 0 0 23.88V488a23.94 23.94 0 0 0 23.88 24H360a23.94 23.94 0 0 0 24-23.88V128zM64 72a8 8 0 0 1 8-8h80a8 8 0 0 1 8 8v16a8 8 0 0 1-8 8H72a8 8 0 0 1-8-8zm0 64a8 8 0 0 1 8-8h80a8 8 0 0 1 8 8v16a8 8 0 0 1-8 8H72a8 8 0 0 1-8-8zm256 304a8 8 0 0 1-8 8h-80a8 8 0 0 1-8-8v-16a8 8 0 0 1 8-8h80a8 8 0 0 1 8 8zm0-104a16 16 0 0 1-16 16H80a16 16 0 0 1-16-16v-96a16 16 0 0 1 16-16h224a16 16 0 0 1 16 16z" class="svg-secondary"></path><path fill="currentColor" d="M377 105L279.1 7a24 24 0 0 0-17-7H256v112a16 16 0 0 0 16 16h112v-6.1a23.9 23.9 0 0 0-7-16.9zm-73 119H80a16 16 0 0 0-16 16v96a16 16 0 0 0 16 16h224a16 16 0 0 0 16-16v-96a16 16 0 0 0-16-16zm-16 96H96v-64h192zm24 96h-80a8 8 0 0 0-8 8v16a8 8 0 0 0 8 8h80a8 8 0 0 0 8-8v-16a8 8 0 0 0-8-8z" class="svg-primary"></path></g></svg>
+              <span class="link-text">Resume</span>
+            </a>
+          </li> -->
+  
+          <li class="nav-item" id="themeButton">
+            <a class="nav-link">
+              <svg class="theme-icon" id="lightIcon" aria-hidden="true" focusable="false" data-icon="moon-stars" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><g><path fill="currentColor" d="M320 32L304 0l-16 32-32 16 32 16 16 32 16-32 32-16zm138.7 149.3L432 128l-26.7 53.3L352 208l53.3 26.7L432 288l26.7-53.3L512 208z" class="svg-secondary"></path><path fill="currentColor" d="M332.2 426.4c8.1-1.6 13.9 8 8.6 14.5a191.18 191.18 0 0 1-149 71.1C85.8 512 0 426 0 320c0-120 108.7-210.6 227-188.8 8.2 1.6 10.1 12.6 2.8 16.7a150.3 150.3 0 0 0-76.1 130.8c0 94 85.4 165.4 178.5 147.7z" class="svg-primary"></path></g></svg>
+              <span class="link-text">Change Theme</span>
+            </a>
+          </li>
+        </ul>
+      </nav>
+
+
+      <article>
+        <div id="about" class="article-title"><span>About</span></div>
+        <section id="about-content">
+          <div class="headline">
+            <span>Work-focused full stack developer with a passion for creative solutions, helping others, and teaching.</span>
+          </div>
+          <div class="content">
+            <span>I've always strived to challenge myself in every aspect of my life. Despite working for such a short amount of time I've had the pleasure to work on all aspects of projects. I've found a particular interest in backend development and algorithmic solutions to problems. As a software developer, I want to use my skills to make things that make a difference, particularly in the form of helping others solve their problems.</span>
+          </div>
+          <div class="content">
+            <span>Currently I'm doing my best to focus on education of others. The company I currently work for, Instaflow, has allowed me to work hand in hand with educators and develop tools to make their job easier. I have also spent a considerable amount of time tutoring, both as a job and as a volunteer, in order to help people feel more comfortable with math and computer science.</span>
+          </div>
+          <div class="footer">
+            <span style="color: var(--text-secondary);">Current Focus</span><span style="color: var(--accent-secondary);">: </span> Vue <span style="color: var(--accent-secondary);">//</span> Elm <span style="color: var(--accent-secondary);">//</span> Algorithm Design
+          </div>
+        </section>
+      </article>
+      
+      <article>
+        <div id="projects" class="article-title"><span>Projects</span></div>
+        <section id="projects-content">
+          <div class="project-container">
+            <div id="quantifying_caring" class="card">
+              <div class="head">
+                <div class="background-container">
+                  <noscript>
+                    <div class="rect-container"><div class="rect" style="float: right; clear: left; opacity: 0.078728; width: 19%;"></div><div class="rect" style="float: right; clear: left; opacity: 0.170782; width: 12%;"></div><div class="rect" style="float: right; clear: left; opacity: 0.0345029; width: 16%;"></div><div class="rect" style="float: right; clear: left; opacity: 0.264707; width: 22%;"></div><div class="rect" style="float: left; clear: left; opacity: 0.108254; width: 12%;"></div><div class="rect" style="float: right; clear: left; opacity: 0.177714; width: 20%;"></div><div class="rect" style="float: left; clear: right; opacity: 0.147958; width: 24%;"></div><div class="rect" style="float: left; clear: left; opacity: 0.113375; width: 12%;"></div><div class="rect" style="float: right; clear: left; opacity: 0.105942; width: 24%;"></div><div class="rect" style="float: right; clear: left; opacity: 0.243219; width: 20%;"></div><div class="rect" style="float: right; clear: left; opacity: 0.106753; width: 19%;"></div><div class="rect" style="float: right; clear: left; opacity: 0.24623; width: 16%;"></div><div class="rect" style="float: left; clear: left; opacity: 0.0847801; width: 13%;"></div><div class="rect" style="float: right; clear: left; opacity: 0.0696124; width: 18%;"></div><div class="rect" style="float: right; clear: left; opacity: 0.254916; width: 16%;"></div><div class="rect" style="float: left; clear: left; opacity: 0.071155; width: 12%;"></div><div class="rect" style="float: left; clear: left; opacity: 0.239083; width: 20%;"></div><div class="rect" style="float: right; clear: right; opacity: 0.233629; width: 14%;"></div><div class="rect" style="float: right; clear: left; opacity: 0.237123; width: 15%;"></div><div class="rect" style="float: right; clear: left; opacity: 0.24328; width: 22%;"></div><div class="rect" style="float: right; clear: left; opacity: 0.0241994; width: 16%;"></div><div class="rect" style="float: right; clear: left; opacity: 0.0879853; width: 13%;"></div><div class="rect" style="float: right; clear: left; opacity: 0.204869; width: 19%;"></div><div class="rect" style="float: right; clear: left; opacity: 0.0157948; width: 11%;"></div><div class="rect" style="float: right; clear: left; opacity: 0.0805887; width: 22%;"></div><div class="rect" style="float: right; clear: left; opacity: 0.13246; width: 13%;"></div><div class="rect" style="float: right; clear: left; opacity: 0.289243; width: 15%;"></div><div class="rect" style="float: right; clear: left; opacity: 0.0241006; width: 16%;"></div><div class="rect" style="float: right; clear: left; opacity: 0.205155; width: 12%;"></div><div class="rect" style="float: right; clear: right; opacity: 0.0231194; width: 24%;"></div><div class="rect" style="float: right; clear: left; opacity: 0.0948684; width: 18%;"></div><div class="rect" style="float: left; clear: left; opacity: 0.151238; width: 11%;"></div><div class="rect" style="float: right; clear: right; opacity: 0.138238; width: 15%;"></div><div class="rect" style="float: left; clear: left; opacity: 0.259429; width: 22%;"></div><div class="rect" style="float: right; clear: left; opacity: 0.121261; width: 19%;"></div><div class="rect" style="float: right; clear: right; opacity: 0.0372621; width: 11%;"></div><div class="rect" style="float: left; clear: right; opacity: 0.0652867; width: 15%;"></div><div class="rect" style="float: right; clear: right; opacity: 0.0298927; width: 24%;"></div><div class="rect" style="float: right; clear: left; opacity: 0.262062; width: 19%;"></div><div class="rect" style="float: right; clear: left; opacity: 0.0354789; width: 19%;"></div><div class="rect" style="float: right; clear: right; opacity: 0.291765; width: 10%;"></div><div class="rect" style="float: left; clear: left; opacity: 0.241505; width: 11%;"></div><div class="rect" style="float: right; clear: left; opacity: 0.203806; width: 23%;"></div><div class="rect" style="float: right; clear: left; opacity: 0.227665; width: 22%;"></div><div class="rect" style="float: left; clear: left; opacity: 0.00885348; width: 22%;"></div><div class="rect" style="float: right; clear: left; opacity: 0.0929516; width: 22%;"></div><div class="rect" style="float: right; clear: left; opacity: 0.00634528; width: 18%;"></div><div class="rect" style="float: right; clear: right; opacity: 0.170523; width: 20%;"></div><div class="rect" style="float: right; clear: left; opacity: 0.0255046; width: 10%;"></div><div class="rect" style="float: right; clear: left; opacity: 0.0831133; width: 14%;"></div><div class="rect" style="float: right; clear: left; opacity: 0.180133; width: 19%;"></div><div class="rect" style="float: right; clear: left; opacity: 0.273641; width: 24%;"></div><div class="rect" style="float: right; clear: left; opacity: 0.0388135; width: 17%;"></div><div class="rect" style="float: left; clear: left; opacity: 0.248034; width: 10%;"></div><div class="rect" style="float: right; clear: left; opacity: 0.054929; width: 24%;"></div><div class="rect" style="float: right; clear: left; opacity: 0.17092; width: 21%;"></div><div class="rect" style="float: right; clear: left; opacity: 0.227984; width: 15%;"></div><div class="rect" style="float: right; clear: right; opacity: 0.185059; width: 23%;"></div><div class="rect" style="float: left; clear: right; opacity: 0.165917; width: 14%;"></div><div class="rect" style="float: right; clear: right; opacity: 0.00541672; width: 12%;"></div></div>
+                  </noscript>
+                </div>
+                <span>Quantifying Caring</span>
+              </div>
+              <div class="body">
+                <span>
+                  An attempt at finding a quantifiable metric to determine how much a set of people care about one another. Based on a commonly used metric reffered to as Language Style Matching.
+                </span>
+              </div>
+              <div class="buttons">
+                <a href="./projects/quantifying_caring/">Project</a>
+                <a href="./projects/quantifying_caring/writeup/">Write Up</a>
+              </div>
+              <div class="footer">
+                Feb 2020
+              </div>
+            </div>
+            <div id="noscript_singlepage" class="card">
+              <div class="head">
+                <div class="background-container">
+                  <noscript>
+                    <div class="rect-container"><div class="rect" style="float: left; clear: right; opacity: 0.289287; width: 11%;"></div><div class="rect" style="float: right; clear: left; opacity: 0.0524086; width: 14%;"></div><div class="rect" style="float: right; clear: left; opacity: 0.0428946; width: 12%;"></div><div class="rect" style="float: right; clear: left; opacity: 0.0890287; width: 16%;"></div><div class="rect" style="float: right; clear: right; opacity: 0.0342653; width: 12%;"></div><div class="rect" style="float: right; clear: left; opacity: 0.271979; width: 20%;"></div><div class="rect" style="float: right; clear: left; opacity: 0.105415; width: 15%;"></div><div class="rect" style="float: right; clear: left; opacity: 0.152852; width: 13%;"></div><div class="rect" style="float: right; clear: left; opacity: 0.19672; width: 22%;"></div><div class="rect" style="float: left; clear: left; opacity: 0.16027; width: 13%;"></div><div class="rect" style="float: right; clear: right; opacity: 0.257747; width: 13%;"></div><div class="rect" style="float: right; clear: left; opacity: 0.202965; width: 14%;"></div><div class="rect" style="float: right; clear: left; opacity: 0.260357; width: 19%;"></div><div class="rect" style="float: right; clear: left; opacity: 0.17323; width: 24%;"></div><div class="rect" style="float: right; clear: left; opacity: 0.297021; width: 14%;"></div><div class="rect" style="float: right; clear: left; opacity: 0.0194004; width: 20%;"></div><div class="rect" style="float: left; clear: left; opacity: 0.222978; width: 14%;"></div><div class="rect" style="float: right; clear: left; opacity: 0.0729748; width: 23%;"></div><div class="rect" style="float: right; clear: left; opacity: 0.24988; width: 15%;"></div><div class="rect" style="float: right; clear: left; opacity: 0.00478571; width: 13%;"></div><div class="rect" style="float: right; clear: left; opacity: 0.00987635; width: 15%;"></div><div class="rect" style="float: right; clear: left; opacity: 0.0156501; width: 16%;"></div><div class="rect" style="float: left; clear: left; opacity: 0.199462; width: 16%;"></div><div class="rect" style="float: right; clear: left; opacity: 0.287403; width: 15%;"></div><div class="rect" style="float: right; clear: right; opacity: 0.253496; width: 10%;"></div><div class="rect" style="float: right; clear: left; opacity: 0.135927; width: 20%;"></div><div class="rect" style="float: right; clear: left; opacity: 0.0745424; width: 20%;"></div><div class="rect" style="float: right; clear: left; opacity: 0.00508993; width: 17%;"></div><div class="rect" style="float: right; clear: left; opacity: 0.132203; width: 15%;"></div><div class="rect" style="float: left; clear: left; opacity: 0.299959; width: 11%;"></div><div class="rect" style="float: right; clear: left; opacity: 0.187511; width: 21%;"></div><div class="rect" style="float: right; clear: left; opacity: 0.00454151; width: 22%;"></div><div class="rect" style="float: right; clear: left; opacity: 0.238694; width: 11%;"></div><div class="rect" style="float: left; clear: left; opacity: 0.0760117; width: 21%;"></div><div class="rect" style="float: right; clear: left; opacity: 0.261021; width: 23%;"></div><div class="rect" style="float: right; clear: left; opacity: 0.22036; width: 16%;"></div><div class="rect" style="float: right; clear: left; opacity: 0.257723; width: 15%;"></div><div class="rect" style="float: right; clear: left; opacity: 0.0487224; width: 24%;"></div><div class="rect" style="float: left; clear: left; opacity: 0.0333907; width: 16%;"></div><div class="rect" style="float: right; clear: left; opacity: 0.0210542; width: 22%;"></div><div class="rect" style="float: right; clear: right; opacity: 0.0292504; width: 23%;"></div><div class="rect" style="float: right; clear: left; opacity: 0.289168; width: 16%;"></div><div class="rect" style="float: right; clear: left; opacity: 0.170342; width: 12%;"></div><div class="rect" style="float: right; clear: right; opacity: 0.0404714; width: 13%;"></div><div class="rect" style="float: right; clear: left; opacity: 0.135282; width: 23%;"></div><div class="rect" style="float: right; clear: left; opacity: 0.220119; width: 23%;"></div><div class="rect" style="float: right; clear: right; opacity: 0.0389526; width: 10%;"></div><div class="rect" style="float: right; clear: left; opacity: 0.0659404; width: 15%;"></div><div class="rect" style="float: right; clear: left; opacity: 0.0940059; width: 20%;"></div><div class="rect" style="float: right; clear: left; opacity: 0.211335; width: 19%;"></div><div class="rect" style="float: right; clear: left; opacity: 0.10357; width: 10%;"></div><div class="rect" style="float: right; clear: right; opacity: 0.0301634; width: 23%;"></div><div class="rect" style="float: right; clear: left; opacity: 0.188094; width: 16%;"></div><div class="rect" style="float: right; clear: left; opacity: 0.0624151; width: 24%;"></div><div class="rect" style="float: right; clear: left; opacity: 0.160427; width: 20%;"></div><div class="rect" style="float: right; clear: right; opacity: 0.208824; width: 21%;"></div><div class="rect" style="float: left; clear: left; opacity: 0.106173; width: 17%;"></div><div class="rect" style="float: right; clear: right; opacity: 0.2262; width: 17%;"></div><div class="rect" style="float: right; clear: left; opacity: 0.0404493; width: 13%;"></div><div class="rect" style="float: right; clear: left; opacity: 0.0411872; width: 22%;"></div><div class="rect" style="float: right; clear: right; opacity: 0.0153344; width: 13%;"></div><div class="rect" style="float: left; clear: left; opacity: 0.0255153; width: 23%;"></div><div class="rect" style="float: right; clear: left; opacity: 0.0341903; width: 18%;"></div><div class="rect" style="float: right; clear: left; opacity: 0.232534; width: 10%;"></div><div class="rect" style="float: right; clear: left; opacity: 0.288888; width: 23%;"></div></div>
+                  </noscript>
+                </div>
+                <span>Singlepage NoScript Sites</span>
+              </div>
+              <div class="body">
+                <span>
+                  Frameworks are relied on too heavily. This has left the internet filled with many small personal sites that are bloated with unnecessary JS. This results in slow loading times for the user, and an unusable site for the privacy-conscious noscript user!
+                </span>
+              </div>
+              <div class="buttons">
+                <a href="./projects/noscript_singlepage/writeup/">Write Up</a>
+              </div>
+              <div class="footer">
+                March 2020
+              </div>
+            </div>
+          </div>
+        </section>
+      </article>
+      
+      <article>
+        <div id="skills" class="article-title"><span>Skills</span></div>
+        <section id="skills-content">
+          <div class="card">
+            <h4>UI/UX</h4>
+            <div class="row">
+              <div>
+                <img alt="HTML 5" src="./images/html5.png" class="responsive-img"><text>HTML 5</text>
+              </div>
+              <div>
+                <img alt="CSS 3" src="./images/css3.png" class="responsive-img"><text>CSS 3</text>
+              </div>
+              <div>
+                <img alt="Elm-Ui" src="./images/elm-ui.png" class="responsive-img"><text>Elm-Ui</text>
+              </div>
+              <div>
+                <img alt="Sass" src="./images/sass.png" class="responsive-img"><text>Sass</text>
+              </div>
+              <div>
+                <img alt="Bootstrap" src="./images/bootstrap.png" class="responsive-img"><text>Bootstrap</text>
+              </div>
+            </div>
+          </div>
+          <div class="card">
+            <h4>JS+</h4>
+            <div class="row">
+              <div>
+                <img alt="JS" src="./images/js.png" class="responsive-img"><text>Javascript</text>
+              </div>
+              <div>
+                <img alt="Elm" src="./images/elm.png" class="responsive-img"><text>Elm</text>
+              </div>
+              <div>
+                <img alt="TS" src="./images/ts.png" class="responsive-img"><text>Typescript</text>
+              </div>
+              <div>
+                <img alt="Vue" src="./images/vue.png" class="responsive-img"><text>Vue</text>
+              </div>
+              <div>
+                <img alt="Angular" src="./images/angular.png" class="responsive-img"><text>Angular</text>
+              </div>
+            </div>
+          </div>
+          <div class="card">
+            <h4>Langauges</h4>
+            <div class="row">
+              <div>
+                <img alt="NodeJS" src="./images/node.png" class="responsive-img"><text>Node JS</text>
+              </div>
+              <div>
+                <img alt="Java" src="./images/java.png" class="responsive-img"><text>Java</text>
+              </div>
+              <div>
+                <img alt="SQL" src="./images/sql.png" class="responsive-img"><text>SQL</text>
+              </div>
+              <div>
+                <img alt="Lua" src="./images/lua.png" class="responsive-img"><text>Lua</text>
+              </div>
+              <div>
+                <img alt="PHP" src="./images/php.png" class="responsive-img"><text>PHP</text>
+              </div>
+            </div>
+          </div>
+          <div class="card">
+            <h4>Other</h4>
+            <div class="row">
+              <div>
+                <img alt="Github" src="./images/github.png" class="responsive-img"><text>Github</text>
+              </div>
+              <div>
+                <img alt="Latex" src="./images/latex.png" class="responsive-img"><text>Latex</text>
+              </div>
+              <div>
+                <img alt="Firebase" src="./images/firebase.png" class="responsive-img"><text>Firebase</text>
+              </div>
+              <div id="aws-img-dark">
+                <img alt="AWS-d" src="./images/aws_dark.png" class="responsive-img"><text>AWS</text>
+              </div>
+              <div id="aws-img-light">
+                <img alt="AWS-l" src="./images/aws_light.png" class="responsive-img"><text>AWS</text>
+              </div>
+              <div>
+                <img alt="MongoDB" src="./images/mongodb.png" class="responsive-img"><text>MongoDB</text>
+              </div>
+            </div>
+          </div>
+        </section>
+      </article>
+      
+      <article>
+        <div id="experience" class="article-title"><span>Experience</span></div>
+        <section id="experience-content">
+          <div class="card">
+            <h4>Instaflow</h4>
+            <h4>Lead Frontend Engineer</h4>
+            <div>
+              <span>Document management platform targetted at higher educational institutions</span>
+            </div>
+            <ul>
+              <li>Contribute core features across entire stack (20K+ lines of code)</li>
+              <li>First large scale work enviornment, and first time working with a large team</li>
+              <li>Oversee frontend, adopt best practices for UI/UX</li>
+              <li>Minor backend work</li>
+              <li>Tools: JS, TS, Vue // AWS, MongoDB</li>
+            </ul>
+            <div class="footer">
+              Jul 2019 - Present | Remote
+            </div>
+          </div>
+          <div class="card">
+            <h4>Math and CS Tutor</h4>
+            <h4></h4>
+            <div>
+              <span>Tutoring in high-school level math and beginner to intermediate computer science</span>
+            </div>
+            <ul>
+              <li>One on one and two on one work with people</li>
+              <li>Focusing on building intution among students</li>
+              <li>Work with early to late teens</li>
+              <li>Done both as volunteer work and for money</li>
+            </ul>
+            <div class="footer">
+              Feb 2019 - Present | Ithaca, NY
+            </div>
+          </div>
+          <div class="card">
+            <h4>StateRidge Group</h4>
+            <h4>Co-Founder and COO</h4>
+            <div>
+              <span>Consulting company with a focus on government contracts</span>
+            </div>
+            <ul>
+              <li>First experience starting a business as a teen</li>
+              <li>Experience growing a company without investment</li>
+              <li>Implement custom software tooling to optimize workflow</li>
+              <li>Writing grant proposals</li>
+              <li>Working with and getting clients</li>
+              <li>Working with government organizations</li>
+            </ul>
+            <div class="footer">
+              Mar 2018 - Mar 2020 | Ithaca, NY
+            </div>
+          </div>
+          <div class="card">
+            <h4>Freelance Work</h4>
+            <h4></h4>
+            <div>
+              <span>Work consisted mostly of basic website creation</span>
+            </div>
+            <ul>
+              <li>Collaborative Work</li>
+              <li>First experience working with clients goals</li>
+              <li>Production quality work with JS frameworks</li>
+              <li>Minimal want for maintanace; requires robust work</li>
+            </ul>
+            <div class="footer">
+              Jan 2017 - Sep 2018
+            </div>
+          </div>
+        </section>
+      </article>
+      
+      <article>
+        <div id="contact" class="article-title"><span>Contact</span></div>
+        <section id="contact-content">
+          <div class="dual-card">
+            <a href="mailto:michael.kassabov@gmail.com">
+              <div class="card">
+                <h4>Email</h4>
+              </div>
+            </a>
+            <a href="tel:+19292696855">
+              <div class="card">
+                <h4>Phone</h4>
+              </div>
+            </a>
+          </div>
+          <div class="dual-card">
+            <a href="https://github.com/Mkassabov">
+              <div class="card">
+                <h4>Github</h4>
+              </div>
+            </a>
+            <a href="https://www.linkedin.com/in/michael-kassabov-21965918a/">
+              <div class="card">
+                <h4>Linkedin</h4>
+              </div>
+            </a>
+          </div>
+        </section>
+      </article>
+    </main>
+ 
+    <script>
+        let containerList = document.getElementsByClassName("background-container");
+        for(let i = 0; i < containerList.length; i++) {
+          let container = document.createElement("div"); {
+            container.classList.add("rect-container");
+            
+            let numOfRects = Math.floor(Math.random() * (10)) + 60;
+            
+            for(var j = 0; j < numOfRects; j++) {
+              
+              var rect = document.createElement("div"); {
+                rect.classList.add("rect");
+                
+                rect.style.cssFloat = (Math.random() < 0.75) ? "right" : "left";
+                rect.style.clear = (Math.random() < 0.25) ? "right" : "left";
+                rect.style.opacity = Math.random() * 0.3;
+                rect.style.width = Math.floor(Math.random() * (15)) + 10 + "%";
+              
+              } container.appendChild(rect);
+            }
+          } 
+          containerList[i].appendChild(container);
+        }
+    </script>
+  </body>
 </html>
