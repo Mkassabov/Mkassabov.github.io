@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <script async src="/theme.js"></script>
+    <link rel="stylesheet" href="/writeup.min.css" />
+    <link rel="stylesheet" href="/style.min.css" />
+    <title>Mkassabov | FractaSketch Online</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0"/>
+    <script async src="/pageControl.js"></script>
+    <meta name="apple-mobile-web-app-title" content="Mkassabov"/>
+    <meta name="application-name" content="Mkassabov"/>
+    <link class="metaControlChild" rel="apple-touch-icon" sizes="180x180" href="/favicon-light/apple-touch-icon.webp">
+    <link class="metaControlChild" rel="icon" type="image/png" sizes="32x32" href="/favicon-light/favicon-32x32.webp">
+    <link class="metaControlChild" rel="icon" type="image/png" sizes="16x16" href="/favicon-light/favicon-16x16.webp">
+    <link class="metaControlChild" rel="manifest" href="/favicon-light/site.webmanifest">
+    <link class="metaControlChild" rel="mask-icon" href="/favicon-light/safari-pinned-tab.svg" color="#00a3e4">
+    <link class="metaControlChild" rel="shortcut icon" href="/favicon-light/favicon.ico">
+    <meta class="metaControlChild" name="msapplication-config" content="/favicon-light/browserconfig.xml">
+    <meta class="metaControlChild" name="msapplication-TileColor" content="#ffffff">
+    <meta class="metaControlChild" name="theme-color" content="#ffffff">
+    <meta name="description" content="A tool that allows students to create fractals from a template."/>
+
+    <noscript>
+      <style>
+        main {
+          margin-left: initial;
+          min-width: 100vw;
+        }
+
+        #projects-content .card .head span {
+	        margin-top: 1.25rem;
+        }
+
+        @media (prefers-color-scheme: light) {
+          :root
+          {
+            --text-primary: #1f1f1f;
+            --text-secondary: #000000;
+            --bg-primary: #ffffff;
+            --bg-secondary: #e4e4e4;
+            --bg-tertiary:white;
+            --bg-body:#efefef;
+            --accent-primary:#026288;
+            --accent-secondary:#00a3e4;
+          }		
+          
+          #skills-content .row #aws-img-dark
+          {
+            display: none;
+          }
+        }
+
+        @media (prefers-color-scheme: dark) {
+          :root
+          {
+            --text-primary:#b6b6b6;
+            --text-secondary:#ececec;
+            --bg-primary:#23232e;
+            --bg-secondary:#141418;
+            --bg-tertiary:#252526;
+            --bg-body:#1e1e1e;
+            --accent-primary: #360B63;
+            --accent-secondary: #6649b8;
+          }		
+
+          #skills-content .row #aws-img-light
+          {
+            display: none;
+          }
+        }
+      </style>
+    </noscript>
+
+  </head>
+  
+  <body>
+    <meta-control></meta-control>
+    <nav id="nav" class="navbar">
+      <div class="logo">
+        <a href="/#landing" class="nav-link">
+          <span class="link-text logo-text">Michael <span style="transition:var(--transition-speed); color: var(--accent-primary)">Kassabov</span></span>
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 300">
+            <g>
+              <path class="svg-primary" d="M426.1,270.9L311,155.8c-2.5-2.5-2.4-6.4,0-8.9L413.9,44.6c2.5-2.4,6.4-2.4,8.9,0l18.8,18.9
+                c2.4,2.5,2.4,6.4,0,8.9L362,151.4l91.8,91.8c2.4,2.4,2.4,6.4,0,8.9L435,270.9C432.5,273.4,428.5,273.4,426.1,270.9z"/>
+            </g>
+            <g>
+              <path class="svg-secondary" d="M278.4,272.8h-27.8c-3.6,0-6.6-2.9-6.6-6.6V132.3l-69.8,69.8c-2.6,2.6-6.7,2.6-9.3,0l-69.8-69.8v133.9
+                c0,3.6-2.9,6.6-6.6,6.6H60.7c-3.6,0-6.6-2.9-6.6-6.6V49.3c0-5.8,7.1-8.8,11.2-4.6l104.2,104.2L273.8,44.7
+                c4.1-4.1,11.2-1.2,11.2,4.6v216.9C285,269.8,282,272.8,278.4,272.8z"/>
+            </g>
+          </svg>
+        </a>
+      </div>
+      <ul class="navbar-nav">
+
+        <li class="nav-item">
+          <a href="#project" class="nav-link">
+            <svg aria-hidden="true" focusable="false" data-icon="question" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><g><path fill="currentColor" d="M182.43 373.46a69.27 69.27 0 1 0 69.28 69.27 69.28 69.28 0 0 0-69.28-69.27z" class="svg-secondary"></path><path fill="currentColor" d="M367.92 153.6c0 116-125.27 117.77-125.27 160.63V320a24 24 0 0 1-24 24h-72.47a24 24 0 0 1-24-24v-9.79c0-61.83 46.87-86.54 82.3-106.4 30.38-17 49-28.62 49-51.17 0-29.83-38-49.63-68.82-49.63-39.12 0-57.75 18.07-82.75 49.45a24 24 0 0 1-33.26 4.15L25.51 123.9A24 24 0 0 1 20.34 91c40.59-58.3 92.28-91 172.1-91 84.88 0 175.49 66.26 175.48 153.6z" class="svg-primary"></path></g></svg>
+            <span class="link-text">Description</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a href="#why-elm" class="nav-link">
+            <svg aria-hidden="true" focusable="false" data-icon="plus" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M416 208H272V64c0-17.67-14.33-32-32-32h-32c-17.67 0-32 14.33-32 32v144H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h144v144c0 17.67 14.33 32 32 32h32c17.67 0 32-14.33 32-32V304h144c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z" class="svg-primary"></path></svg>
+            <span class="link-text">Elm-lang Pros</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a href="#why-not" class="nav-link">
+            <svg aria-hidden="true" focusable="false" data-icon="minus" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M416 208H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h384c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z" class="svg-primary"></path></svg>
+            <span class="link-text">Elm-lang Cons</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a href="#forward" class="nav-link">
+            <svg aria-hidden="true" focusable="false" data-icon="forward" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><g class="fa-group"><path fill="currentColor" d="M224 297.69L52.5 440.61C31.9 457.81 0 443.41 0 416V96c0-27.4 31.9-41.7 52.5-24.6L224 214.32z" class="svg-secondary"></path><path fill="currentColor" d="M500.5 231.41a32.11 32.11 0 0 1 0 49.2l-192 160c-20.6 17.2-52.5 2.8-52.5-24.6V96c0-27.4 31.9-41.7 52.5-24.6z" class="svg-primary"></path></g></svg>
+            <span class="link-text">The Future</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a href="#design" class="nav-link">
+            <svg aria-hidden="true" focusable="false" data-icon="drafting-compass" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="svg-inline--fa fa-drafting-compass fa-w-16 fa-2x"><g><path fill="currentColor" d="M12.5 249.86c-4.86-7.67-1.89-18 6.05-22.39l28.07-15.57c7.48-4.15 16.61-1.46 21.26 5.72a223.89 223.89 0 0 0 35.75 42.55L71 316.68a288.08 288.08 0 0 1-58.5-66.82zm487 0c4.86-7.67 1.89-18-6.05-22.39l-28.07-15.57c-7.48-4.15-16.61-1.46-21.26 5.72a223.95 223.95 0 0 1-257.77 91.26l-32.53 56.35A287.42 287.42 0 0 0 256 384a288.42 288.42 0 0 0 243.5-134.14z" class="svg-secondary"></path><path fill="currentColor" d="M457.21 344.75a318.63 318.63 0 0 1-82.85 48.51l54.5 94.4 53.95 23A16 16 0 0 0 505 497.9l7-58.25zM340.9 143.3a96.5 96.5 0 1 0-169.29-.88L0 439.65l7 58.25a16 16 0 0 0 22.17 12.8l54-23 170.11-294.76c1.07 0 2.14.06 3.22.06h2.24l50.49 87.47a191.71 191.71 0 0 0 82.65-48.85zM256.5 128A31.5 31.5 0 1 1 288 96.5a31.5 31.5 0 0 1-31.5 31.5z" class="svg-primary"></path></g></svg>
+            <span class="link-text">Design</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a href="#design-features" class="nav-link">
+            <svg aria-hidden="true" focusable="false" data-icon="star" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><path fill="currentColor" d="M259.3 17.8L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0z"  class="svg-primary"></path></svg>
+            <span class="link-text">New Features</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a href="#design-controls" class="nav-link">
+            <svg aria-hidden="true" focusable="false" data-icon="gamepad" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><g><path fill="currentColor" d="M480.07 96H160a160 160 0 1 0 114.24 272h91.52A160 160 0 1 0 480.07 96zM248 268a12 12 0 0 1-12 12h-52v52a12 12 0 0 1-12 12h-24a12 12 0 0 1-12-12v-52H84a12 12 0 0 1-12-12v-24a12 12 0 0 1 12-12h52v-52a12 12 0 0 1 12-12h24a12 12 0 0 1 12 12v52h52a12 12 0 0 1 12 12zm216 76a40 40 0 1 1 40-40 40 40 0 0 1-40 40zm64-96a40 40 0 1 1 40-40 40 40 0 0 1-40 40z" class="svg-secondary"></path><path fill="currentColor" d="M248 268a12 12 0 0 1-12 12h-52v52a12 12 0 0 1-12 12h-24a12 12 0 0 1-12-12v-52H84a12 12 0 0 1-12-12v-24a12 12 0 0 1 12-12h52v-52a12 12 0 0 1 12-12h24a12 12 0 0 1 12 12v52h52a12 12 0 0 1 12 12z" class="svg-primary"></path></g></svg>
+            <span class="link-text">Controls</span>
+          </a>
+        </li>
+        
+        <li class="nav-item">
+          <a aria-label="project" href="../" class="nav-link">
+            <svg aria-hidden="true" focusable="false" data-icon="mobile-android" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><g><path fill="currentColor" d="M0 384v80a48 48 0 0 0 48 48h224a48 48 0 0 0 48-48v-80zm208 68a12 12 0 0 1-12 12h-72a12 12 0 0 1-12-12v-8a12 12 0 0 1 12-12h72a12 12 0 0 1 12 12z" class="svg-secondary"></path><path fill="currentColor" d="M0 384V48A48 48 0 0 1 48 0h224a48 48 0 0 1 48 48v336z" class="svg-primary"></path></g></svg>
+            <span class="link-text">The Project</span>
+          </a>
+        </li>
+
+        <li class="nav-item" id="themeButton">
+          <a class="nav-link">
+            <svg class="theme-icon" id="lightIcon" aria-hidden="true" focusable="false" data-divfix="fad" data-icon="moon-stars" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><g><path fill="currentColor" d="M320 32L304 0l-16 32-32 16 32 16 16 32 16-32 32-16zm138.7 149.3L432 128l-26.7 53.3L352 208l53.3 26.7L432 288l26.7-53.3L512 208z" class="svg-secondary"></path><path fill="currentColor" d="M332.2 426.4c8.1-1.6 13.9 8 8.6 14.5a191.18 191.18 0 0 1-149 71.1C85.8 512 0 426 0 320c0-120 108.7-210.6 227-188.8 8.2 1.6 10.1 12.6 2.8 16.7a150.3 150.3 0 0 0-76.1 130.8c0 94 85.4 165.4 178.5 147.7z" class="svg-primary"></path></g></svg>
+            <span class="link-text">Change Theme</span>
+          </a>
+        </li>
+      </ul>
+    </nav>
+
+    <main>
+      <article>
+        <div class="article-container">
+          <div class="headline"><h1>FractaSketch Online</h1></div>
+          <div class="subheading"><h2 id="project">What This Project Is</h2></div>
+          <p>This is a remake of a remake of an old program; the code is available here. The original version of Fractasketch is from the late 80s, but I never had the chance to use this version. My version is an update to this remake. I was first introduced to this software in a highschool class about fractals and chaos (Shoutout to Mr K.). Due to our district moving to chromebooks for students, I was asked to make a version of fractasketch that could run on those. I used the version by DKLoehr (an old student) in class, and aside from some stability issues there was nothing wrong with it. However, The teacher of the class did ask me to add a few extra features, such as colours and line weights.</p>
+          <p>The whole idea of the project was to create an intuitive and fairly easy-to-use piece of software that could help students understand how fractals work. This is done through the use of a template, which users can create by clicking on various sections of a grid to generate lines. Each line has a direction in which to replicate the fractal (since fractals are self similar shapes), and it is also possible to prevent replication along certain edges using static lines.</p>
+          
+          <div class="img-container"><img src="image1.png" alt="template example"></div>
+
+          <div class="subheading"><h2 id="why-elm">Why I chose Elm-lang</h2></div>
+          <p>The main goal of this project was to get it to run smoothly on Chromebooks, essentially on the web. While it was never tested on a chromebook, it was tested on an older generation raspberry PI, which should be significantly weaker, and it ran without issue. My goals can be broken down into the following:</p>
+          <ol>
+            <li>JS or transpiles to JS</li>
+            <li>As Bugfree as possible, since it will be in a classroom environment</li>
+            <li>Efficient</li>
+          </ol>
+          <p>I originally didn’t take the last two goals into consideration, and opted to write this project in Vue. This resulted in a wildly inefficient program that had a lot of issues. There aren’t many options for JS frameworks that are both efficient and provide less opportunities for bugs, at least not to the extent wanted. A handful of fellow developers recommended that I use TypeScript, although said language does not reduce bugs to any significant extent.</p>
+          <p>Eventually I was told about Elm-lang, Elm for short. Elm provided the bug-free and safe environment that I was looking for. Instead of relying on strict typing, it relies on parametricity, immutability, and making unreachable states actually unreachable. These properties also contribute to Elm’s rapid speed. This all sounded great, and I wanted a project to see if Elm was capable of being the new language we use in production, as of writing this it is currently Vue.js.</p>
+          <p>Having such a strict environment was extremely useful. While I typically comment and write code in such a manner that unreachable states don’t happen, that often doesn’t apply to primarily math-based code (e.g. the linear transformations heavily used in this project). Elm forced me to stick to those principles throughout the entire codebase, including the math, as well as prevent side effects. All of this makes the code much more manageable and incredibly easy to traverse. The code only gets complicated in a few places, where the complication comes down to not knowing the extensive core functions that Elm offers, which can easily be looked up in the documentation</p>
+          <p>The Elm Architecture is designed around having a single central model. For most of my projects, this seems incredibly useful. In this case, the project consists of one template which can be modified, a few states for what the user sees, and a handful of options for what is currently selected and what should be being displayed which can easily be nested.</p>
+          <p>Alongside being a very robust language, Elm is truly a pleasure to write in when web apis aren’t needed. The compiler has the most helpful error messages I have seen in any kind of environment. Alongside the normal error locations, and a copy of the line(s) that contained the error the compiler also offers suggestions on what could have gone wrong, or how to fix it. Sometimes this even includes references to the Elm documentation. The compiler can suggest fixes for typos. The most useful part of the compiler, or rather Elm itself, is that it prevents 2 things: undefined situations, and mutation. These two restrictions are very beneficial because it makes it extremely easy to get acquainted with an unknown codebase, as is the case if the project hasn’t been worked on for an extended period of time.	</p>
+          <p>While Elm is wonderful for a lot of smaller projects, certain features are clearly lacking in the languages leading Elm to be something I wouldn’t recommend trying to use in a Production setting.</p>
+          
+          <div class="subheading"><h2 id="why-not">Why Elm isn’t production ready</h2></div>
+          
+          <p>All of Elms's aforementioned benefits may naturally bring up the question of why the language is not considered to be ready for production. Elm is great for the business logic and the core of a website. However it interfaces fairly poorly with vanilla JavaScript. Elm has built-in ports, which work fine but don’t seem to be powerful enough to give the needed control. The other option is to use a custom web component that ties together the code from Elm and JavaScript. While this combination leaves very few possibilities left unreachable, it feels extremely hacky. I would be uncomfortable having people who aren’t highly familiar with Elm writing these kinds of components, since breaking things is all-too easy. These kinds of interfaces are crucial for at least two things I include in most of my projects: responsive design, and web APIs.</p>
+
+          <div class="subheading"><h3 id="why-not-responsive">Responsive Design</h3></div>
+          <section>
+            <p>The idea that a webpage can scale between a device of any size, or at least a phone and a computer, has always spoken to me. I am somebody who heavily relies on my phone, all the while simultaneously treasuring my computer. I want all of my tools to work on both. Sadly, Elm is unable to comfortably handle window resizing, at least not in the way I want it to. I was unable to get Elm to re-render on window resize at all, so I had to make do with different render depending on the initial size of the window, based on the sizes passed into the Elm app. Due to the nature of Elm, this had to be added to the main Model, which simply felt like unnecessary clutter. I completely understand why generally functions shouldn’t read information from other parts of the program, but Elm really needs to be able to see that I only need the window size in this one place at one time.</p>
+            <p>The second issue I ran into was needing to know the size of the canvas in order to properly render dots. In vanilla JS, getting the size of the canvas would be a simple function that checks whether the canvas exists, then returns its size if it exists, or some error/default value if it does not. But in Elm, this element might not exist at all, a distinction which has to be checked asynchronously. This unnecessarily complicates the ordeal, since what should have been one function in one file is turned into 2 functions and variables that clutter the main Model split across 3 different files. All to get the size of an element, created by Elm.</p>
+            <p>Touch events are also handled fairly poorly in Elm. In order to get the information from touch events, an entire unzipping decoder had to be created to read the entire event.</p>
+            <div class="code-container">
+              <div>
+                <code>
+                <div>dynamicListDecoder : Decoder a -> Decoder (List a)</div>
+                <div>dynamicListDecoder itemDecoder =</div>
+                <div>&nbsp; Decode.field "length" Decode.int</div>
+                <div>&nbsp; &nbsp; |> Decode.andThen</div>
+                <div>&nbsp; &nbsp; &nbsp; (\i -></div>
+                <div>&nbsp; &nbsp; &nbsp; &nbsp; List.range 0 (i - 1)</div>
+                <div>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; |> List.map (\j -> Decode.field (String.fromInt j) itemDecoder)</div>
+                <div>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; |> List.foldr (Decode.map2 (::)) (Decode.succeed [])</div>
+                <div>&nbsp; &nbsp; &nbsp; )</div>
+                </code>
+              </div>
+            </div>
+
+          </section>
+          <div class="subheading"><h3 id="why-not-api">Web APIs</h3></div>
+          <section>
+            <p>Web APIs are another huge issue with Elm. Many of them are simply missing, and for a lot of internal Elm politics that I won’t get into at the moment, are very hard to create. The only options are hacky web components that seem incredibly likely to cause massive, hard-to-find errors. I ran into this issue when needing to download the SVG element of the fractal into a file. While Elm offers a way to create and download files, it requires a string to do so. The SVG element can be converted into a string by reading the HTML generated by Elm. But it doesn’t work like that. Elm doesn’t let the code see stringified HTML (without jumping through a lot of hoops), which is insufferably idiotic in my opinion. Elm creates this HTML code, it knows what the HTML string is, so why can’t it give it to me? This is a problem in Elm HTML one of the core packages. While there is a project that adds a toString method into a rewrite of the HTML package (looking at the code it is literally two extra functions, and then copying the code from Elm HTML). I would have used this package instead of Elm HTML, save for the fact that it was missing half the HTML elements I needed. Why can’t somebody just add this as a request to Elm HTML, as Elm is entirely open source? Even if somebody did so, it would most likely not get accepted, just like every other minor issue in Elm. At the end of the day, if I really needed such a tool, I could have added that one function myself and just copied over the code from Elm HTM. Instead, I chose to just create a port and handle this with vanilla JS, thereby giving me more control over the end file than Elm ever would have. I’m focusing on this specific issue with reading the HTML string, not because it's impossible to solve otherwise, not because it is some critical feature that frontend developers use every day, but because it acts as a great metaphor for so many of the things wrong with Elm: many of the things you expect, the things you need, just aren’t there….</p>
+          </section>
+          
+          
+          <div class="subheading"><h2 id="froward">Moving Forward</h2></div>
+          <p>While Elm certainly has its share of issues, I found many of its key features appealing. Although it contains many problems for which I cannot compromise for in a language, my experience on this project has led my inclinations further towards the functional programming paradigm - albeit, I would prefer to do so without leaving the JS ecosystem.</p>
+
+          <div class="subheading"><h3 id="forward-better">Better Ways of Writing JS</h3></div>
+            <section>
+              <p>My experience of writing Elm has led me to reevaluate the way I write JS, and hopefully make some changes to my workflow - both in the way I write plain JS, as well as the external libraries I want to use. While Elm led to a lot of frustration when it failed, it has opened my eyes to the world of functional programming for me. It has also given clarity towards the direction I want to take in what I learn next.</p>
+
+              <div class="subheading"><h4 id="forward-better-TEA">Elm Architecture (localised to components)</h4></div>
+              <p>The Elm Architecture (TEA) works really well until it doesn’t. The wonderful thing about vanillaJS is that it allows me to use TEA for what it's good at, while just using whatever other core data structure I need for a wall of section that TEA simply won't work in. </p>
+              <p>The next project I’m working on involves chart.js, a library that makes creating charts in JS a joy. Even one page into its documentation it becomes clear that there is one big object that controls each chart. Similar to a model in an Elm project. This same thing can be seen in frameworks like Vue.js, where each component has its own data. Seeing so many others use ideas similar to TEA in such large and popular projects really solidifies my belief that there are some parts of TEA that are incredibly useful to learn from. My next project has the core of its information stored in one object, it's made writing the code significantly more enjoyable. </p>
+              <p>While TEA might not be able to apply to every project, some structure that shares a lot of similarities with TEA exists for almost every project. Being forced to conform to TEA in this project prevented me from making a lot of bad-practice mistakes that I would have normally made, and has definitely helped me conform to my own custom architectures now that my projects include them.</p>
+
+              <div class="subheading"><h4 id="forward-better-pure">Pure Functions and Currying</h4></div>
+              <p>Elm is built around pure functions, meaning functions that don’t have side effects (changing state). For every function, if you pass in certain values, the output will always be the same. This significantly simplifies the way different parts of the code communicate with each other. Currying is simply a way to control passing parameters with pure functions, it's more syntax sugar that forces you to take advantage of some of the benefits of functional programming.</p>
+            </section>
+
+            <div class="subheading"><h3 id="forward-alt">Alternatives</h3></div>
+            <section>
+              <p>Since writing functional code was such a joy with Elm, It’s something I want to pursue more of. JS is still my primary language, and I don’t intend to change that anytime soon, so finding something that is purely functional and works with JS is my current goal. There are some options. </p>
+
+              <div class="subheading"><h4 id="forward-alt-haskellWasm">Haskell -> Wasm</h4></div>
+              <p>Haskell compiled to WebAssembly is the first alternative that comes to my mind. This workflow provides all the benefits of Haskell, such as the support of a much larger community than a smaller project like Elm, as well as great documentation and a plethora of educational resources. At first, this setup looks rather appealing, but quickly falls apart upon closer examination. JS interop is necessary when using Web APIs with Wasm; although this should not be too difficult to deal with since Wasm is designed to have good interop with JS, it still poses an issue for most developers. There are multiple Haskell-to-Wasm compilers available, but all of them seem to have an issue with creating extremely large binaries. From my understanding, this issue is a result of the fact that Wasm does not have a garbage collection mechanism (which the GHC relies on), although the matter is likely more nuanced than that explanation may suggest. However, the primary reason that I do not want to build my workflow upon WebAssembly is that it is simply not necessary for most tasks, in addition to its relative novelty contributing to a boatload of issues. Of course, Wasm is an extremely useful technology in certain situations, but it is unnecessary for most smaller projects. The biggest issue with the Haskell-to-Wasm setup is definitely the unruly size of the binaries involved, despite the fact that there is already discussion of a GHCJS port to Wasm designed to explore potential workarounds to said massive binaries.</p>
+
+              <div class="subheading"><h4 id="forward-alt-haskellJS">Haskell -> JS and Miso and Reflex</h4></div>
+              <p>While exploring the possibilities for a Haskell to wasm frontend, I discovered GHCJS. The aim of the project is to compile Haskell to JS instead, this sounds significantly better than Haskell to wasm. This is probably the most likely solution, though it requires some more exploration in order to determine how viable it is. The big benefit of GHCJS compared to other methods is that it would allow easy access to both the JS ecosystem and the Haskell Ecosystem. The concern with this is that GHCJS also compiles the entire GHC Runtime, despite this GHCJS seems to be faster than alternatives like ReasonML and  PureScript.</p>
+              <p>One framework that makes use of GHCJS particularly well is Miso. Miso is basically the Elm architecture, I mentioned how much I enjoyed TEA, so that's a big plus. Miso also builds in a virtual dom, which seems beneficial. From what I’ve read Miso seems to be easier to learn compared to other GHCJS based frameworks. The alternative to Miso is Reflex, which is still based on GHCJS. Reflex is FRP based, this means making your own design patterns most of the time, this comes with the tradeoff that a reflex allows you to make a messy codebase, although being purely functional it is still harder than usual. Reflex also doesn’t use a virtual dom, it instead changes individual UI elements, I personally prefer the lower level DOM access without losing the abstraction of haskell. Where Reflex shines is performance, while miso and reflex on desktop are both limited by GHCJS. For native apps Reflex gets around these issues by running haskell cross compiled to the cpu whenever it can (instead of running in GHCJS), this means native apps are significantly faster than they are on desktop.</p>
+              <p>GHCJS still hasn’t convinced me that it's worth learning. The GHCJS project seems to be set aside partially in favor of a wasm GHC. This means it also has an uncertain future, and is therefore something I’m not willing to commit to for a production environment. That being said, it might still be useful for certain personal projects.</p>
+
+              <div class="subheading"><h4 id="forward-alt-clojure">ClojureScript</h4></div>
+              <p>ClojureScript is Google's solution to functional programming in JS. The major difference it holds to all the other languages is its ability to maintain dynamic typing. The problem here is there seems to be a lack of documentation on the differences between Clojure and ClojureScript. This does seem like a likely candidate, though the community and documentation side of things seem to be lacking, which is disappointing.</p>
+
+              <div class="subheading"><h4 id="forward-alt-reason">ReasonML</h4></div>
+              <p>ReasonML is Facebook’s solution to functional programming in JS, or rather a solution that can be compiled to JS via BuckleScript. ReasonML probably has the nicest JS interop I’ve ever seen. The language is designed to have a JS-friendly syntax, and for that reason it also has inferred types, though you can also define types. Reason is also incredibly fast. Reading through the documentation, as well as forum posts, the only thing that I have an issue with are the different operators for floats and ints (eg +. Instead of just +), although the language does have both lists and arrays which is different from Elm. ReasonML has a lot of potential to me, just like Elm did, this is one of the few alternatives listed here that I will likely try out.</p>
+              <p>All this has really made me feel like I want too much. There seems to be no language that can offer the reach, tools, apis, and devices that JS has while maintaining the highly strict environment offered by purely functional languages such as Haskell. My main hope is building strict rules on how to write JS to ‘force’ myself to write purely functional code, these would be guaranteed by the dev environment. You know what? I’ll just make my own damn language at this point….</p>
+            </section>
+
+          <div class="subheading"><h2 id="design">Design Decisions</h2></div>
+          <div class="subheading"><h3 id="design-core">Core Mechanics</h3></div>
+          <section>
+            <p>I mentioned previously that The Elm Architecture was very fitting in most of my projects, including this one. Taking a look at the main model for this project one can easily see the important information.</p>
+            <div class="code-container">
+              <div>
+                <code>
+                  <div>type alias Model =</div>
+                  <div>&nbsp; { fractalModel : FractalModel</div>
+                  <div>&nbsp; , drawingModel : DrawingModel</div>
+                  <div>&nbsp; , colorPicker : ColorPicker.State</div>
+                  <div>&nbsp; , showColorPicker : Bool</div>
+                  <div>&nbsp; , canvasSize : ( Int, Int )</div>
+                  <div>&nbsp; , windowSize : ( Int, Int )</div>
+                  <div>&nbsp; , menu : Menu</div>
+                  <div>&nbsp; , state : State</div>
+                  <div>&nbsp; }</div>
+                </code>
+              </div>
+            </div>
+            
+            <ul>
+              <li>The fractalModel is all of the information for the template</li>
+              <li>The drawingModel, is all of the information for what is currently selected and how the following line needs to be drawn</li>
+              <li>colorPicker and showColorPicker are interfacing with the color selection library/component being used. This probably could have been performed without as much clutter</li>
+              <li>canvasSize and windowSize are involved in resizing the window. This is actually one of the place I feel like Elm is lacking, more on that later</li>
+              <li>menu and state are about what state and what menu is being drawn to the user, these are so similar that they can be treated as one variable, and if I were to remake this application they would be. Refactoring it currently would be incredibly easy,but at this point I’m too lazy for that</li>
+            </ul>
+            <p>The Elm code is also split into multiple files. Main.elm being the main file that runs and ties everything together. The Model.elm and Msg.elm files are for controlling the model, both internally and in terms of user interaction. The Pages folder contains multiple .elm files instructing what each state/menu/etc should look like and how the user should be able to interact with it (interaction is listened for here, but it is executed by the Msg.elm functions). The Data folder contains all the definitions and mechanics of each individual section of the template, all partitioned into separate files.</p>
+            <div class="code-container">
+              <div>
+                <code>
+                  <div>generateSegments : FractalData -> Int -> (Segment -> List Segment) -> List Segment</div>
+                  <div>generateSegments fractal level filter =</div>
+                  <div>&nbsp;if level &lt; 0 then</div>
+                  <div>&nbsp;&nbsp;[]</div>
+                  <div>&nbsp;</div>
+                  <div>&nbsp;else if level == 0 then</div>
+                  <div>&nbsp;&nbsp;applyToInterval fractal (ends fractal) identity identity identity |> List.concatMap hiddenFilter</div>
+                  <div>&nbsp;</div>
+                  <div>&nbsp;else</div>
+                  <div>&nbsp;&nbsp;generateSegments fractal (level - 1) filter |> applyToSegmentList fractal |> List.concatMap filter</div>
+                </code>
+              </div>
+            </div>
+            <p>For those wanting to recreate this project or expand on it, the main linear transformations and control of what happens when an iteration occurs is located in the Fractal.elm and Line.elm files. The most important exception is the main iterating function is contained in View.elm</p>
+            <p>All this function does is recursively generate the fractal on each template segment. This function is really more of a handler for <span class="inline-code">applyToSegmentList</span> and <span class="inline-code">applyToInterval</span>. These functions are responsible for replicating the model for each segment, they are primarily made up of linear transformations, and manipulation of segments for future linear transformations. Note that for <span class="inline-code">level == 0</span> <span class="inline-code">applyToInterval</span> is applied directly, this is responsible for mapping the entire template to itself to convert it from a template into a fractal.</p>
+            <div class="code-container">
+              <div>
+                <code>
+                  <div>applyToSegmentList : FractalData -> List Segment -> List Segment</div>
+                  <div>applyToSegmentList f list =</div>
+                  <div>&nbsp;List.filter (\s -> s.segType /= Hidden) (List.concatMap (applyToSegment f) list)</div>
+                </code>
+              </div>
+            </div>
+            <p><span class="inline-code">applyToSegmentList</span> maps through all the segments and maps the template to each of them using <span class="inline-code">applyToSegment</span>.</p>
+            <div class="code-container">
+              <div>
+                <code>
+                  <div>applyToSegment : FractalData -> Segment -> List Segment</div>
+                  <div>applyToSegment f s =</div>
+                  <div>&nbsp;let</div>
+                  <div>&nbsp;&nbsp;changeWeight =</div>
+                  <div>&nbsp;&nbsp;&nbsp;if f.propagateLineWeight then</div>
+                  <div>&nbsp;&nbsp;&nbsp;&nbsp;\w -> Basics.max 0.025 (1.25 * s.weight * w)</div>
+                  <div>&nbsp;</div>
+                  <div>&nbsp;&nbsp;&nbsp;else</div>
+                  <div>&nbsp;&nbsp;&nbsp;&nbsp;identity</div>
+                  <div>&nbsp;in</div>
+                  <div>&nbsp;case s.segType of</div>
+                  <div>&nbsp;&nbsp;Hidden -></div>
+                  <div>&nbsp;&nbsp;&nbsp;[]</div>
+                  <div>&nbsp;</div>
+                  <div>&nbsp;&nbsp;Static -></div>
+                  <div>&nbsp;&nbsp;&nbsp;[ s ]</div>
+                  <div>&nbsp;</div>
+                  <div>&nbsp;&nbsp;TopRight -></div>
+                  <div>&nbsp;&nbsp;&nbsp;applyToInterval f (Just ( s.startPoint, s.endPoint )) identity identity changeWeight</div>
+                  <div>&nbsp;</div>
+                  <div>&nbsp;&nbsp;TopLeft -></div>
+                  <div>&nbsp;&nbsp;&nbsp;applyToInterval f (Just ( s.endPoint, s.startPoint )) flipPoint flipSeg changeWeight</div>
+                  <div>&nbsp;</div>
+                  <div>&nbsp;&nbsp;BottomLeft -></div>
+                  <div>&nbsp;&nbsp;&nbsp;applyToInterval f (Just ( s.endPoint, s.startPoint )) identity identity changeWeight</div>
+                  <div>&nbsp;</div>
+                  <div>&nbsp;&nbsp;BottomRight -></div>
+                  <div>&nbsp;&nbsp;&nbsp;applyToInterval f (Just ( s.startPoint, s.endPoint )) flipPoint flipSeg changeWeight</div>
+                </code>
+              </div>
+            </div>
+            <p><span class="inline-code">applyToSegment</span> maps the template onto each segment depending on the segment type. The transformations to it are determined here and then passed to <span class="inline-code">applyToInterval</span> which then perform the linear transformations. Note how the key word <span class="inline-code">Just</span> is mentioned prior to the tuple containing the segment start and end points. This is because <span class="inline-code">applyToInterval</span> takes a <span class="inline-code">Maybe (point, point)</span> meaning the value can be a <span class="inline-code">(point, point)</span> value or <span class="inline-code">Nothing</span>, this will be important later!</p>
+            <div class="code-container">
+              <div>
+                <code>
+                  <div>applyToInterval : FractalData -> Maybe ( Point, Point ) -> (Point -> Point) -> (LineType -> LineType) -> (Float -> Float) -> List Segment</div>
+                  <div>applyToInterval f i flip changeType changeWeight =</div>
+                  <div>&nbsp;List.map</div>
+                  <div>&nbsp;&nbsp;(\s -></div>
+                  <div>&nbsp;&nbsp;&nbsp;{ s</div>
+                  <div>&nbsp;&nbsp;&nbsp;&nbsp;| startPoint = transform (ends f) i flip s.startPoint</div>
+                  <div>&nbsp;&nbsp;&nbsp;&nbsp;, endPoint = transform (ends f) i flip s.endPoint</div>
+                  <div>&nbsp;&nbsp;&nbsp;&nbsp;, segType = changeType s.segType</div>
+                  <div>&nbsp;&nbsp;&nbsp;&nbsp;, weight = changeWeight s.weight</div>
+                  <div>&nbsp;&nbsp;&nbsp;}</div>
+                  <div>&nbsp;&nbsp;)</div>
+                  <div>&nbsp;&nbsp;(segments f)</div>
+                </code>
+              </div>
+            </div>
+            <p>Looking at the signature for <span class="inline-code">applyToInterval</span> it takes a fractal, the end points of a segment, and transformation functions for both the points and the linetype (there is also a function for modifying lineweight, though this isn’t part of the core functionality). <span class="inline-code">applyToInterval</span> handles the necessary transformations that flip the line type if needed, as well as the linear transformations that move the endpoints of each segment in the template into their position on the fractal. Due to the way the data is stored this has to be done on an individual line by line basis, hence the mapping function that performs the transformations on each segment in the template.</p>
+            <p>Recall that in <span class="inline-code">generateSegments</span> a call to <span class="inline-code">applyToInterval</span> was made in order to map the template to itself and convert it into a fractal. Since the user is responsible for drawing the template it is possible that the user attempts to finalize a template without a start and end point, resulting in a value for <span class="inline-code">Nothing</span> being passed into  <span class="inline-code">applyToInterval</span>, this occurs again when the start and end points are passed into transform. This is then passed into transform and is dealt with there.</p>
+            <div class="img-container"><img src="image4.png" alt="applyToInterval example"></div>
+            <div class="code-container">
+              <div>
+                <code>
+                  <div>transform : Maybe ( Point, Point ) -> Maybe ( Point, Point ) -> (Point -> Point) -> Point -> Point</div>
+                  <div>transform u v =</div>
+                  <div>&nbsp;Maybe.map2</div>
+                  <div>&nbsp;&nbsp;(\( a, b ) ( p, q ) -></div>
+                  <div>&nbsp;&nbsp;&nbsp;\flip x -></div>
+                  <div>&nbsp;&nbsp;&nbsp;&nbsp;diffPoint a x</div>
+                  <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|> prodPoint (invertPoint (diffPoint a b))</div>
+                  <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|> flip</div>
+                  <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|> prodPoint (diffPoint p q)</div>
+                  <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|> sumPoint p</div>
+                  <div>&nbsp;&nbsp;)</div>
+                  <div>&nbsp;&nbsp;u</div>
+                  <div>&nbsp;&nbsp;v</div>
+                  <div>&nbsp;&nbsp;|> Maybe.withDefault (\_ -> identity)</div>
+                </code>
+              </div>
+            </div>
+            <p>The Transform function is responsible for taking a point and positioning it relative to the start and end points of the fractal. This is done through multiple linear transformations, broken down into simpler functions, all located in Point.elm. It was previously mentioned how <span class="inline-code">applyToInterval</span> deals with a <span class="inline-code">Maybe (point, point)</span>  by passing it into transform. This was done since the start and end points of the fractal also need to be passed into transform, if both sets of points are passed in as <span class="inline-code">Maybe (point, point)</span>  they can be resolved with a single Maybe.map2 instead of using a normal map function and resolving the <span class="inline-code">Maybe (point, point)</span>s inline in <span class="inline-code">applyToInterval</span>. This is entirely for readability / syntax sugar reasons. </p>
+          </section>
+          <div class="subheading"><h3 id="design-iterations">Infinite Iterations</h3></div>
+          <section>
+            <p>Fast infinite iteration works in a similar way to the remake, it simply iterates to a really fine detail. The biggest difference is that this just iterates to 30 (it still stops drawing the lines after a certain size). 30 is more than enough to show what infinite iteration would look like on most fractals, without taking the iteration count so high that the computer has to do too much math to calculate it all at once. Iterating past 30 should be done level by level for stability’s sake. Another measure done for the sake of stability is blocking fast infinite iteration for fractals that expand. This prevents the computer from having to do bulk operations that get more complicated as it goes, since this can lead to exponential growth in computation complexity and can severely slow down the browser.</p>
+            <p>Slow infinite iteration serves two purposes. Primarily to allow creation of a slideshow-like process to help understanding of how a fractal is self similar and infinite, despite being able to create one from a simple template. This also serves as a more performant version of the fast infinite iteration, users can stop it whenever changes stop occurring, preventing excessive computation (since most fractals will stop adding noticeable detail way before 30), as well as see when the browser is slowing down. Due to these performance enhancements templates that result in growing fractals aren’t blocked, so ‘infinite’ iteration for those fractals is possible.</p>
+          </section>
+
+          <div class="subheading"><h3 id="design-features">New Features</h3></div>
+          <section>
+            <div class="subheading"><h4 id="design-features-weight">Line Weight</h4></div>
+            <p>Line weight was simple to create. Each segment has a weight value assigned to it based on a slider in the controls. There is also the option to propagate lineweight, simply making each line thinner with every iteration, this is handled by a function that gets passed into <span class="inline-code">applyToInterval</span> (any other modifications to the way lineweight changes with iteration can be done here). Definitely not complicated implementation wise.</p>
+            <div class="subheading"><h4 id="design-features-color">Line Color</h4></div>
+            <p>Colour is pretty much the same story as line weight. There is an RGBA value stored with each line segment. The difficult thing about colour is deciding how you want to change the colour with iterations. The easiest method is to just have each segment take the colour of its respective segment in the template. Since segments are essentially cloned and put through a linear transformation there is no need for any extra code. There are other possibilities for what one could do with line colour, it is theoretically possible to create some sort of colour gradient on the overall image, or on every self repeating piece, or on every iteration. From a code standpoint this shouldn’t be difficult, simply add another argument to <span class="inline-code">applyToInterval</span> and add a helper function inside applyToSegment (the same way changeWeight works). The only reason I opted against this is simply for the sake of the UI, I felt like the controls were already cluttered enough. For anybody willing to rework this project (or I might do it in the future) I would suggest adding an entirely separate colour menu (see generateMenu in Main.elm).</p>
+            <div class="subheading"><h4 id="design-features-ghost">Ghosting</h4></div>
+            <p>Ghosting, is when the shadow of the previous iteration gets drawn. This comes in 3 different modes, None, Last, and All. None doesn’t show any of the shadows. Last shows the shadow of only the previous iteration. All shows the shadows of all the previous iterations, though after a certain amount of iterations they will become very close to transparent. The code for this isn’t complicated, its mostly just executing the same code but with an offset in level</p>
+            <div class="code-container">
+              <div>
+                <code>
+                  <div>NoGhost -></div>
+                  <div>&nbsp;[ generateSegments model.fractalModel.fractaldata model.drawingModel.level (lengthFilter model.drawingModel.accuracy)</div>
+                  <div>&nbsp;&nbsp;|> List.concatMap (boundsFilter ( ( 0, 0 ), Tuple.mapBoth toFloat toFloat model.canvasSize ))</div>
+                  <div>&nbsp;&nbsp;|> drawSegmentListNoArrow</div>
+                  <div>&nbsp;&nbsp;&nbsp;[ SvgA.stroke "black" ]</div>
+                  <div>&nbsp;]</div>
+                </code>
+              </div>
+            </div>
+            <p>None simply draws the fractal once</p>
+            <div class="code-container">
+              <div>
+                <code>
+                  <div>LastGhost -></div>
+                  <div>&nbsp;[ generateSegments model.fractalModel.fractaldata (model.drawingModel.level - 1) (lengthFilter model.drawingModel.accuracy)</div>
+                  <div>&nbsp;&nbsp;|> List.concatMap (boundsFilter ( ( 0, 0 ), Tuple.mapBoth toFloat toFloat model.canvasSize ))</div>
+                  <div>&nbsp;&nbsp;|> drawSegmentListNoArrow</div>
+                  <div>&nbsp;&nbsp;&nbsp;[ SvgA.stroke "black", SvgA.opacity "0.5" ]</div>
+                  <div>&nbsp;, generateSegments model.fractalModel.fractaldata model.drawingModel.level (lengthFilter model.drawingModel.accuracy)</div>
+                  <div>&nbsp;&nbsp;|> List.concatMap (boundsFilter ( ( 0, 0 ), Tuple.mapBoth toFloat toFloat model.canvasSize ))</div>
+                  <div>&nbsp;&nbsp;|> drawSegmentListNoArrow</div>
+                  <div>&nbsp;&nbsp;[ SvgA.stroke "black" ]</div>
+                  <div>&nbsp;]</div>
+                </code>
+              </div>
+            </div>
+            <p>Last simply draws the fractal twice, with a slight offset and a slight opacity change.</p>
+            <div class="code-container">
+              <div>
+                <code>
+                  <div>AllGhost -></div>
+                  <div>&nbsp;List.range 0 model.drawingModel.level</div>
+                  <div>&nbsp;&nbsp;|> List.map (\i -> generateSegments model.fractalModel.fractaldata i (lengthFilter model.drawingModel.accuracy))</div>
+                  <div>&nbsp;&nbsp;|> truncateList (List.all (\s -> s.segType == Static))</div>
+                  <div>&nbsp;&nbsp;|> (::) []</div>
+                  <div>&nbsp;&nbsp;|> mapIndex</div>
+                  <div>&nbsp;&nbsp;&nbsp;(\totalLevels level segmentList -></div>
+                  <div>&nbsp;&nbsp;&nbsp;&nbsp;segmentList</div>
+                  <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|> List.concatMap (boundsFilter ( ( 0, 0 ), Tuple.mapBoth toFloat toFloat model.canvasSize ))</div>
+                  <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|> drawSegmentListNoArrow</div>
+                  <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[ SvgA.stroke "black", SvgA.opacity (String.fromFloat (toFloat level / toFloat (totalLevels - 1))) ]</div>
+                  <div>&nbsp;&nbsp;&nbsp;)</div>
+                  <div>&nbsp;&nbsp;|> List.reverse</div>
+                </code>
+              </div>
+            </div>
+            <p>All gets a little bit more complicated. First a range is created from 0 to the drawing level. Fractals with the corresponding levels are then mapped to each value in the range. This list of fractals is then truncated if every segment is static (this prevents it from drawing fractals that are so detailed they are no longer iterting at all, there is no reason to draw the shadow for these). An empty list is added to the beginning of the list to fix an off by one error, this means that the index of the level 1 fractal is 1, the index of the level 2 fractal is 2, etc… mapIndex then uses this to apply the same boilerplate for drawing the fractal, only this time opacity is added depending on the level, to make it appear more and more faded. The list is then reversed so that the shadows get drawn in the correct order in the HTML code.</p>
+            <div class="subheading"><h4 id="design-features-live">Live Iteration</h4></div>
+            <p>Another useful addition is live iteration. This shows a pink ghost of the level 3 fractal while in the drawing view, allowing for easier visualization. The decision to use the level 3 fractal instead of a higher level was to allow the user to still be able to comfortably modify the template without too much lag. Theoretically it is possible to draw the level 10 fractal every time, the only problem will be how long the user has to wait before getting feedback on modifying the fractal. This can become particularly bad when dragging points or modifying line types. This is done the same way the other kinds of ghosts are done, but it displays it at the same time as the template creation view. For convenience this view is in its own function called liveView located in View.elm.</p>
+            <div class="code-container">
+              <div>
+                <code>
+                  <div>[ generateSegments (model.fractalModel.fractaldata |> addMaybePioint model.drawingModel.extraPoint |> clearDecorations ) 3 (lengthFilter model.drawingModel.accuracy)</div>
+                  <div>&nbsp;|> List.concatMap (boundsFilter ( ( 0, 0 ), Tuple.mapBoth toFloat toFloat model.canvasSize ))</div>
+                  <div>&nbsp;|> drawSegmentListNoArrow</div>
+                  <div>&nbsp;&nbsp;[ SvgA.opacity "1" ]</div>
+                  <div>&nbsp;</div>
+                  <div>, gridSVG model.drawingModel.grid model.canvasSize 25</div>
+                  <div>, drawFractalData segclickhandler model.fractalModel.fractaldata model.drawingModel.extraPoint</div>
+                  <div>, drawPointList (pointmousedownhandler -1) pointmousedownhandler (List.map (\( p, _ ) -> p) model.fractalModel.fractaldata.seg)</div>
+                  <div>]</div>
+                </code>
+              </div>
+            </div>
+            <p>The first element is a fixed level fractal generation, and all of the template drawing tools are also present, allowing the user to both modify the template and observe the fractal at the same time.
+              Note: This can make low end devices struggle if a lot of changes are made to the template in a short amount of time, if the device starts to struggle, giving it some time to calculate the math would be useful.</p>
+            <div class="subheading"><h4 id="design-features-mouseline">Toggle Mouse Line</h4></div>
+            <p>The line that follows the mouse during template creation view can now be toggled. More user choice is a good thing!</p>
+            <div class="subheading"><h4 id="design-features-counter">Line Counter</h4></div>
+            <p>Adds a simple display to the right of the main control panel that shows the number of lines in the template, the current level of the fractal, and the number of lines in the fractal (note: this is not the number of lines drawn, but the number of theoretical lines in the fractal)</p>
+            <div class="subheading"><h4 id="design-features-mobile">Mobile Compatibility - ish</h4></div>
+            <p>Since this runs in a browser why not make it run on mobile too!!!!! That would be my normal mentality. This project however feels like it should be designed from the ground up for mobile, something that I might get around at some point, for now just adding touch events to work in parallel with mouse events, as well as shrinking the controls to give the user as much space as possible, is as close as its getting for mobile. Note: touch events are present on the full version as well, meaning that touchscreen laptops should theoretically work.</p>
+            <div class="subheading"><h4 id="design-features-accuracy">Accuracy Slider</h4></div>
+            <p>The least stable part of this project is having to draw all of the lines. There are 2 ways of reducing the amount of lines being drawn without influencing what the user sees. One of the ways of reducing the lines being drawn is by not drawing lines that are under a certain length. The remake does this to some extent. My version simply makes it more aggressive and adds a slider to control the minimum length. The other method of drawing less lines will be ment. This really should have some sort of debouncing so that Elm doesn’t try to recalculate the level in real time with the slider (making it impossible to change accuracy at high iteration levels, hence the clearing of the fractal). The built in slider from Elm-Ui was used, it didn’t appear to have a debounce function. Writing one is potentially in the future of this project.</p>
+            <div class="subheading"><h4 id="design-features-outside-canvas">Outside Canvas</h4></div>
+            <p>Another way to draw less lines is to not draw lines that don’t actually get drawn. This might sound stupid, but even having <line> tags that are drawn outside of the canvas still cause problems. In order to solve this there is a filter as part of the boilerplate for drawing the fractal. This filter simply removes any lines that are outside of the canvas. Keep in mind the data for those lines is still kept, and calculations for these lines are still done. This means it is possible to have a template that starts completely outside of the canvas and extends to be drawn onto the canvas. (Yes, it is possible to have your template outside of the canvas, since the template can be moved this is easy)</p>
+              <div class="code-container">
+                <div>
+                  <code>
+                    <div>|> List.concatMap (boundsFilter ( ( 0, 0 ), Tuple.mapBoth toFloat toFloat model.canvasSize ))</div>
+                  </code>
+                </div>
+              </div>
+            <p><span class="inline-code">boundsFilter</span> filters out all lines using Line.inBounds. Line.inBounds checks each endpoint of the line using Point.inBounds. A comes down to a simple check if both endpoints are outside of the canvas, which promptly removes it from the list of segments being drawn.</p>
+          </section>
+          <div class="subheading"><h3 id="design-files">File / Backwards Compatibility</h3></div>
+          <section>
+            <p>The remake of Fractasketch creates its own .fsk files. My version can parse and create .fsk files, when outputting to a .fsk file line weight and colour will be stripped. In order to compensate for this I have created .fsk2 files that are essentially the same as .fsk files however they add in both colour and weight. Here is how two files for a fractal that appears like a shell:</p>
+            <div style="display: flex;">
+              <div class="img-container"><img src="image2.png" alt="template example"></div>
+              <div class="img-container"><img src="image3.png" alt="template example"></div>
+            </div>
+            <p>It is worth keeping in mind that the fractasketch remake has significantly thinner lines than what gets imported, so some fractals may appear slightly off due to thicker lines. I’m unaware of how the remake deals with fractals that aren’t on its canvas, this may cause potential issues.</p>
+            <p>For anybody wanting to recreate this, write your own parser, mine is hot garbage and I probably should’ve used Elm-parser which I didn’t know about at the time.</p>
+            <p>Export of images has been done as .svg instead of .png since less detail gets lost and .svg files are just better! Naming of .fsk/.fsk2 files has been removed since I’m too lazy to add a textbox to the UI, though that might be added in the future.</p>
+          </section>
+          <div class="subheading"><h3 id="design-controls">Controls</h3></div>
+          <section>
+            <p>Due to the addition of more features there needed to be significant changes to the UI. The original set of controls has been expanded. The Grid options have been moved to a column, import and export options have been moved to seperate menus entirely. The Original line types have remained, underneath them are the entirely new options for manipulating the weight of the line, and the colour of the line. An important addition to the program was the ability to manipulate the position and size of the entire model. Due to the already limited amount of space in the controls, the need to add more without adding another control panel was crucial. The simple solution to this was to add the controls as keyboard shortcuts.</p>
+            <ol>
+              <li>Up Arrow -> move template 25px* up</li>
+              <li>Right Arrow -> move template 25px* right</li>
+              <li>Down Arrow -> move template 25px* down88</li>
+              <li>Left Arrow -> move template 25px* left</li>
+              <li>Greater than (&gt;) -> scale template to 125%</li>
+              <li>Less than (&lt;) -> scale template to 80% (the inverse of 125%)</li>
+              <li>Comma (,) -> rotate 5 degrees counter clockwise</li>
+              <li>Period (.) -> rotate 5 degrees clockwise</li>
+              <li>Enter -> finish template and move to iterating view</li>
+              <p>* The square grid is made up of 25px by 25px squares</p>
+            </ol>
+            <p>In Addition there are other keyboard controls added for other kinds of functionality</p>
+            <ol>
+              <li>@ (Shift + 2) -> live iterations in drawing view</li>
+              <li>Backspace -> clear template in drawing view</li>
+              <li>0 - 5 -> change current line type in drawing view</li>
+              <li>n, s, h -> change grid type in drawing view</li>
+              <li>Control (Ctrl) -> draw mouse line in drawing view</li>
+              <p></p>
+              <li>Up Arrow -> slideshow iteration to level 30 in iterating view</li>
+              <li>Down arrow -> immediate iteration to level 30 in iterating view</li>
+              <li>Left Arrow -> previous iteration in iterating view</li>
+              <li>Right Arrow -> next iteration in iterating view</li>
+              <li>Space -> stop slideshow iteration at current level</li>
+              <li>1 - 3 -> change ghost in iterating view</li>
+              <li>Escape -> return to drawing view</li>
+            </ol>
+            <p>Now might be a good time to mention o reworked mouse controls</p>
+            <ol>
+              <li>Left Click on grid -> adds a point to the end of template (snapping to grid if present)</li>
+              <li>Left Click on point -> adds a point to the end of template (snapping to grid if present)</li>
+              <li>Right Click on point -> remove point</li>
+              <li>Double Left Click on line -> split line into two lines of same type, adds a point</li>
+              <li>Right Click on line -> cycle line type</li>
+            </ol>
+            <p>These controls are extended to the mobile version via touches, these should also work on touchscreen computers.</p>
+            <ol>
+              <li>Tap on grid -> add point to end of template</li>
+              <li>Touch and Drag -> move point</li>
+              <li>Touch and Hold -> remove point (doesn’t remove last point in Template)</li>
+              <li>Double Tap on line -> split line</li>
+              <li>Long Press on line -> cycle line type</li>
+            </ol>
+            <p>Note:  while colours, line weights, etc are not available on mobile, a model with those properties can be uploaded to mobile and still function as intended.</p>
+          </section>
+      </article>
+    </main>
+  </body>
+</html>
