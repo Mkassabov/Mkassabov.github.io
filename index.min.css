@@ -186,7 +186,7 @@ article .article-title span {
 }
 #skills-content img {
   width: 90%;
-  margin-bottom: 0.5rem;
+  margin: 0.5rem 0;
 }
 #skills-content .row {
   margin-top: 1rem;
