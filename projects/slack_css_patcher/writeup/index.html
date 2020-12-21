@@ -140,9 +140,9 @@
           <div class="subheading"><h2 id="injecting-css">Injecting CSS</h2></div>
           
           <p>I remember back when I first started using slack I decided to check out the desktop app. Honestly I didn’t see what it offered over the web version, so I never ended up using it. As a result the only real thing I knew about the Slack Desktop App was that it was based on electron, and electron was effectively a web browser. Had I not known that it was an electron app I would’ve never even tried to modify it.</p>
-          <p>5 minutes of googling told me that the app.asar file could be compiled in order to see the JS that ran everything. Looking through the files it was clear that this js code was bundled with webpack. I personally don’t know much about webpack beyond the fact that it's a bundler. I’m sure there are better ways of injecting `&lt;style&gt;` tags into a webpack app. I didn’t really see value in learning webpack, I personally use Rollup or Snowpack. The easiest solution seemed to be a brute force injection into the bundled file.</p>
-          <p>Looking through the package.json I found the entrypoint for the program. A file called `boot.bundle.js`, searching the document for dom related tags (document, head, body, child, etc) and functions (.appendChild(), .insertBefore(), etc.) and finding nothing allowed me to quickly disregard this file.</p>
-          <p>The next file I took a look at was `preload.bundle.js`. I chose this file since I was looking to inject code on the page; logically a file that preloads the page would have some stuff related to the page. Searching the file for the same dom tags and functions yielded a lot more results this time. I tried to hijack a few of the instances of `.appendChild()` and `.insertBefore()` this resulted in the Slack App throwing errors in the console and failing to load the `preload.bundle.js` file. One thing that I did notice was that the file failing to load meant that the titlebar buttons to minimize, maximize, or close the app didn’t show up, meaning this file was definitely injecting something.</p>
+          <p>5 minutes of googling told me that the <span class="inline-code">app.asar</span> file could be compiled in order to see the JS that ran everything. Looking through the files it was clear that this js code was bundled with webpack. I personally don’t know much about webpack beyond the fact that it's a bundler. I’m sure there are better ways of injecting <span class="inline-code">&lt;style&gt;</span> tags into a webpack app. I didn’t really see value in learning webpack, I personally use Rollup or Snowpack. The easiest solution seemed to be a brute force injection into the bundled file.</p>
+          <p>Looking through the package.json I found the entrypoint for the program. A file called <span class="inline-code">boot.bundle.js</span>, searching the document for dom related tags (<span class="inline-code">document</span>, <span class="inline-code">head</span>, <span class="inline-code">body</span>, <span class="inline-code">child</span>, etc) and functions (<span class="inline-code">.appendChild()</span>, <span class="inline-code">.insertBefore()</span>, etc.) and finding nothing allowed me to quickly disregard this file.</p>
+          <p>The next file I took a look at was <span class="inline-code">preload.bundle.js</span>. I chose this file since I was looking to inject code on the page; logically a file that preloads the page would have some stuff related to the page. Searching the file for the same dom tags and functions yielded a lot more results this time. I tried to hijack a few of the instances of <span class="inline-code">.appendChild()</span> and <span class="inline-code">.insertBefore()</span> this resulted in the Slack App throwing errors in the console and failing to load the <span class="inline-code">preload.bundle.js</span> file. One thing that I did notice was that the file failing to load meant that the titlebar buttons to minimize, maximize, or close the app didn’t show up, meaning this file was definitely injecting something.</p>
           <p>Upon closer inspection a piece of code stood out.</p>
           <div class="code-container">
             <div>
@@ -153,9 +153,9 @@
               </code>
             </div>
           </div>
-          <p>Unlike seemingly everything else this was checking that the parent element actually existed, and another `&&parent.insertBefore(element,parent.firstChild)` could be chained onto it without any issues. Creating a div using `document.createElement("div");` and inserting it using the above strategy. Unlike previous attempts this didn’t result in errors, and the preload file was actually loaded into the Slack App.</p>
-          <p>Looking through the resulting HTML and comparing it to the original unpatched version showed me where this div was added. Into a `#shadow-root` inside `&lt;window-chrome&gt;` element in the body. Just as I had predicted this was where the settings for the titlebar buttons were also added.</p>
-          <p>Now that I could add an html tag into the document, changing it to a style should be simple. In order to create a node with styles I used a simple IIFE: (Note how `body {display: none}` is used as simple CSS to ensure that the CSS actually works)</p>
+          <p>Unlike seemingly everything else this was checking that the parent element actually existed, and another <span class="inline-code">&&parent.insertBefore(element,parent.firstChild)</span> could be chained onto it without any issues. Creating a div using <span class="inline-code">document.createElement("div");</span> and inserting it using the above strategy. Unlike previous attempts this didn’t result in errors, and the preload file was actually loaded into the Slack App.</p>
+          <p>Looking through the resulting HTML and comparing it to the original unpatched version showed me where this div was added. Into a <span class="inline-code">#shadow-root</span> inside <span class="inline-code">&lt;window-chrome&gt;</span> element in the body. Just as I had predicted this was where the settings for the titlebar buttons were also added.</p>
+          <p>Now that I could add an html tag into the document, changing it to a style should be simple. In order to create a node with styles I used a simple IIFE: (Note how <span class="inline-code">body {display: none}</span> is used as simple CSS to ensure that the CSS actually works)</p>
           <div class="code-container">
             <div>
               <code>
@@ -163,10 +163,10 @@
               </code>
             </div>
           </div>
-          <p>Interesting enough, this inserted the style tag but it didn’t have any effect on the document. I had mentioned before that this node was created inside of a #shadow-root this means that it renders independently of the main DOM, hence the style tag is unaffected. The way to get around this issue is to use `parent.ownerDocument` since this references the `document` from any node, including those in the shadow DOM. From there we can simply place the style tag in the head of the document.</p>
+          <p>Interesting enough, this inserted the style tag but it didn’t have any effect on the document. I had mentioned before that this node was created inside of a #shadow-root this means that it renders independently of the main DOM, hence the style tag is unaffected. The way to get around this issue is to use <span class="inline-code">parent.ownerDocument</span> since this references the <span class="inline-code">document</span> from any node, including those in the shadow DOM. From there we can simply place the style tag in the head of the document.</p>
           <div class="subheading"><h2 id="cli-tool">CLI Tool</h2></div>
           <p>The first things needed in order to recreate the process programmatically are the location of the css patch file and the path to the slack app itself, these will be pulled in using command line arguments to the cli tool. I wouldn’t be surprised if it was possible to track down the location of the slack program using a variety of different methods, but that code would probably end up being as long as the rest of the file and it wouldn’t make that big of a difference.</p>
-          <p>The first step in the actual process is unpacking the `asar` file. This can be done with the asar package. While the package is mostly designed to act as a cli tool it does have a (poorly documented) functionality as a library. We simply find the slack directory from the arguments and navigate to the resources section where we can extract the `app.asar` file. This is slightly complicated since it requires reading the directory to navigate to the newest version folder. Despite all that the code is still fairly simple:</p>
+          <p>The first step in the actual process is unpacking the <span class="inline-code">asar</span> file. This can be done with the asar package. While the package is mostly designed to act as a cli tool it does have a (poorly documented) functionality as a library. We simply find the slack directory from the arguments and navigate to the resources section where we can extract the <span class="inline-code">app.asar</span> file. This is slightly complicated since it requires reading the directory to navigate to the newest version folder. Despite all that the code is still fairly simple:</p>
           <div class="code-container">
             <div>
               <code>
@@ -176,9 +176,9 @@
               </code>
             </div>
           </div>
-          <p>This will create the app directory with all of the unpackaged files, due to the way electron works these files take precedence and the `app.asar` file is ignored. </p>
-          <p>The next step is to read the patch file and clean it. This is as simple as using `fs.readFIle`. In order to clean the file replace all newlines with an empty space using `patchFile.replace(/[\r\n]/g, " ")`. Without this there are some issues with parsing the `preload.bundle.js`. Another thing that caused issues in the `preload.bundle.js` is quotes, this is fixed by escaping all of the quotes in the actual string itself. Quote replacing is also fairly simple `.replace(/\"/g, '\\"')` note the double backslash, this is simply to escape the backslash so the escaped quote is in the final string not the param passed into replace. The same process should be repeated for single quotes.</p>
-          <p>The last part is the actual css injection. In order to do this an injection string needs to be created, this will be the actual string that gets injected into the `preload.bundle.js` file. The injection string needs to use the same code that was used in manual testing. This can all be formatted with a template literal that formats our cleaned patch file into the needed string: </p>
+          <p>This will create the app directory with all of the unpackaged files, due to the way electron works these files take precedence and the <span class="inline-code">app.asar</span> file is ignored. </p>
+          <p>The next step is to read the patch file and clean it. This is as simple as using <span class="inline-code">fs.readFIle</span>. In order to clean the file replace all newlines with an empty space using <span class="inline-code">patchFile.replace(/[\r\n]/g, " ")</span>. Without this there are some issues with parsing the <span class="inline-code">preload.bundle.js</span>. Another thing that caused issues in the <span class="inline-code">preload.bundle.js</span> is quotes, this is fixed by escaping all of the quotes in the actual string itself. Quote replacing is also fairly simple <span class="inline-code">.replace(/\"/g, '\\"')</span> note the double backslash, this is simply to escape the backslash so the escaped quote is in the final string not the param passed into replace. The same process should be repeated for single quotes.</p>
+          <p>The last part is the actual css injection. In order to do this an injection string needs to be created, this will be the actual string that gets injected into the <span class="inline-code">preload.bundle.js</span> file. The injection string needs to use the same code that was used in manual testing. This can all be formatted with a template literal that formats our cleaned patch file into the needed string: </p>
           <div class="code-container">
             <div>
               <code>
@@ -188,8 +188,8 @@
               </code>
             </div>
           </div>
-          <p>In order to insert the `InjectionString` into the actual `preload.bundle.js` the preload bundle file needs to be read in, this can once again be done using `fs.readFile`.</p>
-          <p>Once the file is read in, `.replace` can be used and the modified version can be written back into the `preload.bundle.js` where upon restarting the Slack App will allow the changes to take effect.</p>
+          <p>In order to insert the <span class="inline-code">InjectionString</span> into the actual <span class="inline-code">preload.bundle.js</span> the preload bundle file needs to be read in, this can once again be done using <span class="inline-code">fs.readFile</span>.</p>
+          <p>Once the file is read in, <span class="inline-code">.replace</span> can be used and the modified version can be written back into the <span class="inline-code">preload.bundle.js</span> where upon restarting the Slack App will allow the changes to take effect.</p>
           <div class="code-container">
             <div>
               <code>
@@ -202,7 +202,7 @@
               </code>
             </div>
           </div>
-          <p>Note that `parent&&parent` only occurs once in this file, therefore positive regex lookaheads and lookbehinds can be used to add code, in this case the `injectionString`, directly where needed without removing any existing code.</p>
+          <p>Note that <span class="inline-code">parent&&parent</span> only occurs once in this file, therefore positive regex lookaheads and lookbehinds can be used to add code, in this case the <span class="inline-code">injectionString</span>, directly where needed without removing any existing code.</p>
         </div>
       </article>
     </main>
