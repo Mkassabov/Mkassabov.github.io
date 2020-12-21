@@ -1,5 +1,5 @@
 @font-face {
-  font-family: 'Consolas';
+  font-family: "Consolas";
   src: url(/fonts/Consolas.ttf);
   font-display: swap;
   font-weight: 400;
@@ -63,7 +63,8 @@ article {
   width: -moz-available;
   width: -webkit-fill-available;
 }
-.subheading h2, .subheading h3 {
+.subheading h2,
+.subheading h3 {
   width: max-content;
   margin-bottom: 0;
   border-bottom: 0.15rem var(--accent-secondary) solid;
@@ -171,9 +172,9 @@ img {
 }
 div code {
   white-space: nowrap;
-  font-family: 'Consolas';
+  font-family: "Consolas";
 }
-code span:last-child {
+code > span:last-child {
   margin-right: 2rem;
 }
 .inline-code {
@@ -185,7 +186,7 @@ code span:last-child {
   color: var(--bg-primary);
 }
 .math {
-  font-family: 'Consolas';
+  font-family: "Consolas";
   display: flex;
   justify-content: center;
   color: var(--text-primary);
@@ -202,18 +203,20 @@ table {
   border-collapse: collapse;
 }
 tr {
-  border-top: 1px solid var(--text-primary);;
+  border-top: 1px solid var(--text-primary);
 }
 tr:first-child {
   border-top: none;
-  border-bottom: 3px solid var(--text-primary);;
+  border-bottom: 3px solid var(--text-primary);
 }
-td, th {
-  border-right: 3px solid var(--text-primary);;
+td,
+th {
+  border-right: 3px solid var(--text-primary);
   text-align: center;
   padding: 0.2rem 0.75rem;
 }
-th:last-child, td:last-child {
+th:last-child,
+td:last-child {
   border-right: none;
 }
 

@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <script async src="/theme.js"></script>
+    <link rel="stylesheet" href="/writeup.min.css" />
+    <link rel="stylesheet" href="/style.min.css" />
+    <title>Mkassabov | Injecting CSS into the Slack App</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0"/>
+    <script async src="/pageControl.js"></script>
+    <meta name="apple-mobile-web-app-title" content="Mkassabov"/>
+    <meta name="application-name" content="Mkassabov"/>
+    <link class="metaControlChild" rel="apple-touch-icon" sizes="180x180" href="/favicon-light/apple-touch-icon.webp">
+    <link class="metaControlChild" rel="icon" type="image/png" sizes="32x32" href="/favicon-light/favicon-32x32.webp">
+    <link class="metaControlChild" rel="icon" type="image/png" sizes="16x16" href="/favicon-light/favicon-16x16.webp">
+    <link class="metaControlChild" rel="manifest" href="/favicon-light/site.webmanifest">
+    <link class="metaControlChild" rel="mask-icon" href="/favicon-light/safari-pinned-tab.svg" color="#00a3e4">
+    <link class="metaControlChild" rel="shortcut icon" href="/favicon-light/favicon.ico">
+    <meta class="metaControlChild" name="msapplication-config" content="/favicon-light/browserconfig.xml">
+    <meta class="metaControlChild" name="msapplication-TileColor" content="#ffffff">
+    <meta class="metaControlChild" name="theme-color" content="#ffffff">
+    <meta name="description" content="A simple tool to patch the slack app with custom css."/>
+
+    <noscript>
+      <style>
+        main {
+          margin-left: initial;
+          min-width: 100vw;
+        }
+
+        #projects-content .card .head span {
+	        margin-top: 1.25rem;
+        }
+
+        @media (prefers-color-scheme: light) {
+          :root
+          {
+            --text-primary: #1f1f1f;
+            --text-secondary: #000000;
+            --bg-primary: #ffffff;
+            --bg-secondary: #e4e4e4;
+            --bg-tertiary:white;
+            --bg-body:#efefef;
+            --accent-primary:#026288;
+            --accent-secondary:#00a3e4;
+          }		
+          
+          #skills-content .row #aws-img-dark
+          {
+            display: none;
+          }
+        }
+
+        @media (prefers-color-scheme: dark) {
+          :root
+          {
+            --text-primary:#b6b6b6;
+            --text-secondary:#ececec;
+            --bg-primary:#23232e;
+            --bg-secondary:#141418;
+            --bg-tertiary:#252526;
+            --bg-body:#1e1e1e;
+            --accent-primary: #360B63;
+            --accent-secondary: #6649b8;
+          }		
+
+          #skills-content .row #aws-img-light
+          {
+            display: none;
+          }
+        }
+      </style>
+    </noscript>
+
+  </head>
+  
+  <body>
+    <meta-control></meta-control>
+    <nav id="nav" class="navbar">
+      <div class="logo">
+        <a href="/#landing" class="nav-link">
+          <span class="link-text logo-text">Michael <span style="transition:var(--transition-speed); color: var(--accent-primary)">Kassabov</span></span>
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 300">
+            <g>
+              <path class="svg-primary" d="M426.1,270.9L311,155.8c-2.5-2.5-2.4-6.4,0-8.9L413.9,44.6c2.5-2.4,6.4-2.4,8.9,0l18.8,18.9
+                c2.4,2.5,2.4,6.4,0,8.9L362,151.4l91.8,91.8c2.4,2.4,2.4,6.4,0,8.9L435,270.9C432.5,273.4,428.5,273.4,426.1,270.9z"/>
+            </g>
+            <g>
+              <path class="svg-secondary" d="M278.4,272.8h-27.8c-3.6,0-6.6-2.9-6.6-6.6V132.3l-69.8,69.8c-2.6,2.6-6.7,2.6-9.3,0l-69.8-69.8v133.9
+                c0,3.6-2.9,6.6-6.6,6.6H60.7c-3.6,0-6.6-2.9-6.6-6.6V49.3c0-5.8,7.1-8.8,11.2-4.6l104.2,104.2L273.8,44.7
+                c4.1-4.1,11.2-1.2,11.2,4.6v216.9C285,269.8,282,272.8,278.4,272.8z"/>
+            </g>
+          </svg>
+        </a>
+      </div>
+      <ul class="navbar-nav">
+
+        <li class="nav-item">
+          <a href="#reasoning" class="nav-link">
+            <svg aria-hidden="true" focusable="false" data-prefix="fad" data-icon="lightbulb-on" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><path fill="currentColor" d="M319.45,0C217.44.31,144,83,144,176a175,175,0,0,0,43.56,115.78c16.52,18.85,42.36,58.22,52.21,91.44,0,.28.07.53.11.78H400.12c0-.25.07-.5.11-.78,9.85-33.22,35.69-72.59,52.21-91.44A175,175,0,0,0,496,176C496,78.63,416.91-.31,319.45,0ZM320,96a80.09,80.09,0,0,0-80,80,16,16,0,0,1-32,0A112.12,112.12,0,0,1,320,64a16,16,0,0,1,0,32Z" class="svg-secondary"></path><path fill="currentColor" d="M240.06,454.34A32,32,0,0,0,245.42,472l17.1,25.69c5.23,7.91,17.17,14.28,26.64,14.28h61.7c9.47,0,21.41-6.37,26.64-14.28L394.59,472A37.47,37.47,0,0,0,400,454.34L400,416H240ZM112,192a24,24,0,0,0-24-24H24a24,24,0,0,0,0,48H88A24,24,0,0,0,112,192Zm504-24H552a24,24,0,0,0,0,48h64a24,24,0,0,0,0-48ZM131.08,55.22l-55.42-32a24,24,0,1,0-24,41.56l55.42,32a24,24,0,1,0,24-41.56Zm457.26,264-55.42-32a24,24,0,1,0-24,41.56l55.42,32a24,24,0,0,0,24-41.56Zm-481.26-32-55.42,32a24,24,0,1,0,24,41.56l55.42-32a24,24,0,0,0-24-41.56ZM520.94,100a23.8,23.8,0,0,0,12-3.22l55.42-32a24,24,0,0,0-24-41.56l-55.42,32a24,24,0,0,0,12,44.78Z" class="svg-primary"></path></svg>
+            <span class="link-text">Reasoning</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a href="#injecting-css" class="nav-link">
+            <svg aria-hidden="true" focusable="false" data-prefix="fad" data-icon="syringe" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M266.43 109.83l135.69 135.69-181.89 181.91a79.68 79.68 0 0 1-65.41 23l-63.59-7.11-66.3 66.3a8 8 0 0 1-11.31 0l-11.3-11.3a8 8 0 0 1 0-11.3l66.41-66.4L61.62 357a79.91 79.91 0 0 1 23-65.4L111 265.24l55.81 55.88a8 8 0 0 0 11.3 0l11.31-11.29a8.06 8.06 0 0 0 0-11.31l-55.86-55.85 45.29-45.28 55.76 55.84a8 8 0 0 0 11.31 0l11.3-11.31a8 8 0 0 0 0-11.3l-55.77-55.83z" class="svg-secondary"></path><path fill="currentColor" d="M166.82 321.12L111 265.23l22.6-22.5 55.81 55.79a8.06 8.06 0 0 1 0 11.31l-11.31 11.29a8 8 0 0 1-11.28 0zm79.11-67.89l11.3-11.31a8 8 0 0 0 0-11.3l-55.71-55.79-22.59 22.59 55.69 55.81a8 8 0 0 0 11.31 0zM509.72 92.92l-11.3 11.31a8 8 0 0 1-11.3 0l-28.3-28.31-45.3 45.31 73.5 73.5A8 8 0 0 1 487 206l-33.9 34a8 8 0 0 1-11.3 0l-17-17L289.12 87.12l-17-17a8 8 0 0 1 0-11.29L306 24.92a8 8 0 0 1 11.3 0l17 17 56.61 56.6 45.3-45.29-28.3-28.31a8 8 0 0 1 0-11.3l11.3-11.29a8 8 0 0 1 11.29 0l79.21 79.19a8.15 8.15 0 0 1 .01 11.4z" class="svg-primary"></path></svg>
+            <span class="link-text">Injecting CSS</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a href="#cli-tool" class="nav-link">
+            <svg aria-hidden="true" focusable="false" data-prefix="fad" data-icon="terminal" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><path fill="currentColor" d="M640 421.34v32a24 24 0 0 1-24 24H312a24 24 0 0 1-24-24v-32a24 24 0 0 1 24-24h304a24 24 0 0 1 24 24z" class="svg-secondary"></path><path fill="currentColor" d="M29.7 464.66L7 442a24 24 0 0 1 0-33.9l154-154.76L7 98.6a24 24 0 0 1 0-33.9L29.7 42a24 24 0 0 1 33.94 0L258 236.37a24 24 0 0 1 0 33.94L63.64 464.66a24 24 0 0 1-33.94 0z" class="svg-primary"></path></svg>
+            <span class="link-text">CLI tool</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a aria-label="project" href="https://github.com/Mkassabov/slack-css-patcher" class="nav-link">
+            <svg aria-hidden="true" focusable="false" data-prefix="fab" data-icon="github" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><path fill="currentColor" d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z" class="svg-primary"></path></svg>
+            <span class="link-text">The Project</span>
+          </a>
+        </li>
+
+        <li class="nav-item" id="themeButton">
+          <a class="nav-link">
+            <svg class="theme-icon" id="lightIcon" aria-hidden="true" focusable="false" data-divfix="fad" data-icon="moon-stars" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><g><path fill="currentColor" d="M320 32L304 0l-16 32-32 16 32 16 16 32 16-32 32-16zm138.7 149.3L432 128l-26.7 53.3L352 208l53.3 26.7L432 288l26.7-53.3L512 208z" class="svg-secondary"></path><path fill="currentColor" d="M332.2 426.4c8.1-1.6 13.9 8 8.6 14.5a191.18 191.18 0 0 1-149 71.1C85.8 512 0 426 0 320c0-120 108.7-210.6 227-188.8 8.2 1.6 10.1 12.6 2.8 16.7a150.3 150.3 0 0 0-76.1 130.8c0 94 85.4 165.4 178.5 147.7z" class="svg-primary"></path></g></svg>
+            <span class="link-text">Change Theme</span>
+          </a>
+        </li>
+      </ul>
+    </nav>
+
+    <main>
+      <article>
+        <div class="article-container">
+          <div class="headline"><h1>Injecting CSS into the Slack App</h1></div>
+          <div class="subheading"><h2 id="reasoning">Reasoning</h2></div>          
+          <p>I’ve always enjoyed giving my friends nicknames, oftentimes simply for my own entertainment. I am lucky enough to get to work with people I would genuinely call friends. One day, while I was messing around with injecting css into websites through <a href="https://add0n.com/stylus.html">Stylus</a> I had the genius idea; use css to rename people in slack.</p>
+          <p>I shared some of these nicknames around the company and people got a kick out of them. Then people started to ask me how they could make nicknames in their slack. The CSS for custom names got shared around the company; people were having fun.</p>
+          <p>Then Jared joined our team. As things ran their course, the custom nicknames were eventually shared with Jared, that's where the problems start. Jared didn’t use the slack website, he used the slack desktop app. This meant no Stylus, and no css injection. I had some free time, and I wanted to make sure everybody at work felt included in the fun, so I found a way to inject CSS into the slack app.</p>
+          <div class="subheading"><h2 id="injecting-css">Injecting CSS</h2></div>
+          
+          <p>I remember back when I first started using slack I decided to check out the desktop app. Honestly I didn’t see what it offered over the web version, so I never ended up using it. As a result the only real thing I knew about the Slack Desktop App was that it was based on electron, and electron was effectively a web browser. Had I not known that it was an electron app I would’ve never even tried to modify it.</p>
+          <p>5 minutes of googling told me that the app.asar file could be compiled in order to see the JS that ran everything. Looking through the files it was clear that this js code was bundled with webpack. I personally don’t know much about webpack beyond the fact that it's a bundler. I’m sure there are better ways of injecting `&lt;style&gt;` tags into a webpack app. I didn’t really see value in learning webpack, I personally use Rollup or Snowpack. The easiest solution seemed to be a brute force injection into the bundled file.</p>
+          <p>Looking through the package.json I found the entrypoint for the program. A file called `boot.bundle.js`, searching the document for dom related tags (document, head, body, child, etc) and functions (.appendChild(), .insertBefore(), etc.) and finding nothing allowed me to quickly disregard this file.</p>
+          <p>The next file I took a look at was `preload.bundle.js`. I chose this file since I was looking to inject code on the page; logically a file that preloads the page would have some stuff related to the page. Searching the file for the same dom tags and functions yielded a lot more results this time. I tried to hijack a few of the instances of `.appendChild()` and `.insertBefore()` this resulted in the Slack App throwing errors in the console and failing to load the `preload.bundle.js` file. One thing that I did notice was that the file failing to load meant that the titlebar buttons to minimize, maximize, or close the app didn’t show up, meaning this file was definitely injecting something.</p>
+          <p>Upon closer inspection a piece of code stood out.</p>
+          <div class="code-container">
+            <div>
+              <code>
+                <span>
+                  <span class="c0"></span><span class="c16 c1">parent</span><span class="c0">&amp;&amp;</span><span class="c16 c1">parent</span><span class="c0">.</span><span class="c1 c11">insertBefore</span><span class="c0">(</span><span class="c16 c1">element</span><span class="c0">,</span><span class="c16 c1">parent</span><span class="c0">.</span><span class="c16 c1">firstChild</span><span class="c0 c10">)</span>
+                </span>
+              </code>
+            </div>
+          </div>
+          <p>Unlike seemingly everything else this was checking that the parent element actually existed, and another `&&parent.insertBefore(element,parent.firstChild)` could be chained onto it without any issues. Creating a div using `document.createElement("div");` and inserting it using the above strategy. Unlike previous attempts this didn’t result in errors, and the preload file was actually loaded into the Slack App.</p>
+          <p>Looking through the resulting HTML and comparing it to the original unpatched version showed me where this div was added. Into a `#shadow-root` inside `&lt;window-chrome&gt;` element in the body. Just as I had predicted this was where the settings for the titlebar buttons were also added.</p>
+          <p>Now that I could add an html tag into the document, changing it to a style should be simple. In order to create a node with styles I used a simple IIFE: (Note how `body {display: none}` is used as simple CSS to ensure that the CSS actually works)</p>
+          <div class="code-container">
+            <div>
+              <code>
+                <span class="c0">(() </span><span class="c7 c1">=&gt;</span><span class="c0">&nbsp;{</span><span class="c7 c1">const</span><span class="c0">&nbsp;</span><span class="c8 c1">div</span><span class="c0">&nbsp;= </span><span class="c1 c16">document</span><span class="c0">.</span><span class="c1 c11">createElement</span><span class="c0">(</span><span class="c5 c1">"style"</span><span class="c0">); </span><span class="c8 c1">div</span><span class="c0">.</span><span class="c16 c1">innerText</span><span class="c0">=</span><span class="c1 c5">"body {display: none}"</span><span class="c0">;</span><span class="c1 c22">&nbsp;return</span><span class="c0">&nbsp;</span><span class="c8 c1">div</span><span class="c0">})()</span>
+              </code>
+            </div>
+          </div>
+          <p>Interesting enough, this inserted the style tag but it didn’t have any effect on the document. I had mentioned before that this node was created inside of a #shadow-root this means that it renders independently of the main DOM, hence the style tag is unaffected. The way to get around this issue is to use `parent.ownerDocument` since this references the `document` from any node, including those in the shadow DOM. From there we can simply place the style tag in the head of the document.</p>
+          <div class="subheading"><h2 id="cli-tool">CLI Tool</h2></div>
+          <p>The first things needed in order to recreate the process programmatically are the location of the css patch file and the path to the slack app itself, these will be pulled in using command line arguments to the cli tool. I wouldn’t be surprised if it was possible to track down the location of the slack program using a variety of different methods, but that code would probably end up being as long as the rest of the file and it wouldn’t make that big of a difference.</p>
+          <p>The first step in the actual process is unpacking the `asar` file. This can be done with the asar package. While the package is mostly designed to act as a cli tool it does have a (poorly documented) functionality as a library. We simply find the slack directory from the arguments and navigate to the resources section where we can extract the `app.asar` file. This is slightly complicated since it requires reading the directory to navigate to the newest version folder. Despite all that the code is still fairly simple:</p>
+          <div class="code-container">
+            <div>
+              <code>
+                <div><span class="c7 c1">const</span><span class="c0">&nbsp;</span><span class="c8 c1">slackDirectory</span><span class="c0">&nbsp;= (</span><span class="c22 c1">await</span><span class="c0">&nbsp;</span><span class="c1 c11">readdir</span><span class="c0">(</span><span class="c16 c1">SLACK_APP_PATH</span><span class="c0">))[</span><span class="c1 c20">0</span><span class="c0 c10">];</span></div>
+                <div><span class="c0"></span><span class="c7 c1">const</span><span class="c0">&nbsp;</span><span class="c8 c1">appDirectory</span><span class="c0">&nbsp;= </span><span class="c5 c1">`</span><span class="c7 c1">${</span><span class="c16 c1">SLACK_APP_PATH</span><span class="c1 c7">}</span><span class="c5 c1">/</span><span class="c7 c1">${</span><span class="c8 c1">slackDirectory</span><span class="c7 c1">}</span><span class="c5 c1">/resources`</span><span class="c0 c10">;</span></div>
+                <div><span class="c0"></span><span class="c16 c1">asar</span><span class="c0">.</span><span class="c1 c11">extractAll</span><span class="c0">(</span><span class="c5 c1">`</span><span class="c7 c1">${</span><span class="c8 c1">appDirectory</span><span class="c7 c1">}</span><span class="c5 c1">/app.asar`</span><span class="c0">, </span><span class="c5 c1">`</span><span class="c7 c1">${</span><span class="c8 c1">appDirectory</span><span class="c7 c1">}</span><span class="c5 c1">/app`</span><span class="c0 c10">);</span></div>
+              </code>
+            </div>
+          </div>
+          <p>This will create the app directory with all of the unpackaged files, due to the way electron works these files take precedence and the `app.asar` file is ignored. </p>
+          <p>The next step is to read the patch file and clean it. This is as simple as using `fs.readFIle`. In order to clean the file replace all newlines with an empty space using `patchFile.replace(/[\r\n]/g, " ")`. Without this there are some issues with parsing the `preload.bundle.js`. Another thing that caused issues in the `preload.bundle.js` is quotes, this is fixed by escaping all of the quotes in the actual string itself. Quote replacing is also fairly simple `.replace(/\"/g, '\\"')` note the double backslash, this is simply to escape the backslash so the escaped quote is in the final string not the param passed into replace. The same process should be repeated for single quotes.</p>
+          <p>The last part is the actual css injection. In order to do this an injection string needs to be created, this will be the actual string that gets injected into the `preload.bundle.js` file. The injection string needs to use the same code that was used in manual testing. This can all be formatted with a template literal that formats our cleaned patch file into the needed string: </p>
+          <div class="code-container">
+            <div>
+              <code>
+                <span>
+                  <span class="c7 c1">const</span><span class="c0">&nbsp;</span><span class="c8 c1">injectionString</span><span class="c0">&nbsp;= </span><span class="c5 c1">`</span><span class="c5 c1">&amp;&amp;parent.ownerDocument.head.insertBefore</span><span class="c5 c1">((() =&gt; {const div = document.createElement("style"); div.innerText=</span><span class="c1 c15">\`</span><span class="c7 c1">${</span><span class="c8 c1">cleanedPatchFile</span><span class="c7 c1">}</span><span class="c15 c1">\`</span><span class="c5 c1">; return div})(), parent.ownerDocument.head.firstChild)`</span><span class="c0 c10">;</span>
+                </span>
+              </code>
+            </div>
+          </div>
+          <p>In order to insert the `InjectionString` into the actual `preload.bundle.js` the preload bundle file needs to be read in, this can once again be done using `fs.readFile`.</p>
+          <p>Once the file is read in, `.replace` can be used and the modified version can be written back into the `preload.bundle.js` where upon restarting the Slack App will allow the changes to take effect.</p>
+          <div class="code-container">
+            <div>
+              <code>
+                <span>
+                  <span class="c7 c1">const</span><span class="c0">&nbsp;</span><span class="c1 c8">newSlackPreloadFile</span><span class="c0">&nbsp;= </span><span class="c8 c1">SLACK_PRELOAD_FILE</span><span class="c0">.</span><span class="c1 c11">replace</span><span class="c0 c10">(</span>
+                  <span class="c0"></span><span class="c1 c13">/</span><span class="c5 c1">(?&lt;=</span><span class="c13 c1">parent</span><span class="c5 c1">)(?=</span><span class="c15 c1">\&amp;\&amp;</span><span class="c13 c1">parent</span><span class="c5 c1">)</span><span class="c13 c1">/</span><span class="c7 c1">gm</span><span class="c0 c10">,</span>
+                  <span class="c0"></span><span class="c10 c8 c1">injectionString</span>
+                  <span class="c0 c10">);</span>
+                </span>
+              </code>
+            </div>
+          </div>
+          <p>Note that `parent&&parent` only occurs once in this file, therefore positive regex lookaheads and lookbehinds can be used to add code, in this case the `injectionString`, directly where needed without removing any existing code.</p>
+        </div>
+      </article>
+    </main>
+    <style>.c0{font-size:10.5pt;font-family:"Consolas";color:#d4d4d4;font-weight:400}.c1{font-weight:400;font-family:"Consolas"}.c5{font-size:10.5pt;color:#ce9178}.c7{font-size:10.5pt;color:#569cd6}.c8{font-size:10.5pt;color:#4fc1ff}.c10{text-decoration:none;vertical-align:baseline;font-style:normal}.c11{font-size:10.5pt;color:#dcdcaa}.c13{font-size:10.5pt;color:#d16969}.c15{font-size:10.5pt;color:#d7ba7d}.c16{font-size:10.5pt;color:#9cdcfe}.c20{font-size:10.5pt;color:#b5cea8}.c22{font-size:10.5pt;color:#c586c0}</style>
+  </body>
+</html>
